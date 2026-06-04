@@ -182,48 +182,7 @@
     .hamburger .menu-text { display: none; }
     .hamburger .line { display: block; }
     .desktop-nav { display: none !important; }
-  
-        /* ===== MOBILE FIXES ===== */
-
-        /* 1. Hide vertical rotated text — causes overflow on mobile */
-        .vertical-text { display: none !important; }
-
-        /* 2. Reduce section padding */
-        section { padding-top: 60px !important; padding-bottom: 60px !important; }
-
-        /* 3. Touch targets min 44px */
-        .cta-link, .filter-item, .project-row a, .sidenav-link { 
-            min-height: 44px; 
-            display: inline-flex; 
-            align-items: center; 
-        }
-
-        /* 4. Body font minimum 16px to prevent iOS zoom */
-        input, textarea, select { font-size: 16px !important; }
-
-        /* 5. Contact banner 2-col → stack */
-        .contact-banner { flex-direction: column !important; }
-        .contact-banner-left  { width: 100% !important; padding: 60px 24px 40px !important; }
-        .contact-banner-right { width: 100% !important; height: 260px !important; }
-
-        /* 6. Contact form 2-col → stack */
-        .contact-form-section,
-        .contact-form-outer > * { 
-            flex-direction: column !important; 
-        }
-        .form-col, .info-col { 
-            width: 100% !important; 
-            padding: 0 0 40px !important; 
-        }
-        .circular-image { 
-            width: 200px !important; 
-            height: 200px !important; 
-            margin: 0 auto 32px !important; 
-        }
-        .contact-form input,
-        .contact-form textarea { width: 100% !important; }
-
-    }
+  }
 
     /* SIDENAV */
     .sidenav {

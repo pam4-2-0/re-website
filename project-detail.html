@@ -200,50 +200,7 @@
     .hamburger { display: flex !important; }
     .hamburger .menu-text { display: none; }
     .hamburger .line { display: block; }
-  
-        /* ===== MOBILE FIXES ===== */
-
-        /* 1. Hide vertical rotated text — causes overflow on mobile */
-        .vertical-text { display: none !important; }
-
-        /* 2. Reduce section padding */
-        section { padding-top: 60px !important; padding-bottom: 60px !important; }
-
-        /* 3. Touch targets min 44px */
-        .cta-link, .filter-item, .project-row a, .sidenav-link { 
-            min-height: 44px; 
-            display: inline-flex; 
-            align-items: center; 
-        }
-
-        /* 4. Body font minimum 16px to prevent iOS zoom */
-        input, textarea, select { font-size: 16px !important; }
-
-        /* 5. Hero text scale */
-        .project-hero h1 { font-size: 32px !important; letter-spacing: 2px !important; }
-
-        /* 6. Gallery → 1 col */
-        .gallery-grid { 
-            display: flex !important; 
-            flex-direction: column !important; 
-        }
-        .gallery-left-tall { height: 260px !important; width: 100% !important; }
-        .gallery-right-grid { 
-            display: grid !important; 
-            grid-template-columns: 1fr 1fr !important; 
-            width: 100% !important; 
-        }
-
-        /* 7. Info 2-col → stack */
-        .info-section { flex-direction: column !important; }
-        .info-left, .info-right { width: 100% !important; }
-        .specs-card { position: static !important; margin-top: 40px; }
-
-        /* 8. Contact form inline → stack */
-        .inline-form-grid { flex-direction: column !important; }
-        .form-left, .form-right { width: 100% !important; }
-
-    }
+  }
 
     /* SIDENAV */
     .sidenav {
