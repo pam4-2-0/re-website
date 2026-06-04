@@ -671,7 +671,37 @@
         padding: 12px 20px;
       }
     }
-  </style>
+  
+      .hamburger {
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 28px;
+        height: 18px;
+        padding: 0;
+      }
+      .hamburger .line {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--navy);
+        transition: background-color 0.2s;
+      }
+      .hamburger:hover .line { background-color: var(--gold); }
+      .hamburger .menu-text { display: none !important; }
+      /* On dark hero: lines should be white */
+      .hero-sec .hamburger .line,
+      .main-header.on-hero .hamburger .line { background-color: white; }
+    
+      /* Arrow only on active nav link */
+      .sidenav-link .arrow { display: none; color: var(--gold); }
+      .sidenav-link.active .arrow { display: inline; }
+      .sidenav-link.active { color: var(--gold); }
+    </style>
 </head>
 <body>
 
@@ -698,7 +728,6 @@
         <a href="contact.html" class="desktop-nav-link active">Contact</a>
       </nav>
       <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
-        <span class="menu-text">Menu</span>
         <span class="line"></span>
         <span class="line"></span>
         <span class="line"></span>
@@ -788,3 +817,28 @@
     <div class="sidenav-bottom">
       <a href="tel:+17145550192" class="sidenav-phone">+1 (714) 555-0192</a>
       <a href="mailto:hello@legacy
+  <script>
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const sidenav = document.getElementById('sidenav');
+    const sidenavClose = document.getElementById('sidenavClose');
+    const backdrop = document.getElementById('backdrop');
+
+    function openSidenav() {
+      sidenav.classList.add('open');
+      backdrop.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeSidenav() {
+      sidenav.classList.remove('open');
+      backdrop.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    if (hamburgerBtn) hamburgerBtn.addEventListener('click', openSidenav);
+    if (sidenavClose) sidenavClose.addEventListener('click', closeSidenav);
+    if (backdrop) backdrop.addEventListener('click', closeSidenav);
+
+    if (typeof AOS !== 'undefined') AOS.init({ duration: 800, once: true, offset: 100 });
+  </script>
+</body>
+</html>
