@@ -6,7 +6,7 @@
   <title>Portfolio | Legacy Development Group</title>
   
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Josefin+Sans:wght@100;200;300;400;600;700&family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
   
   <style>
     /* CSS VARIABLES */
@@ -19,7 +19,7 @@
       --white:       #ffffff;
       --off-white:   #f6f6f6;
       --footer-bg:   #e3e3e3;
-      --transition:  all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+      --transition: color 0.3s ease;
     }
 
     /* Reset & Base Styles */
@@ -42,7 +42,7 @@
     a {
       color: inherit;
       text-decoration: none;
-      transition: var(--transition);
+      transition: color 0.3s ease;
     }
 
     /* Max-Width Container: 1400px Centered */
@@ -77,7 +77,7 @@
       align-items: center;
       background: var(--white);
       border-bottom: 1px solid rgba(26, 40, 71, 0.1);
-      transition: var(--transition);
+      transition: color 0.3s ease;
     }
 
     .header-inner {
@@ -145,14 +145,12 @@
       color: var(--navy);
       text-decoration: none;
       padding-bottom: 3px;
-      border-bottom: 2px solid transparent;
       transition: color 0.3s ease, border-color 0.3s ease;
     }
 
     .desktop-nav-link:hover,
     .desktop-nav-link.active {
       color: var(--gold);
-      border-bottom-color: var(--gold);
     }
 
     /* Hamburger Menu Button */
@@ -165,7 +163,7 @@
       align-items: center;
       gap: 8px;
       padding: 0;
-      transition: var(--transition);
+      transition: color 0.3s ease;
     }
     
     .hamburger .menu-text {
@@ -187,7 +185,7 @@
       width: 24px;
       height: 2px;
       background-color: var(--navy);
-      transition: var(--transition);
+      transition: color 0.3s ease;
     }
 
     /* Media query for hiding/showing desktop links and hamburger */
@@ -211,7 +209,7 @@
       box-shadow: -10px 0 30px rgba(0,0,0,0.05);
       z-index: 999;
       transform: translateX(100%);
-      transition: transform 0.5s ease;
+      transition: color 0.3s ease;
       padding: 100px 50px 50px;
       display: flex;
       flex-direction: column;
@@ -231,7 +229,7 @@
       font-weight: 300;
       cursor: pointer;
       line-height: 1;
-      transition: var(--transition);
+      transition: color 0.3s ease;
     }
     
     .sidenav-close:hover {
@@ -318,11 +316,10 @@
       width: 100%;
       height: 100%;
       background: rgba(26, 40, 71, 0.4);
-      backdrop-filter: blur(4px);
       z-index: 998;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.5s ease;
+      transition: color 0.3s ease;
     }
     
     .backdrop.active {
@@ -414,7 +411,7 @@
       padding: 12px 30px;
       text-decoration: none;
       display: inline-block;
-      transition: var(--transition);
+      transition: color 0.3s ease;
       background-color: transparent;
     }
 
@@ -470,13 +467,13 @@
       display: flex;
       flex-direction: column;
       background-color: var(--white);
-      transition: var(--transition);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
     }
 
     .project-card:hover {
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
       transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(26,40,71,0.10);
     }
 
     .card-image {
@@ -488,7 +485,7 @@
     }
 
     .card-body {
-      padding: 24px 0;
+      padding: 20px 20px 24px;
     }
 
     .status-badge {
@@ -548,10 +545,12 @@
     }
 
     .card-cta {
-      font-family: 'Playfair Display', serif;
-      font-size: 15px;
-      font-weight: 400;
-      color: var(--black);
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--navy);
       transition: color 0.3s ease;
     }
 
@@ -744,7 +743,7 @@
 
         <!-- Card 3 -->
         <div class="project-card" onclick="window.location.href='project-detail.html'">
-          <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6d349a58?w=800&q=80&fit=crop');"></div>
+          <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80&fit=crop');"></div>
           <div class="card-body">
             <span class="status-badge">COMPLETED</span>
             <h3 class="project-name">MAPLE RIDGE</h3>
@@ -769,6 +768,38 @@
             <hr class="card-divider">
             <div class="card-footer">
               <span class="card-meta-info">Est. ROI 22%</span>
+              <span class="card-cta">View details &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="project-card" onclick="window.location.href='project-detail.html'">
+          <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80&fit=crop');"></div>
+          <div class="card-body">
+            <span class="status-badge">UNDER CONSTRUCTION</span>
+            <h3 class="project-name">PINE CREST VILLAS</h3>
+            <p class="project-location">Santa Barbara County, California</p>
+            <p class="project-type">Luxury Villas</p>
+            <hr class="card-divider">
+            <div class="card-footer">
+              <span class="card-meta-info">Est. ROI 24%</span>
+              <span class="card-cta">View details &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="project-card" onclick="window.location.href='project-detail.html'">
+          <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1598228723793-52759bba239c?w=800&q=80&fit=crop');"></div>
+          <div class="card-body">
+            <span class="status-badge">FOR SALE</span>
+            <h3 class="project-name">HARBOR VIEW RESIDENCES</h3>
+            <p class="project-location">Ventura County, California</p>
+            <p class="project-type">Waterfront Apartments</p>
+            <hr class="card-divider">
+            <div class="card-footer">
+              <span class="card-meta-info">142 Units</span>
               <span class="card-cta">View details &rarr;</span>
             </div>
           </div>
@@ -832,3 +863,4 @@
   </script>
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   

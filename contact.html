@@ -8,10 +8,9 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Josefin+Sans:wght@100;200;300;400;600;700&family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
   
   <!-- AOS CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
   <style>
     /* CSS VARIABLES */
@@ -70,7 +69,7 @@
     align-items: center;
     background: var(--white);
     border-bottom: 1px solid rgba(26, 40, 71, 0.1);
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
   }
   .header-inner {
     display: flex;
@@ -92,13 +91,11 @@
     color: var(--navy);
     text-decoration: none;
     padding-bottom: 3px;
-    border-bottom: 2px solid transparent;
     transition: color 0.3s ease, border-color 0.3s ease;
   }
   .desktop-nav-link:hover,
   .desktop-nav-link.active {
     color: var(--gold);
-    border-bottom-color: var(--gold);
   }
   .logo-container {
     display: flex;
@@ -202,7 +199,7 @@
       flex-direction: column;
       justify-content: space-between;
       transform: translateX(100%);
-      transition: transform 0.5s ease;
+      transition: color 0.3s ease;
     }
 
     .sidenav.open {
@@ -261,7 +258,7 @@
       margin-right: 8px;
       opacity: 0;
       width: 0;
-      transition: opacity 0.3s ease, width 0.3s ease;
+      transition: color 0.3s ease;
       display: inline-block;
       overflow: hidden;
     }
@@ -327,11 +324,10 @@
       width: 100%;
       height: 100%;
       background: rgba(26, 40, 71, 0.2);
-      backdrop-filter: blur(4px);
       z-index: 998;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.5s ease;
+      transition: color 0.3s ease;
     }
 
     .backdrop.active {
@@ -473,13 +469,11 @@
       font-size: 20px;
       color: var(--black);
       outline: none;
-      transition: border-bottom-color 0.3s ease;
       display: block;
     }
 
     .form-group input:focus,
     .form-group textarea:focus {
-      border-bottom-color: var(--gold);
     }
 
     .form-group textarea {
@@ -488,7 +482,7 @@
     }
 
     .submit-btn {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Josefin Sans', sans-serif;
       font-style: normal;
       font-size: 18px;
       color: #222;
@@ -672,7 +666,7 @@
   </header>
 
   <!-- SECTION 1 — contact banner -->
-  <section class="sec-contact-banner" data-aos="fade-in">
+  <section class="sec-contact-banner">
     <div class="banner-left">
       <div>
         <h1>CONTACT</h1>
@@ -690,7 +684,7 @@
   </section>
 
   <!-- SECTION 2 — form -->
-  <section class="sec-contact-form" data-aos="fade-in">
+  <section class="sec-contact-form">
     <div class="container form-layout">
       <!-- Left circular details -->
       <div class="form-left">
@@ -752,87 +746,4 @@
 
     <div class="sidenav-bottom">
       <a href="tel:+17145550192" class="sidenav-phone">+1 (714) 555-0192</a>
-      <a href="mailto:hello@legacydevelopmentgroup.com" class="sidenav-email">hello@legacydevelopmentgroup.com</a>
-      
-      <div class="lang-switcher">
-        <span class="lang-btn" id="lang-vi">VI</span>
-        <span>|</span>
-        <span class="lang-btn active" id="lang-en">EN</span>
-      </div>
-    </div>
-  </nav>
-
-  <!-- FOOTER -->
-  <footer class="main-footer" data-aos="fade-in">
-    <div class="container footer-inner">
-      <!-- Left -->
-      <div class="footer-left">
-        <svg class="wave-svg" viewBox="0 0 50 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 18 C 10 18, 10 12, 18 12 C 26 12, 26 18, 34 18 C 42 18, 42 12, 48 12" stroke="#1a2847" stroke-width="2" stroke-linecap="round"/>
-          <path d="M2 12 C 10 12, 10 6, 18 6 C 26 6, 26 12, 34 12 C 42 12, 42 6, 48 6" stroke="#1a2847" stroke-width="2" stroke-linecap="round"/>
-          <path d="M2 6 C 10 6, 10 0, 18 0 C 26 0, 26 6, 34 6 C 42 6, 42 0, 48 0" stroke="#1a2847" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        <div class="logo-wordmark">
-          <span class="line-1">LEGACY</span>
-          <span class="line-2">DEVELOPMENT</span>
-        </div>
-      </div>
-
-      <!-- Center -->
-      <div class="footer-center">
-        <div>100 Spectrum Center Drive, Suite 900</div>
-        <div>Irvine, CA 92618</div>
-      </div>
-
-      <!-- Right -->
-      <div class="footer-right">
-        <div>+1 (714) 555-0192 | hello@legacydevelopmentgroup.com</div>
-        <div class="copyright-row">
-          <span>Copyright &copy; 2026</span>
-          <span>|</span>
-          <a href="#">Privacy Policy</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- AOS / Vanilla JS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800,
-      once: true
-    });
-
-    // Sidenav Interactions
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const sidenav = document.getElementById('sidenav');
-    const sidenavClose = document.getElementById('sidenavClose');
-    const backdrop = document.getElementById('backdrop');
-
-    hamburgerBtn.addEventListener('click', () => {
-      sidenav.classList.add('open');
-      backdrop.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-
-    const closeMenu = () => {
-      sidenav.classList.remove('open');
-      backdrop.classList.remove('active');
-      document.body.style.overflow = '';
-    };
-
-    sidenavClose.addEventListener('click', closeMenu);
-    backdrop.addEventListener('click', closeMenu);
-
-    // Active link toggle
-    function setActiveLink(clickedLink) {
-      document.querySelectorAll('.sidenav-link').forEach(link => {
-        link.classList.remove('active');
-      });
-      clickedLink.classList.add('active');
-      setTimeout(closeMenu, 300);
-    }
-  </script>
-</body>
-</html>
+      <a href="mailto:hello@legacy
