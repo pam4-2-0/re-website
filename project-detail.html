@@ -8,7 +8,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,300;1,400&family=Josefin+Sans:wght@100;200;300;400;600;700&family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Josefin+Sans:wght@100;200;300;400;600;700&family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
   
   <!-- AOS CSS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
@@ -75,7 +75,7 @@
     /* GENERAL CTA LINK */
     .cta-link {
       font-family: 'Playfair Display', serif;
-      font-style: italic;
+      font-style: normal;
       font-size: 15px;
       font-weight: 400;
       color: var(--black);
@@ -89,109 +89,121 @@
       color: var(--gold);
     }
 
-    /* NAVBAR */
-    .navbar {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 130px;
-      padding: 22px 0;
-      background: var(--white);
-      border-bottom: 1px solid rgba(26, 40, 71, 0.1);
-      z-index: 100;
-    }
-
-    .navbar-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 100%;
-    }
-
-    /* Logo structure */
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .logo .line1, .logo .line2 {
-      color: var(--navy) !important;
-    }
-
-    .logo svg path {
-      stroke: currentColor !important;
-    }
-
-    .wave-svg {
-      width: 50px;
-      height: 24px;
-    }
-
-    .wordmark {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.2;
-    }
-
-    .wordmark .line1 {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-    }
-
-    .wordmark .line2 {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-    }
-
-    /* Hamburger icon: 3 lines */
-    .hamburger {
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 0;
-      transition: all 0.3s ease;
-    }
-
-    .hamburger .menu-text {
-      display: block;
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--navy);
-      transition: color 0.3s ease;
-    }
-
-    .hamburger:hover .menu-text {
-      color: var(--gold);
-    }
-
-    .hamburger .line {
-      display: none;
-      width: 24px;
-      height: 2px;
-      background-color: var(--navy);
-      transition: all 0.3s ease;
-    }
-
-    .hamburger:hover .line:nth-of-type(2) {
-      transform: translateX(-4px);
-    }
+  header.main-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    border-bottom: 1px solid rgba(26, 40, 71, 0.1);
+    transition: all 0.3s ease;
+  }
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    color: var(--navy);
+    text-decoration: none;
+  }
+  .logo-container,
+  .logo-container:visited,
+  .logo-container:hover {
+    color: var(--navy);
+    text-decoration: none;
+  }
+  .logo-wordmark {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+  .logo-wordmark .line-1 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--navy);
+  }
+  .logo-wordmark .line-2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--navy);
+  }
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  .desktop-nav-link {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--navy);
+    text-decoration: none;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+  .desktop-nav-link:hover,
+  .desktop-nav-link.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+  .wave-svg {
+    width: 50px;
+    height: 24px;
+  }
+  .wave-svg path {
+    stroke: currentColor;
+  }
+  .hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+  }
+  .hamburger .menu-text {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--navy);
+  }
+  .hamburger .line {
+    display: none;
+    width: 24px;
+    height: 2px;
+    background-color: var(--navy);
+  }
+  @media (min-width: 769px) {
+    .hamburger { display: none !important; }
+  }
+  @media (max-width: 768px) {
+    .desktop-nav { display: none !important; }
+    .hamburger { display: flex !important; }
+    .hamburger .menu-text { display: none; }
+    .hamburger .line { display: block; }
+  }
 
     /* SIDENAV */
     .sidenav {
@@ -351,6 +363,7 @@
       min-height: 480px;
       position: relative;
       background: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=85&fit=crop') center center / cover no-repeat;
+      padding-bottom: 60px;
     }
 
     .hero-detail-overlay {
@@ -400,7 +413,7 @@
 
     /* GALLERY */
     .gallery-sec {
-      padding: 80px 0;
+      padding: 60px 0 80px;
       background-color: var(--white);
     }
 
@@ -601,7 +614,7 @@
 
     .specs-block a {
       font-family: 'Playfair Display', serif;
-      font-style: italic;
+      font-style: normal;
       font-size: 15px;
       color: var(--gold);
       text-decoration: none;
@@ -672,7 +685,7 @@
 
     .contact-sec h2 {
       font-family: 'Playfair Display', serif;
-      font-style: italic;
+      font-style: normal;
       font-size: 36px;
       text-align: center;
       color: var(--black);
@@ -745,7 +758,7 @@
 
     .submit-btn {
       font-family: 'Playfair Display', serif;
-      font-style: italic;
+      font-style: normal;
       font-size: 18px;
       color: #222;
       background: transparent;
@@ -805,7 +818,7 @@
 
     .project-row-left .number {
       font-family: 'Playfair Display', serif;
-      font-style: italic;
+      font-style: normal;
       font-size: 20px;
       color: var(--gray-text);
       width: 30px;
@@ -840,7 +853,7 @@
 
     .project-row-right a {
       font-family: 'Playfair Display', serif;
-      font-style: italic;
+      font-style: normal;
       font-size: 15px;
       color: var(--black);
       text-decoration: none;
@@ -852,22 +865,34 @@
     }
 
     /* FOOTER */
-    .footer {
+    footer.main-footer {
       background-color: var(--footer-bg);
       padding: 51px 0;
+      border-top: 1px solid rgba(0,0,0,0.05);
     }
 
     .footer-inner {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
       align-items: center;
+      gap: 40px;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .footer-left .logo-wordmark .line-1,
+    .footer-left .logo-wordmark .line-2 {
+      color: var(--navy);
     }
 
     .footer-center {
       font-family: 'Be Vietnam Pro', sans-serif;
       font-size: 14px;
       color: var(--near-black);
-      line-height: 1.6;
       text-align: center;
     }
 
@@ -878,9 +903,9 @@
       text-align: right;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 5px;
     }
-
+    
     .footer-right .copyright-row {
       font-size: 12px;
       color: var(--gray-text);
@@ -1008,29 +1033,33 @@
   <section class="hero-detail">
     <div class="hero-detail-overlay"></div>
     
-    <!-- Floating transparent Navbar -->
-    <header class="navbar" data-aos="fade-in">
-      <div class="container navbar-inner">
-        <a href="index.html" class="logo">
-          <svg class="wave-svg" viewBox="0 0 50 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 4 Q 13 0, 25 4 T 49 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-            <path d="M1 8 Q 13 4, 25 8 T 49 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-            <path d="M1 12 Q 13 8, 25 12 T 49 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-          </svg>
-          <div class="wordmark">
-            <span class="line1">LEGACY</span>
-            <span class="line2">DEVELOPMENT</span>
-          </div>
-        </a>
-        
-        <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
-          <span class="menu-text">Menu</span>
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-        </button>
-      </div>
-    </header>
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-container">
+        <svg class="wave-svg" viewBox="0 0 50 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 18 C 10 18, 10 12, 18 12 C 26 12, 26 18, 34 18 C 42 18, 42 12, 48 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 12 C 10 12, 10 6, 18 6 C 26 6, 26 12, 34 12 C 42 12, 42 6, 48 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 6 C 10 6, 10 0, 18 0 C 26 0, 26 6, 34 6 C 42 6, 42 0, 48 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="logo-wordmark">
+          <span class="line-1">LEGACY</span>
+          <span class="line-2">DEVELOPMENT</span>
+        </div>
+      </a>
+      <nav class="desktop-nav">
+        <a href="index.html" class="desktop-nav-link">Home</a>
+        <a href="about.html" class="desktop-nav-link">Who We Are</a>
+        <a href="projects.html" class="desktop-nav-link active">Portfolio</a>
+        <a href="contact.html" class="desktop-nav-link">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+        <span class="menu-text">Menu</span>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+    </div>
+  </header>
 
     <div class="hero-detail-content" data-aos="fade-in">
       <p class="breadcrumb">Home / Projects / Alpha Urban Development</p>
@@ -1286,20 +1315,20 @@
   </nav>
 
   <!-- FOOTER -->
-  <footer class="footer" data-aos="fade-in">
+  <footer class="main-footer" data-aos="fade-in">
     <div class="container footer-inner">
       <!-- Left -->
-      <a href="index.html" class="logo">
-        <svg class="wave-svg" viewBox="0 0 50 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1 4 Q 13 0, 25 4 T 49 4" stroke="var(--navy)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-          <path d="M1 8 Q 13 4, 25 8 T 49 8" stroke="var(--navy)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-          <path d="M1 12 Q 13 8, 25 12 T 49 12" stroke="var(--navy)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      <div class="footer-left">
+        <svg class="wave-svg" viewBox="0 0 50 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 18 C 10 18, 10 12, 18 12 C 26 12, 26 18, 34 18 C 42 18, 42 12, 48 12" stroke="#1a2847" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 12 C 10 12, 10 6, 18 6 C 26 6, 26 12, 34 12 C 42 12, 42 6, 48 6" stroke="#1a2847" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 6 C 10 6, 10 0, 18 0 C 26 0, 26 6, 34 6 C 42 6, 42 0, 48 0" stroke="#1a2847" stroke-width="2" stroke-linecap="round"/>
         </svg>
-        <div class="wordmark">
-          <span class="line1">LEGACY</span>
-          <span class="line2">DEVELOPMENT</span>
+        <div class="logo-wordmark">
+          <span class="line-1">LEGACY</span>
+          <span class="line-2">DEVELOPMENT</span>
         </div>
-      </a>
+      </div>
 
       <!-- Center -->
       <div class="footer-center">
