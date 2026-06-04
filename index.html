@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legacy Development Group | Extraordinary Real Estate</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Josefin+Sans:wght@100;200;300;400;600;700&family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+  <style>
+    /* CSS VARIABLES */
+    :root {
+      --black:       #000000;
+      --near-black:  #2c2c2c;
+      --navy:        #1a2847;   /* our brand navy */
+      --gold:        #c9a060;   /* our brand gold — use for hover, active nav arrow, etc. */
+      --gray-text:   #848484;
+      --white:       #ffffff;
+      --off-white:   #f6f6f6;
+      --footer-bg:   #e3e3e3;
+      --transition:  all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--white);
+      color: var(--black);
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 15px;
+      line-height: 1.8;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      border-top: none;
+      outline: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    /* Max-Width Container: 1400px Centered */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 80px;
+      position: relative;
+    }
+
+    @media (max-width: 1024px) {
+      .container {
+        padding: 0 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 20px;
+      }
+    }
+
+    /* Spacing Rule: minimum 100-150px padding top/bottom */
+    section {
+      padding: 120px 0;
+      position: relative;
+      background-color: var(--white);
+      overflow: hidden; /* Cropping helper for decorative arcs */
+    }
+
+    /* Section Labels */
+    .section-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--black);
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    /* Headings styling matching Silver Creek typography inspection */
+    .heading-large-serif {
+      font-family: 'Playfair Display', serif;
+      font-style: normal;
+      font-size: 40px;
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1.3;
+    }
+
+    .heading-medium-garamond {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--black);
+      line-height: 1.4;
+    }
+
+    /* NO buttons — all CTAs are italic Playfair Display + " →" */
+    .cta-link {
+      font-family: 'Playfair Display', serif;
+      font-style: normal;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--black);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      position: relative;
+      background: none;
+      border: none;
+      padding: 0;
+      transition: color 0.3s ease;
+    }
+    
+    .cta-link:hover {
+      color: var(--gold);
+      text-decoration: underline;
+    }
+
+    /* Decorative navy circle: 500px diameter, absolute, cropped at page left/right edge */
+    .deco-circle {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background-color: var(--navy);
+      opacity: 0.08;
+      z-index: 0;
+      pointer-events: none;
+    }
+    
+    .deco-circle.left-crop {
+      left: -250px;
+      top: 10%;
+    }
+    
+    .deco-circle.right-crop {
+      right: -250px;
+      bottom: 10%;
+    }
+
+    /* Vertical Rotated Text */
+    .vertical-text {
+      position: absolute;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--gray-text);
+      z-index: 2;
+    }
+
+    /* TRANSPARENT NAVBAR FLOATING OVER HERO */
+    header.main-header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      background: var(--white);
+      border-bottom: 1px solid rgba(26, 40, 71, 0.1);
+      transition: all 0.3s ease;
+      border-top: none;
+      outline: none;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    /* Logo Wave Icon (SVG) */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      cursor: pointer;
+      color: var(--navy);
+      text-decoration: none;
+    }
+    
+    .logo-container, .logo-container:visited, .logo-container:hover {
+      color: var(--navy);
+      text-decoration: none;
+    }
+    
+    .wave-svg {
+      width: 50px;
+      height: 24px;
+    }
+
+    .wave-svg path {
+      stroke: currentColor;
+    }
+    
+    .logo-wordmark {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+    
+    .logo-wordmark .line-1 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--navy);
+      transition: color 0.3s ease;
+    }
+    
+    .logo-wordmark .line-2 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--navy);
+      transition: color 0.3s ease;
+    }
+
+    /* Hamburger Menu Button */
+    .hamburger {
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0;
+      transition: var(--transition);
+    }
+
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  .desktop-nav-link {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--navy);
+    text-decoration: none;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+  .desktop-nav-link:hover,
+  .desktop-nav-link.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+  @media (max-width: 768px) {
+    .desktop-nav { display: none; }
+  }
+  @media (min-width: 769px) {
+    .hamburger { display: none !important; }
+  }
+    
+    .hamburger .menu-text {
+      display: block;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--navy);
+      transition: color 0.3s ease;
+    }
+    
+    .hamburger:hover .menu-text {
+      color: var(--gold);
+    }
+
+    .hamburger .line {
+      display: none;
+      width: 24px;
+      height: 2px;
+      background-color: var(--navy);
+      transition: var(--transition);
+    }
+
+    .hamburger:hover .line:nth-of-type(2) {
+      transform: translateX(-4px);
+    }
+
+    /* SIDENAV PANEL (Slide from right) */
+    .sidenav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 420px;
+      background-color: var(--white);
+      box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+      z-index: 999;
+      transform: translateX(100%);
+      transition: transform 0.5s ease;
+      padding: 100px 50px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    .sidenav.open {
+      transform: translateX(0);
+    }
+
+    .sidenav-close {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 50px;
+      font-weight: 300;
+      cursor: pointer;
+      line-height: 1;
+      transition: var(--transition);
+    }
+    
+    .sidenav-close:hover {
+      color: var(--gold);
+    }
+
+    .sidenav-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2.3px;
+      text-transform: uppercase;
+      color: var(--near-black);
+      margin-bottom: 40px;
+    }
+
+    .sidenav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .sidenav-link {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      color: var(--black);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .sidenav-link span.arrow {
+      color: var(--gold);
+      display: none;
+    }
+
+    .sidenav-link.active {
+      color: var(--gold);
+    }
+    
+    .sidenav-link.active span.arrow {
+      display: inline;
+    }
+
+    .sidenav-link:hover {
+      color: var(--gold);
+    }
+
+    .sidenav-footer {
+      border-top: 1px solid rgba(0,0,0,0.1);
+      padding-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .sidenav-phone {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .sidenav-email {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 20px;
+      color: var(--near-black);
+    }
+
+    /* BACKDROP OVERLAY */
+    .backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(26, 40, 71, 0.4);
+      backdrop-filter: blur(4px);
+      z-index: 998;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+    
+    .backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* VIEW ROUTER */
+    .page-view {
+      display: none;
+    }
+    
+    .page-view.active-view {
+      display: block;
+    }
+
+    /* =========================================
+       1. HOMEPAGE VIEW (view-home)
+       ========================================= */
+
+    /* Hero Banner (main-banner) */
+    .hero-sec {
+      height: 100vh;
+      min-height: 680px;
+      max-height: 900px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(to right, rgba(26,40,71,0.55) 40%, rgba(26,40,71,0.25) 100%), url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1600&q=80&fit=crop') center center / cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      padding: 0;
+    }
+
+    .hero-sec .left-overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background: transparent;
+      z-index: 1;
+      pointer-events: none;
+      display: none;
+    }
+
+    .hero-container {
+      width: 100%;
+      padding-bottom: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      z-index: 2;
+    }
+
+    .hero-text-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .hero-text-stack span.line-playfair {
+      font-family: 'Josefin Sans', sans-serif;
+      font-style: normal;
+      font-size: 50px;
+      font-weight: 300;
+      letter-spacing: 2.5px;
+      color: var(--white);
+    }
+
+    .hero-text-stack h2.line-cormorant {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 46px;
+      font-weight: 400;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1.1;
+    }
+
+    .hero-text-stack em.line-sub {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--white);
+      font-style: normal;
+      display: block;
+      width: fit-content;
+      text-align: center;
+      margin: 4px 0;
+    }
+
+    .hero-text-stack span.line-realities {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 58px;
+      font-weight: 400;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1.1;
+    }
+
+    .hero-right-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 40px;
+    }
+
+    .hero-featured-label {
+      text-align: right;
+      color: var(--white);
+    }
+
+    .hero-featured-label span {
+      font-family: 'Playfair Display', serif;
+      font-style: normal;
+      font-size: 13px;
+      letter-spacing: 2.8px;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .hero-featured-label h4 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .hero-counter {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 4px;
+    }
+
+    .hero-project-link {
+      font-family: 'Playfair Display', serif;
+      font-style: normal;
+      font-size: 18px;
+      letter-spacing: 4px;
+      color: var(--white);
+      text-decoration: none;
+    }
+    
+    .hero-project-link:hover {
+      color: var(--gold);
+    }
+
+    .hero-vertical-text {
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%) rotate(180deg);
+      color: rgba(255,255,255,0.6);
+      opacity: 0.8;
+    }
+
+    /* Section 2: High Performance Sec */
+    .high-performance-sec {
+      padding: 120px 0 150px;
+    }
+
+    .three-col-layout {
+      display: grid;
+      grid-template-columns: 3.5fr 4.5fr 4fr;
+      gap: 60px;
+      align-items: flex-start;
+    }
+
+    .image-overlap-wrapper {
+      position: relative;
+      height: 480px;
+    }
+
+    .img-placeholder-overlap-a {
+      width: 280px;
+      height: 380px;
+      background: url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=900&q=80&fit=crop') center center / cover no-repeat;
+      position: relative;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    }
+
+    .img-placeholder-overlap-b {
+      width: 200px;
+      height: 260px;
+      background: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&q=80&fit=crop') center center / cover no-repeat;
+      position: absolute;
+      top: -30px;
+      right: 0;
+      z-index: 2;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .center-col {
+      padding: 0 30px;
+    }
+
+    .center-col .section-line {
+      border-bottom: 1px solid var(--black);
+      width: 80px;
+      margin-bottom: 30px;
+    }
+
+    .center-col p {
+      margin-bottom: 25px;
+      color: var(--near-black);
+    }
+
+    .right-col {
+      padding-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .right-col h4 {
+      line-height: 1.6;
+    }
+
+    /* Section 3: Centered Pullquote */
+    .create-place-sec {
+      padding: 150px 0 60px;
+      text-align: center;
+    }
+
+    .pullquote-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .pullquote-content .heading-large-serif span {
+      display: block;
+      margin-top: 15px;
+    }
+
+    /* Section 4: Home About Sec */
+    .home-about-sec {
+      padding: 100px 0 120px;
+    }
+
+    .sub-block-a {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-bottom: 100px;
+    }
+
+    .sub-block-a-text {
+      padding-right: 40px;
+    }
+
+    .sub-block-a-text p {
+      margin-bottom: 40px;
+      color: var(--near-black);
+    }
+
+    .sub-block-a-img {
+      width: 100%;
+      height: 500px;
+      background: url('https://images.unsplash.com/photo-1600607687939-ce8a6d349a58?w=900&q=80&fit=crop') center center / cover no-repeat;
+    }
+
+    .sub-block-b {
+      text-align: center;
+      padding: 80px 0;
+      position: relative;
+    }
+
+    .sub-block-b-text {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .sub-block-b-text h3 span {
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .sub-block-c {
+      display: grid;
+      grid-template-columns: 5.5fr 4.5fr;
+      gap: 80px;
+      align-items: center;
+      margin-top: 60px;
+    }
+
+    .sub-block-c-text {
+      padding-right: 40px;
+    }
+
+    .sub-block-c-text .heading-large-serif {
+      margin-bottom: 15px;
+    }
+
+    .sub-block-c-text .heading-medium-garamond {
+      margin-bottom: 40px;
+    }
+
+    .sub-block-c-text p {
+      margin-bottom: 30px;
+    }
+
+    .sub-block-c-img {
+      width: 100%;
+      height: 550px;
+      background: url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=900&q=80&fit=crop') center center / cover no-repeat;
+    }
+
+    /* =========================================
+       2. WHO WE ARE VIEW (view-about)
+       ========================================= */
+    
+    .about-intro-sec {
+      padding: 160px 0 80px;
+    }
+
+    .two-col-split {
+      display: grid;
+      grid-template-columns: 4.5fr 5.5fr;
+      gap: 60px;
+      align-items: stretch;
+    }
+
+    .about-intro-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-right: 40px;
+    }
+
+    .about-intro-text h1 span {
+      display: block;
+    }
+    .about-intro-text h1 span.thin {
+      font-weight: 300;
+    }
+    .about-intro-text h1 span.bold {
+      font-weight: 700;
+    }
+
+    .about-intro-text p {
+      margin-top: 30px;
+      max-width: 420px;
+    }
+
+    .about-intro-img {
+      min-height: 550px;
+      background: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&q=80&fit=crop') center center / cover no-repeat;
+    }
+
+    /* Quote Split Section */
+    .quote-split-sec {
+      padding: 0;
+      display: grid;
+      grid-template-columns: 4fr 8fr;
+    }
+
+    .quote-navy-block {
+      background-color: var(--navy);
+      padding: 100px 60px;
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 80px;
+      line-height: 1;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 20px;
+    }
+
+    .quote-navy-block blockquote {
+      font-family: 'Playfair Display', serif;
+      font-style: normal;
+      font-size: 18px;
+      line-height: 1.9;
+      margin-bottom: 30px;
+    }
+
+    .quote-author {
+      font-family: 'Playfair Display', serif;
+      font-style: normal;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .quote-role {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2px;
+    }
+
+    .quote-company {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    .quote-white-block {
+      padding: 100px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: var(--white);
+    }
+
+    .quote-white-block h2 {
+      font-size: 48px;
+      margin-bottom: 30px;
+    }
+
+    .quote-white-block p {
+      max-width: 650px;
+    }
+
+    /* Benefits Section */
+    .benefits-sec {
+      padding: 120px 0;
+    }
+
+    .benefits-sec h2 {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .benefits-sec h2 span.thin {
+      font-weight: 300;
+    }
+
+    .benefits-sec h2 span.bold {
+      font-weight: 700;
+    }
+
+    .benefits-img {
+      width: 65%;
+      height: 450px;
+      margin-left: auto;
+      background: url('https://images.unsplash.com/photo-1600607687939-ce8a6d349a58?w=900&q=80&fit=crop') center center / cover no-repeat;
+      border-radius: 0 0 80px 0;
+    }
+
+    /* Partners Section */
+    .partners-sec {
+      padding: 120px 0;
+    }
+
+    .partners-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .partners-text {
+      padding-right: 40px;
+    }
+
+    .partners-text p {
+      margin-bottom: 30px;
+    }
+
+    .partners-img {
+      width: 100%;
+      height: 500px;
+      background: url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=900&q=80&fit=crop') center center / cover no-repeat;
+      border-radius: 0 0 0 80px;
+    }
+
+    /* Extra text block */
+    .about-extra-sec {
+      padding: 80px 0;
+    }
+
+    .about-extra-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-extra-img {
+      width: 100%;
+      height: 500px;
+      background: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&q=80&fit=crop') center center / cover no-repeat;
+    }
+
+    .about-extra-text {
+      padding-left: 40px;
+    }
+    
+    .about-extra-text p {
+      margin-bottom: 30px;
+    }
+
+    /* Leadership Section */
+    .leadership-sec {
+      padding: 120px 0;
+    }
+
+    .leadership-title-wrap {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 80px;
+    }
+
+    .leadership-title-wrap h2 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 36px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+
+    .leader-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .leader-name {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 28px;
+      text-transform: uppercase;
+    }
+
+    .leader-name span.bold {
+      font-weight: 700;
+    }
+    
+    .leader-name span.thin {
+      font-weight: 400;
+    }
+
+    .leader-title {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--near-black);
+      margin-top: 5px;
+    }
+
+    .leader-divider {
+      width: 200px;
+      height: 1px;
+      background-color: rgba(0,0,0,0.15);
+      margin: 16px 0;
+    }
+
+    .leader-bio {
+      font-size: 15px;
+      color: var(--gray-text);
+      line-height: 1.7;
+      margin-bottom: 15px;
+      max-width: 480px;
+    }
+
+    /* =========================================
+       3. PROJECTS VIEW (view-projects)
+       ========================================= */
+
+    .projects-intro-sec {
+      padding: 160px 0 80px;
+    }
+
+    .featured-project-banner {
+      width: 100%;
+      height: 50vh;
+      min-height: 350px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(rgba(26, 40, 71, 0.4), rgba(26, 40, 71, 0.5)), url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80&fit=crop') center center / cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 50px;
+      cursor: pointer;
+    }
+
+    .featured-project-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .featured-project-content .project-badge {
+      font-family: 'Playfair Display', serif;
+      font-style: normal;
+      font-size: 13px;
+      letter-spacing: 2.8px;
+      color: var(--white);
+    }
+
+    .featured-project-content h2 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 52px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .featured-project-content p {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 10px;
+    }
+
+    .featured-project-content .cta-link {
+      color: var(--white);
+    }
+
+    /* Projects Filter bar */
+    .projects-filter-bar {
+      padding: 50px 0;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .filter-item {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      color: var(--near-black);
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: var(--transition);
+    }
+
+    .filter-item:hover, .filter-item.active {
+      color: var(--gold);
+      border-bottom: 2px solid var(--gold);
+    }
+
+    /* Project List Rows */
+    .project-list-wrap {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 100px;
+    }
+
+    .project-row {
+      display: grid;
+      grid-template-columns: 1fr 4fr 3fr 3fr;
+      align-items: center;
+      padding: 40px 80px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    
+    .project-row:hover {
+      background-color: var(--off-white);
+    }
+
+    .project-num {
+      font-family: 'Playfair Display', serif;
+      font-style: normal;
+      font-size: 20px;
+      color: var(--gray-text);
+      opacity: 0.5;
+    }
+
+    .project-name-col h3 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 28px;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+
+    .project-meta-col {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 14px;
+      color: var(--gray-text);
+    }
+    
+    .project-meta-col span {
+      display: block;
+    }
+
+    .project-action-col {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .project-status-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--near-black);
+    }
+
+    /* =========================================
+       4. PROJECT DETAIL VIEW (view-project-detail)
+       ========================================= */
+
+    .project-detail-hero {
+      height: 70vh;
+      min-height: 450px;
+      background: linear-gradient(rgba(26, 40, 71, 0.4), rgba(26, 40, 71, 0.6)), url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80&fit=crop') center center / cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 60px;
+    }
+
+    .project-detail-hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .project-breadcrumb {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .project-detail-hero-content h1 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 64px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--white);
+      line-height: 1.1;
+    }
+
+    .project-detail-hero-content p {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 20px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* Gallery Section */
+    .project-gallery-sec {
+      padding: 80px 0;
+    }
+
+    .gallery-layout {
+      display: grid;
+      grid-template-columns: 6fr 4fr;
+      gap: 30px;
+    }
+
+    .gallery-left-tall {
+      width: 100%;
+      height: 600px;
+      background: url('https://images.unsplash.com/photo-1600607687939-ce8a6d349a58?w=900&q=80&fit=crop') center center / cover no-repeat;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-style: normal;
+      font-size: 20px;
+      color: var(--white);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .gallery-right-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .gallery-thumb {
+      background: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&q=80&fit=crop') center center / cover no-repeat;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-style: normal;
+      color: var(--white);
+      font-size: 16px;
+    }
+
+    /* Info Section split */
+    .project-info-sec {
+      padding: 80px 0;
+    }
+
+    .project-info-split {
+      display: grid;
+      grid-template-columns: 6fr 4fr;
+      gap: 80px;
+    }
+
+    .project-desc-col p {
+      margin-bottom: 25px;
+    }
+
+    .project-highlights {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .highlight-item {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .highlight-item span.bullet {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .project-specs-col {
+      position: sticky;
+      top: 120px;
+      height: fit-content;
+      border-left: 3px solid var(--gold);
+      padding-left: 40px;
+    }
+
+    .specs-table {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      width: 100%;
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 14px;
+    }
+
+    .spec-label {
+      color: var(--gray-text);
+    }
+
+    .spec-value {
+      font-weight: 500;
+      color: var(--black);
+    }
+
+    /* Map Section */
+    .project-location-sec {
+      padding: 80px 0;
+      background-color: var(--off-white);
+    }
+
+    .map-placeholder {
+      width: 100%;
+      height: 400px;
+      background-color: #d1cbd4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 18px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--near-black);
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 85%;
+      background: #2c2c2c;
+      width: 800px;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-style: normal;
+      font-size: 32px;
+      color: var(--white);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: var(--white);
+      font-size: 50px;
+      cursor: pointer;
+    }
+
+    /* =========================================
+       5. CONTACT VIEW (view-contact)
+       ========================================= */
+
+    .contact-banner-sec {
+      padding: 160px 0 80px;
+    }
+
+    .contact-banner-split {
+      display: grid;
+      grid-template-columns: 4.5fr 5.5fr;
+      gap: 60px;
+      align-items: stretch;
+    }
+
+    .contact-banner-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-right: 40px;
+    }
+
+    .contact-intro-box {
+      background-color: var(--off-white);
+      padding: 60px;
+      margin-bottom: 40px;
+    }
+
+    .contact-intro-box h1 {
+      margin-bottom: 20px;
+    }
+
+    .contact-banner-left .company-small-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .contact-banner-left .company-small-info .company-name {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+
+    .contact-banner-right-img {
+      min-height: 500px;
+      background: url('https://images.unsplash.com/photo-1600607687939-ce8a6d349a58?w=900&q=80&fit=crop') center center / cover no-repeat;
+    }
+
+    /* Form Section */
+    .contact-form-outer {
+      padding: 150px 0 120px;
+    }
+
+    .contact-form-split {
+      display: grid;
+      grid-template-columns: 4.5fr 5.5fr;
+      gap: 80px;
+    }
+
+    .contact-form-left-col {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .circle-img-placeholder {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=900&q=80&fit=crop') center center / cover no-repeat;
+      align-self: flex-start;
+    }
+
+    .contact-address {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 15px;
+      color: var(--near-black);
+    }
+
+    /* Transparent background, no border style matching prompt details */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .form-field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-field-group label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--near-black);
+    }
+
+    .form-field-group input, .form-field-group textarea {
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(0,0,0,0.15);
+      padding: 15px 10px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 16px;
+      color: var(--black);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-field-group input:focus, .form-field-group textarea:focus {
+      border-bottom-color: var(--gold);
+      background-color: var(--off-white);
+    }
+
+    .form-field-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      font-family: 'Playfair Display', serif;
+      font-style: normal;
+      font-size: 18px;
+      color: var(--near-black);
+      background: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+      padding: 0;
+    }
+
+    .submit-btn:hover {
+      color: var(--gold);
+    }
+
+    .form-success-alert {
+      display: none;
+      background-color: rgba(201, 160, 96, 0.1);
+      border-left: 3px solid var(--gold);
+      padding: 20px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 15px;
+      color: var(--navy);
+      margin-top: 20px;
+    }
+
+    /* =========================================
+       FOOTER (all pages)
+       ========================================= */
+    footer.main-footer {
+      background-color: var(--footer-bg);
+      padding: 51px 0;
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .footer-left .logo-wordmark .line-1,
+    .footer-left .logo-wordmark .line-2 {
+      color: var(--navy);
+    }
+
+    .footer-center {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 14px;
+      color: var(--near-black);
+      text-align: center;
+    }
+
+    .footer-right {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 14px;
+      color: var(--near-black);
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    
+    .footer-right .copyright {
+      font-size: 12px;
+      color: var(--gray-text);
+      margin-top: 8px;
+    }
+
+    .footer-right a:hover {
+      color: var(--gold);
+    }
+
+    /* RESPONSIVE LAYOUTS */
+    @media (max-width: 991px) {
+      .three-col-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .image-overlap-wrapper {
+        height: auto;
+        display: flex;
+        gap: 20px;
+      }
+      .img-placeholder-overlap-a, .img-placeholder-overlap-b {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 300px;
+      }
+      .center-col, .right-col {
+        padding: 0;
+      }
+      .sub-block-a, .sub-block-c, .two-col-split, .partners-split, .about-extra-split, .leadership-grid, .contact-banner-split, .contact-form-split {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .sub-block-a-text, .sub-block-c-text, .about-intro-text, .partners-text, .about-extra-text, .contact-banner-left {
+        padding: 0;
+      }
+      .quote-split-sec {
+        grid-template-columns: 1fr;
+      }
+      .project-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 30px 40px;
+      }
+      .project-meta-col {
+        grid-column: span 2;
+      }
+      .project-action-col {
+        grid-column: span 2;
+        justify-content: flex-start;
+        gap: 20px;
+      }
+      .project-info-split, .gallery-layout {
+        grid-template-columns: 1fr;
+      }
+      .gallery-left-tall {
+        height: 350px;
+      }
+      .footer-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+      }
+      .footer-left {
+        justify-content: center;
+      }
+      .footer-center, .footer-right {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        width: 24px;
+        height: 16px;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .hamburger .menu-text {
+        display: none;
+      }
+      .hamburger .line {
+        display: block;
+      }
+      .hero-text-stack span.line-playfair {
+        font-size: 36px;
+      }
+      .hero-text-stack h2.line-cormorant {
+        font-size: 32px;
+      }
+      .hero-text-stack span.line-realities {
+        font-size: 42px;
+      }
+      .sidenav {
+        width: 100%;
+      }
+      .project-row {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Backdrop -->
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- FLOATING NAVBAR -->
+  <header class="main-header" id="mainHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-container">
+        <svg class="wave-svg" viewBox="0 0 50 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 18 C 10 18, 10 12, 18 12 C 26 12, 26 18, 34 18 C 42 18, 42 12, 48 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 12 C 10 12, 10 6, 18 6 C 26 6, 26 12, 34 12 C 42 12, 42 6, 48 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 6 C 10 6, 10 0, 18 0 C 26 0, 26 6, 34 6 C 42 6, 42 0, 48 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="logo-wordmark">
+          <span class="line-1">LEGACY</span>
+          <span class="line-2">DEVELOPMENT</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html" class="desktop-nav-link active">Home</a>
+        <a href="about.html" class="desktop-nav-link">Who We Are</a>
+        <a href="projects.html" class="desktop-nav-link">Portfolio</a>
+        <a href="contact.html" class="desktop-nav-link">Contact</a>
+      </nav>
+      
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+        <span class="menu-text">Menu</span>
+        <span class="line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- SIDENAV MENU (Slides in from right) -->
+  <nav class="sidenav" id="sidenav">
+    <div class="sidenav-close" id="sidenavClose">&times;</div>
+    <div>
+      <div class="sidenav-label">NAVIGATE</div>
+      <div class="sidenav-links">
+        <a href="index.html" class="sidenav-link active">
+          <span class="arrow">&rarr;</span>
+          <span>Home</span>
+        </a>
+        <a href="about.html" class="sidenav-link">
+          <span class="arrow">&rarr;</span>
+          <span>Who We Are</span>
+        </a>
+        <a href="projects.html" class="sidenav-link">
+          <span class="arrow">&rarr;</span>
+          <span>Portfolio</span>
+        </a>
+        <a href="contact.html" class="sidenav-link">
+          <span class="arrow">&rarr;</span>
+          <span>Contact</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="sidenav-footer">
+      <div class="sidenav-phone">+1 (714) 555-0192</div>
+      <div class="sidenav-email">hello@legacydevelopmentgroup.com</div>
+    </div>
+  </nav>
+
+  <!-- ========================================================
+       1. HOMEPAGE VIEW
+       ======================================================== -->
+  <main>
+    <!-- Hero Banner Section -->
+    <section class="hero-sec" data-aos="fade-in">
+      <div class="left-overlay"></div>
+      
+      <div class="container hero-container">
+        <!-- Hero Left Stacked Text -->
+        <div class="hero-text-stack">
+          <span class="line-playfair">Turning Innovative</span>
+          <h2 class="line-cormorant">IDEAS</h2>
+          <em class="line-sub">into</em>
+          <span class="line-playfair">Iconic</span>
+          <span class="line-realities">REALITIES</span>
+        </div>
+
+        <!-- Hero Right Info Block -->
+        <div class="hero-right-meta">
+          <div class="hero-featured-label">
+            <span>featured project</span>
+            <h4>RIVERSIDE HEIGHTS</h4>
+          </div>
+          <div class="hero-counter">01 ———————— 01</div>
+          <a href="projects.html" class="hero-project-link">our projects &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Vertical rotated text right edge -->
+      <div class="vertical-text hero-vertical-text">
+        EXCELLENCE, PERFORMANCE + INNOVATION IN REAL ESTATE
+      </div>
+    </section>
+
+    <!-- Section 2: High Performance Sec -->
+    <section class="high-performance-sec" data-aos="fade-in">
+      <div class="container three-col-layout">
+        <!-- Col 1: Overlapping Photos -->
+        <div class="image-overlap-wrapper">
+          <div class="img-placeholder-overlap-a"></div>
+          <div class="img-placeholder-overlap-b"></div>
+        </div>
+
+        <!-- Col 2: Info -->
+        <div class="center-col">
+          <span class="section-label">WE BUILD FOR EXCELLENCE</span>
+          <div class="section-line"></div>
+          <h3 class="heading-medium-garamond">High-performance destinations with cutting-edge design</h3>
+          <p>Legacy Development Group is a premier real estate development company specializing in high-end projects. Our principals bring over 30 years of collective experience across regional and global markets.</p>
+        </div>
+
+        <!-- Col 3: Stat Text + Link -->
+        <div class="right-col">
+          <h4 class="heading-large-serif" style="color: var(--navy);">Over 30 years of collective industry experience across the globe</h4>
+          <a href="about.html" class="cta-link">meet us &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Centered Pullquote -->
+    <section class="create-place-sec" data-aos="fade-in">
+      <div class="container pullquote-content">
+        <h1 class="heading-large-serif">
+          <span>Creating places that inspire &</span>
+          <span style="font-family: 'Josefin Sans', sans-serif; font-style: normal; font-size: 28px; font-weight: 300;">communities that thrive</span>
+        </h1>
+      </div>
+    </section>
+
+    <!-- Section 4: Home About Sec -->
+    <section class="home-about-sec">
+      <div class="container">
+        <!-- Sub-block A -->
+        <div class="sub-block-a" data-aos="fade-in">
+          <div class="deco-circle left-crop"></div>
+          <div class="sub-block-a-text">
+            <span class="section-label">PRIME LOCATIONS WITH POTENTIAL</span>
+            <p>We select locations that offer significant potential for growth and transformation. Our focus is to unlock value that benefits both investors and local users.</p>
+            
+            <span class="section-label">DEEP ROOTED VALUES</span>
+            <p>Integrity, quality, and commitment define everything we do. We strive to create environments that enrich neighborhoods.</p>
+            <a href="about.html" class="cta-link">who we are &rarr;</a>
+          </div>
+          <div class="sub-block-a-img"></div>
+        </div>
+
+        <!-- Sub-block B -->
+        <div class="sub-block-b" data-aos="fade-in">
+          <div class="vertical-text" style="left: 0; top: 0;">
+            GLOBALLY RECOGNIZED DESTINATIONS BENEFITTING LOCAL COMMUNITIES
+          </div>
+          <div class="sub-block-b-text">
+            <h3 class="heading-medium-garamond" style="font-size: 25px;">
+              Elevating the way people LIVE, WORK AND PLAY in the 21st century
+            </h3>
+          </div>
+        </div>
+
+        <!-- Sub-block C -->
+        <div class="sub-block-c" data-aos="fade-in">
+          <div class="vertical-text" style="right: 0; top: 0;">
+            PASSION FOR ICONIC DESIGN
+          </div>
+          <div class="sub-block-c-text">
+            <h2 class="heading-large-serif">Discover high-caliber destinations that revitalize neighborhoods</h2>
+            <h3 class="heading-medium-garamond">while earning their place on the world stage</h3>
+            
+            <span class="section-label">PERFORMANCE DRIVEN</span>
+            <p>Every square meter we design reflects our rigorous dedication to build lasting architectural landmarks.</p>
+            <a href="contact.html" class="cta-link">contact us &rarr;</a>
+          </div>
+          <div class="sub-block-c-img"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+  <footer class="main-footer">
+    <div class="container footer-inner">
+      <!-- Left -->
+      <div class="footer-left">
+        <svg class="wave-svg" viewBox="0 0 50 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 18 C 10 18, 10 12, 18 12 C 26 12, 26 18, 34 18 C 42 18, 42 12, 48 12" stroke="#1a2847" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 12 C 10 12, 10 6, 18 6 C 26 6, 26 12, 34 12 C 42 12, 42 6, 48 6" stroke="#1a2847" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 6 C 10 6, 10 0, 18 0 C 26 0, 26 6, 34 6 C 42 6, 42 0, 48 0" stroke="#1a2847" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="logo-wordmark">
+          <span class="line-1">LEGACY</span>
+          <span class="line-2">DEVELOPMENT</span>
+        </div>
+      </div>
+
+      <!-- Center -->
+      <div class="footer-center">
+        <span>100 Spectrum Center Drive, Suite 900, Irvine, CA 92618</span>
+      </div>
+
+      <!-- Right -->
+      <div class="footer-right">
+        <span>+1 (714) 555-0192 | hello@legacydevelopmentgroup.com</span>
+        <div class="copyright">
+          <span>Copyright &copy; 2026 | </span>
+          <a href="contact.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+
+    // Sidenav controls
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const sidenav = document.getElementById('sidenav');
+    const sidenavClose = document.getElementById('sidenavClose');
+    const backdrop = document.getElementById('backdrop');
+
+    function openSidenav() {
+      sidenav.classList.add('open');
+      backdrop.classList.add('active');
+    }
+
+    function closeSidenav() {
+      sidenav.classList.remove('open');
+      backdrop.classList.remove('active');
+    }
+
+    hamburgerBtn.addEventListener('click', openSidenav);
+    sidenavClose.addEventListener('click', closeSidenav);
+    backdrop.addEventListener('click', closeSidenav);
+  </script>
+</body>
+</html>

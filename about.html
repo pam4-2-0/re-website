@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Who We Are | Legacy Development Group</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Josefin+Sans:wght@100;200;300;400;600;700&family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS VARIABLES */
+    :root {
+      --black:       #000000;
+      --near-black:  #2c2c2c;
+      --navy:        #1a2847;
+      --gold:        #c9a060;
+      --gray-text:   #848484;
+      --white:       #ffffff;
+      --off-white:   #f6f6f6;
+      --footer-bg:   #e3e3e3;
+      --transition:  all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--white);
+      color: var(--black);
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 15px;
+      line-height: 1.8;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    /* Max-Width Container: 1400px Centered */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 80px;
+      position: relative;
+    }
+
+    @media (max-width: 1024px) {
+      .container {
+        padding: 0 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 20px;
+      }
+    }
+
+    /* SECTION 1: STICKY NAVBAR */
+    header.main-header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      background: var(--white);
+      border-bottom: 1px solid rgba(26, 40, 71, 0.1);
+      transition: var(--transition);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    /* Logo Wave Icon (SVG) */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      cursor: pointer;
+      color: var(--navy);
+    }
+    
+    .wave-svg {
+      width: 50px;
+      height: 24px;
+    }
+
+    .wave-svg path {
+      stroke: currentColor;
+    }
+    
+    .logo-wordmark {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+    
+    .logo-wordmark .line-1 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+    
+    .logo-wordmark .line-2 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+
+    /* Desktop Navigation Links */
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .desktop-nav-link {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--navy);
+      text-decoration: none;
+      padding-bottom: 3px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .desktop-nav-link:hover,
+    .desktop-nav-link.active {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    /* Hamburger Menu Button */
+    .hamburger {
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      padding: 0;
+      transition: var(--transition);
+    }
+    
+    .hamburger .menu-text {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--navy);
+      transition: color 0.3s ease;
+    }
+    
+    .hamburger:hover .menu-text {
+      color: var(--gold);
+    }
+
+    .hamburger .line {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--navy);
+      transition: var(--transition);
+    }
+
+    /* Media query for hiding/showing desktop links and hamburger */
+    @media (max-width: 768px) {
+      .desktop-nav {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* SIDENAV PANEL */
+    .sidenav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 420px;
+      background-color: var(--white);
+      box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+      z-index: 999;
+      transform: translateX(100%);
+      transition: transform 0.5s ease;
+      padding: 100px 50px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    .sidenav.open {
+      transform: translateX(0);
+    }
+
+    .sidenav-close {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 50px;
+      font-weight: 300;
+      cursor: pointer;
+      line-height: 1;
+      transition: var(--transition);
+    }
+    
+    .sidenav-close:hover {
+      color: var(--gold);
+    }
+
+    .sidenav-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2.3px;
+      text-transform: uppercase;
+      color: var(--near-black);
+      margin-bottom: 40px;
+    }
+
+    .sidenav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .sidenav-link {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      color: var(--black);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .sidenav-link span.arrow {
+      color: var(--gold);
+      display: none;
+    }
+
+    .sidenav-link.active {
+      color: var(--gold);
+    }
+    
+    .sidenav-link.active span.arrow {
+      display: inline;
+    }
+
+    .sidenav-link:hover {
+      color: var(--gold);
+    }
+
+    .sidenav-footer {
+      border-top: 1px solid rgba(0,0,0,0.1);
+      padding-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .sidenav-phone {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .sidenav-email {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 20px;
+      color: var(--near-black);
+    }
+
+    @media (max-width: 768px) {
+      .sidenav {
+        width: 100%;
+      }
+    }
+
+    /* BACKDROP OVERLAY */
+    .backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(26, 40, 71, 0.4);
+      backdrop-filter: blur(4px);
+      z-index: 998;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+    
+    .backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* SECTION 2: PAGE HERO (two-column split) */
+    .split-hero {
+      display: flex;
+      min-height: 520px;
+      width: 100%;
+    }
+
+    .hero-left {
+      width: 45%;
+      background-color: var(--navy);
+      padding: 120px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-right {
+      width: 55%;
+      background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&q=80&fit=crop');
+      background-size: cover;
+      background-position: center;
+      min-height: 520px;
+    }
+
+    .hero-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--gold);
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .hero-title-line1 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 44px;
+      font-weight: 300;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      line-height: 1.2;
+      display: block;
+    }
+
+    .hero-title-line2 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 44px;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      line-height: 1.2;
+      display: block;
+    }
+
+    .hero-paragraph {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.8;
+      margin-top: 24px;
+      max-width: 380px;
+    }
+
+    @media (max-width: 991px) {
+      .split-hero {
+        flex-direction: column;
+      }
+      .hero-left {
+        width: 100%;
+        padding: 80px 40px;
+      }
+      .hero-right {
+        width: 100%;
+        min-height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-left {
+        padding: 80px 20px;
+      }
+      .hero-title-line1,
+      .hero-title-line2 {
+        font-size: 32px;
+      }
+    }
+
+    /* SECTION 3: COMPANY INTRO */
+    .company-intro {
+      padding: 100px 0;
+      background-color: var(--white);
+    }
+
+    .intro-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .intro-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--black);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .intro-title {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 36px;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--navy);
+      margin-bottom: 30px;
+    }
+
+    .intro-p {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 16px;
+      color: var(--near-black);
+      line-height: 1.9;
+    }
+
+    .intro-p + .intro-p {
+      margin-top: 20px;
+    }
+
+    /* SECTION 4: FOUR PILLARS */
+    .pillars-section {
+      background-color: var(--off-white);
+      padding: 100px 0;
+    }
+
+    .section-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--black);
+      margin-bottom: 60px;
+      display: inline-block;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 60px;
+    }
+
+    .pillar-card {
+      background-color: var(--white);
+      padding: 50px 40px;
+    }
+
+    .pillar-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight: 400;
+      color: var(--gold);
+      margin-bottom: 16px;
+      line-height: 1;
+    }
+
+    .pillar-title {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .pillar-divider {
+      width: 50px;
+      height: 2px;
+      background-color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .pillar-text {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 15px;
+      color: var(--near-black);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .pillar-card {
+        padding: 40px 30px;
+      }
+    }
+
+    /* SECTION 5: TEAM */
+    .team-section {
+      background-color: var(--white);
+      padding: 100px 0;
+    }
+
+    .team-title {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 36px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--black);
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .team-subtext {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 15px;
+      color: var(--gray-text);
+      max-width: 600px;
+      margin: 0 auto 80px;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 60px;
+    }
+
+    .team-card {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .team-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+      flex-shrink: 0;
+    }
+
+    .team-card-body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .team-name {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .team-name span.bold {
+      font-weight: 700;
+    }
+
+    .team-name span.thin {
+      font-weight: 400;
+    }
+
+    .team-title-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .team-divider {
+      width: 40px;
+      height: 1px;
+      background-color: rgba(0,0,0,0.15);
+      margin-bottom: 12px;
+    }
+
+    .team-bio {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 14px;
+      color: var(--gray-text);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .team-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .team-divider {
+        margin: 0 auto 12px;
+      }
+    }
+
+    /* SECTION 6: FOOTER */
+    footer.main-footer {
+      background-color: var(--footer-bg);
+      padding: 51px 0;
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .footer-left .logo-wordmark .line-1,
+    .footer-left .logo-wordmark .line-2 {
+      color: var(--navy);
+    }
+
+    .footer-center {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 14px;
+      color: var(--near-black);
+      text-align: center;
+    }
+
+    .footer-right {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 14px;
+      color: var(--near-black);
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    
+    .footer-right .copyright {
+      font-size: 12px;
+      color: var(--gray-text);
+      margin-top: 8px;
+    }
+
+    .footer-right a:hover {
+      color: var(--gold);
+    }
+
+    @media (max-width: 768px) {
+      .footer-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+      }
+      .footer-left {
+        justify-content: center;
+      }
+      .footer-center, .footer-right {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Backdrop -->
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- STICKY NAVBAR -->
+  <header class="main-header" id="mainHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-container">
+        <svg class="wave-svg" viewBox="0 0 50 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 18 C 10 18, 10 12, 18 12 C 26 12, 26 18, 34 18 C 42 18, 42 12, 48 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 12 C 10 12, 10 6, 18 6 C 26 6, 26 12, 34 12 C 42 12, 42 6, 48 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 6 C 10 6, 10 0, 18 0 C 26 0, 26 6, 34 6 C 42 6, 42 0, 48 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="logo-wordmark">
+          <span class="line-1">LEGACY</span>
+          <span class="line-2">DEVELOPMENT</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html" class="desktop-nav-link">Home</a>
+        <a href="about.html" class="desktop-nav-link active">Who We Are</a>
+        <a href="projects.html" class="desktop-nav-link">Portfolio</a>
+        <a href="contact.html" class="desktop-nav-link">Contact</a>
+      </nav>
+      
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+        <span class="menu-text">Menu</span>
+        <span class="line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- SIDENAV MENU (Slides in from right) -->
+  <nav class="sidenav" id="sidenav">
+    <div class="sidenav-close" id="sidenavClose">&times;</div>
+    <div>
+      <div class="sidenav-label">NAVIGATE</div>
+      <div class="sidenav-links">
+        <a href="index.html" class="sidenav-link">
+          <span>Home</span>
+        </a>
+        <a href="about.html" class="sidenav-link active">
+          <span>Who We Are</span>
+        </a>
+        <a href="projects.html" class="sidenav-link">
+          <span>Portfolio</span>
+        </a>
+        <a href="contact.html" class="sidenav-link">
+          <span>Contact</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="sidenav-footer">
+      <div class="sidenav-phone">+1 (714) 555-0192</div>
+      <div class="sidenav-email">hello@legacydevelopmentgroup.com</div>
+    </div>
+  </nav>
+
+  <!-- SECTION 2: PAGE HERO (split) -->
+  <section class="split-hero">
+    <div class="hero-left">
+      <span class="hero-label">WHO WE ARE ——</span>
+      <h1 class="hero-title">
+        <span class="hero-title-line1">THE POWER OF</span>
+        <span class="hero-title-line2">GREAT DESIGN</span>
+      </h1>
+      <p class="hero-paragraph">Legacy Development Group is a fully integrated real estate investment and development firm. We focus on curating iconic visual landmarks that optimize user experiences while enhancing the local urban fabric.</p>
+    </div>
+    <div class="hero-right"></div>
+  </section>
+
+  <!-- SECTION 3: COMPANY INTRO -->
+  <section class="company-intro">
+    <div class="container">
+      <div class="intro-content">
+        <span class="intro-label">ABOUT THE COMPANY</span>
+        <h2 class="intro-title">WHO WE ARE</h2>
+        <p class="intro-p">Legacy Development Group is a technology-driven real estate development company founded with the mission to redefine how landmark properties are built, sold, and sustained. We started with premium residential developments and have since expanded to high-density mixed-use projects across California's most dynamic urban markets.</p>
+        <p class="intro-p">We manage the entire lifecycle of every project — from site acquisition and entitlements through construction, branding, and asset stabilization — ensuring best-in-class outcomes for investors, partners, and communities.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: FOUR PILLARS -->
+  <section class="pillars-section">
+    <div class="container">
+      <span class="section-label">HOW WE WORK</span>
+      
+      <div class="pillars-grid">
+        <!-- Pillar 1 -->
+        <div class="pillar-card">
+          <div class="pillar-number">01</div>
+          <h3 class="pillar-title">ACQUISITION & DILIGENCE</h3>
+          <div class="pillar-divider"></div>
+          <p class="pillar-text">We identify high-value infill opportunities through a network of brokers and proprietary outreach tools. Every site undergoes rigorous feasibility analysis to assess entitlement risk, market positioning, and long-term return potential.</p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="pillar-card">
+          <div class="pillar-number">02</div>
+          <h3 class="pillar-title">CAPITAL FORMATION</h3>
+          <div class="pillar-divider"></div>
+          <p class="pillar-text">We leverage a growing network of accredited investors to structure the capital stack for each project. Our transparent investor portal provides real-time updates on project milestones, financials, and distributions.</p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="pillar-card">
+          <div class="pillar-number">03</div>
+          <h3 class="pillar-title">OPERATIONS</h3>
+          <div class="pillar-divider"></div>
+          <p class="pillar-text">Our operations team manages cost and timeline with precision — selecting top-tier contractors, negotiating tight contracts, and deploying digital tools that streamline vendor payments while protecting investor capital.</p>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="pillar-card">
+          <div class="pillar-number">04</div>
+          <h3 class="pillar-title">SALES & LEASING</h3>
+          <div class="pillar-divider"></div>
+          <p class="pillar-text">We pre-sell and pre-lease units before construction completes. High-quality 3D renderings, virtual tours, and targeted marketing campaigns minimize market exposure risk and accelerate returns for our investors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: TEAM -->
+  <section class="team-section">
+    <div class="container">
+      <h2 class="team-title">LEADERSHIP</h2>
+      <p class="team-subtext">Our management team brings decades of institutional real estate development, investment, and design experience across major markets.</p>
+      
+      <div class="team-grid">
+        <!-- Member 1 -->
+        <div class="team-card">
+          <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80&fit=crop');"></div>
+          <div class="team-card-body">
+            <h3 class="team-name"><span class="bold">DAVID</span> <span class="thin">NGUYEN</span></h3>
+            <span class="team-title-label">Founder & CEO</span>
+            <div class="team-divider"></div>
+            <p class="team-bio">28 years in real estate development across Southeast Asia and the US West Coast. David leads the firm's vision, strategy, and investor relations.</p>
+          </div>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="team-card">
+          <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80&fit=crop');"></div>
+          <div class="team-card-body">
+            <h3 class="team-name"><span class="bold">SARAH</span> <span class="thin">CHEN</span></h3>
+            <span class="team-title-label">Managing Director</span>
+            <div class="team-divider"></div>
+            <p class="team-bio">Oversees acquisition, underwriting, and equity placement. Sarah brings 15 years of institutional investment experience from top-tier firms.</p>
+          </div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="team-card">
+          <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80&fit=crop');"></div>
+          <div class="team-card-body">
+            <h3 class="team-name"><span class="bold">MICHAEL</span> <span class="thin">TRAN</span></h3>
+            <span class="team-title-label">Director of Development</span>
+            <div class="team-divider"></div>
+            <p class="team-bio">Leads masterplan approvals, infrastructure delivery, and contractor coordination across all active projects.</p>
+          </div>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="team-card">
+          <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80&fit=crop');"></div>
+          <div class="team-card-body">
+            <h3 class="team-name"><span class="bold">LISA</span> <span class="thin">PARK</span></h3>
+            <span class="team-title-label">Director of Sales</span>
+            <div class="team-divider"></div>
+            <p class="team-bio">Manages sales strategy, agent partnerships, and buyer relations. Lisa has closed over $400M in residential transactions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: FOOTER -->
+  <footer class="main-footer">
+    <div class="container footer-inner">
+      <!-- Left -->
+      <div class="footer-left">
+        <svg class="wave-svg" viewBox="0 0 50 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 18 C 10 18, 10 12, 18 12 C 26 12, 26 18, 34 18 C 42 18, 42 12, 48 12" stroke="#1a2847" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 12 C 10 12, 10 6, 18 6 C 26 6, 26 12, 34 12 C 42 12, 42 6, 48 6" stroke="#1a2847" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 6 C 10 6, 10 0, 18 0 C 26 0, 26 6, 34 6 C 42 6, 42 0, 48 0" stroke="#1a2847" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="logo-wordmark">
+          <span class="line-1">LEGACY</span>
+          <span class="line-2">DEVELOPMENT</span>
+        </div>
+      </div>
+
+      <!-- Center -->
+      <div class="footer-center">
+        <span>100 Spectrum Center Drive, Suite 900, Irvine, CA 92618</span>
+      </div>
+
+      <!-- Right -->
+      <div class="footer-right">
+        <span>+1 (714) 555-0192 | hello@legacydevelopmentgroup.com</span>
+        <div class="copyright">
+          <span>Copyright &copy; 2026 | </span>
+          <a href="contact.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Sidenav triggers
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const sidenav = document.getElementById('sidenav');
+    const sidenavClose = document.getElementById('sidenavClose');
+    const backdrop = document.getElementById('backdrop');
+
+    function openSidenav() {
+      sidenav.classList.add('open');
+      backdrop.classList.add('active');
+    }
+
+    function closeSidenav() {
+      sidenav.classList.remove('open');
+      backdrop.classList.remove('active');
+    }
+
+    hamburgerBtn.addEventListener('click', openSidenav);
+    sidenavClose.addEventListener('click', closeSidenav);
+    backdrop.addEventListener('click', closeSidenav);
+  </script>
+</body>
+</html>

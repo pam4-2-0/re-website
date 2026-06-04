@@ -1,0 +1,5 @@
+_archive/
+_meta/
+node_modules/
+.DS_Store
+*.log
