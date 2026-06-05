@@ -338,10 +338,7 @@
       gap: 8px;
     }
     
-    .sidenav-link span.arrow {
-      color: var(--gold);
-      display: none;
-    }
+    .sidenav-link span.arrow { display: none !important; }
 
     .sidenav-link.active {
       color: var(--gold);
@@ -1644,7 +1641,7 @@
       .main-header.on-hero .hamburger .line { background-color: white; }
     
       /* Arrow only on active nav link */
-      .sidenav-link .arrow { display: none; color: var(--gold); }
+      .sidenav-link .arrow { display: none !important; }
       .sidenav-link.active .arrow { display: inline; }
       .sidenav-link.active { color: var(--gold); }
     </style>

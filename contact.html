@@ -657,8 +657,7 @@
       .main-header.on-hero .hamburger .line { background-color: white; }
     
       /* Arrow only on active nav link */
-      .sidenav-link .arrow { display: none; color: var(--gold); }
-      .sidenav-link.active .arrow { display: inline; }
+      .sidenav-link .arrow { display: none !important; }
       .sidenav-link.active { color: var(--gold); }
     </style>
 </head>
@@ -775,7 +774,9 @@
 
     <div class="sidenav-bottom">
       <a href="tel:+17145550192" class="sidenav-phone">+1 (714) 555-0192</a>
-      <a href="mailto:hello@legacy
+      <a href="mailto:hello@legacydevelopmentgroup.com" class="sidenav-email">hello@legacydevelopmentgroup.com</a>
+    </div>
+  </nav>
   <script>
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const sidenav = document.getElementById('sidenav');
