@@ -6,20 +6,17 @@
   <title>Who We Are | Legacy Development Group</title>
   
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     /* CSS VARIABLES */
     :root {
-      --black:       #000000;
-      --near-black:  #2c2c2c;
-      --navy:        #1a2847;
-      --gold:        #c9a060;
-      --gray-text:   #848484;
-      --white:       #ffffff;
-      --off-white:   #f6f6f6;
-      --footer-bg:   #e3e3e3;
-      --transition: color 0.3s ease;
+      --gold:      #c9a060;
+      --black:     #0d0d0d;
+      --white:     #ffffff;
+      --off-white: #f6f6f6;
+      --footer-bg: #e3e3e3;
+      --gray-text: #848484;
     }
 
     /* Reset & Base Styles */
@@ -32,9 +29,9 @@
     body {
       background-color: var(--white);
       color: var(--black);
-      font-family: 'Be Vietnam Pro', sans-serif;
-      font-size: 15px;
-      line-height: 1.8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
@@ -76,7 +73,7 @@
       display: flex;
       align-items: center;
       background: var(--white);
-      border-bottom: 1px solid rgba(26, 40, 71, 0.1);
+      border-bottom: 1px solid rgba(13, 13, 13, 0.1);
       transition: color 0.3s ease;
     }
 
@@ -93,7 +90,7 @@
       align-items: center;
       gap: 15px;
       cursor: pointer;
-      color: var(--navy);
+      color: var(--black);
     }
     
     .wave-svg {
@@ -112,21 +109,21 @@
     }
     
     .logo-wordmark .line-1 {
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 18px;
       font-weight: 600;
       letter-spacing: 4px;
       text-transform: uppercase;
-      color: var(--navy);
+      color: var(--black);
     }
     
     .logo-wordmark .line-2 {
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 11px;
       font-weight: 400;
       letter-spacing: 4px;
       text-transform: uppercase;
-      color: var(--navy);
+      color: var(--black);
     }
 
     /* Desktop Navigation Links */
@@ -137,12 +134,12 @@
     }
 
     .desktop-nav-link {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
       font-weight: 600;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--navy);
+      color: var(--black);
       text-decoration: none;
       padding-bottom: 3px;
       transition: color 0.3s ease, border-color 0.3s ease;
@@ -167,24 +164,14 @@
     }
     
     .hamburger .menu-text {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--navy);
-      transition: color 0.3s ease;
-    }
-    
-    .hamburger:hover .menu-text {
-      color: var(--gold);
+      display: none !important;
     }
 
     .hamburger .line {
       display: block;
       width: 24px;
       height: 2px;
-      background-color: var(--navy);
+      background-color: var(--black);
       transition: color 0.3s ease;
     }
 
@@ -209,7 +196,7 @@
       box-shadow: -10px 0 30px rgba(0,0,0,0.05);
       z-index: 999;
       transform: translateX(100%);
-      transition: color 0.3s ease;
+      transition: transform 0.3s ease;
       padding: 100px 50px 50px;
       display: flex;
       flex-direction: column;
@@ -224,9 +211,9 @@
       position: absolute;
       top: 40px;
       right: 40px;
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 50px;
-      font-weight: 300;
+      font-weight: 400;
       cursor: pointer;
       line-height: 1;
       transition: color 0.3s ease;
@@ -237,12 +224,12 @@
     }
 
     .sidenav-label {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
       font-weight: 600;
-      letter-spacing: 2.3px;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--near-black);
+      color: var(--gray-text);
       margin-bottom: 40px;
     }
 
@@ -253,10 +240,10 @@
     }
 
     .sidenav-link {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 20px;
-      font-weight: 400;
-      letter-spacing: 1.3px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--black);
       display: flex;
@@ -264,14 +251,12 @@
       gap: 8px;
     }
     
-    .sidenav-link span.arrow { display: none !important; }
+    .sidenav-link .arrow {
+      display: none !important;
+    }
 
     .sidenav-link.active {
       color: var(--gold);
-    }
-    
-    .sidenav-link.active span.arrow {
-      display: inline;
     }
 
     .sidenav-link:hover {
@@ -287,16 +272,16 @@
     }
 
     .sidenav-phone {
-      font-family: 'Be Vietnam Pro', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 22px;
       font-weight: 700;
       color: var(--black);
     }
 
     .sidenav-email {
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 20px;
-      color: var(--near-black);
+      color: var(--black);
     }
 
     @media (max-width: 768px) {
@@ -312,11 +297,11 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(26, 40, 71, 0.4);
+      background: rgba(13, 13, 13, 0.4);
       z-index: 998;
       opacity: 0;
       pointer-events: none;
-      transition: color 0.3s ease;
+      transition: opacity 0.3s ease;
     }
     
     .backdrop.active {
@@ -333,7 +318,7 @@
 
     .hero-left {
       width: 45%;
-      background-color: var(--navy);
+      background-color: var(--black);
       padding: 60px 80px;
       display: flex;
       flex-direction: column;
@@ -349,9 +334,9 @@
     }
 
     .hero-label {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 3px;
       color: var(--gold);
@@ -360,9 +345,9 @@
     }
 
     .hero-title-line1 {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 44px;
-      font-weight: 300;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 56px;
+      font-weight: 700;
       color: var(--white);
       text-transform: uppercase;
       letter-spacing: 4px;
@@ -371,8 +356,8 @@
     }
 
     .hero-title-line2 {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 44px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 56px;
       font-weight: 700;
       color: var(--white);
       text-transform: uppercase;
@@ -382,10 +367,10 @@
     }
 
     .hero-paragraph {
-      font-family: 'Be Vietnam Pro', sans-serif;
-      font-size: 15px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
       color: rgba(255, 255, 255, 0.75);
-      line-height: 1.8;
+      line-height: 1.7;
       margin-top: 24px;
       max-width: 380px;
     }
@@ -410,7 +395,7 @@
       }
       .hero-title-line1,
       .hero-title-line2 {
-        font-size: 32px;
+        font-size: 40px;
       }
     }
 
@@ -427,31 +412,31 @@
     }
 
     .intro-label {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 3px;
-      color: var(--black);
+      color: var(--gray-text);
       margin-bottom: 20px;
       display: block;
     }
 
     .intro-title {
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 36px;
-      font-weight: 300;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 3px;
-      color: var(--navy);
+      letter-spacing: 2px;
+      color: var(--black);
       margin-bottom: 30px;
     }
 
     .intro-p {
-      font-family: 'Be Vietnam Pro', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 16px;
-      color: var(--near-black);
-      line-height: 1.9;
+      color: var(--black);
+      line-height: 1.7;
     }
 
     .intro-p + .intro-p {
@@ -465,12 +450,12 @@
     }
 
     .section-label {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 3px;
-      color: var(--black);
+      color: var(--gray-text);
       margin-bottom: 60px;
       display: inline-block;
     }
@@ -487,7 +472,7 @@
     }
 
     .pillar-number {
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 48px;
       font-weight: 400;
       color: var(--gold);
@@ -496,12 +481,12 @@
     }
 
     .pillar-title {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 18px;
-      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--navy);
+      letter-spacing: 1px;
+      color: var(--black);
       margin-bottom: 20px;
     }
 
@@ -513,10 +498,10 @@
     }
 
     .pillar-text {
-      font-family: 'Be Vietnam Pro', sans-serif;
-      font-size: 15px;
-      color: var(--near-black);
-      line-height: 1.8;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      color: var(--black);
+      line-height: 1.7;
     }
 
     @media (max-width: 768px) {
@@ -536,19 +521,19 @@
     }
 
     .team-title {
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 36px;
-      font-weight: 400;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       color: var(--black);
       text-align: center;
       margin-bottom: 16px;
     }
 
     .team-subtext {
-      font-family: 'Be Vietnam Pro', sans-serif;
-      font-size: 15px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
       color: var(--gray-text);
       max-width: 600px;
       margin: 0 auto 80px;
@@ -583,11 +568,11 @@
     }
 
     .team-name {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: var(--navy);
+      color: var(--black);
       margin-bottom: 6px;
     }
 
@@ -600,12 +585,12 @@
     }
 
     .team-title-label {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 3px;
-      color: var(--gold);
+      color: var(--gray-text);
       margin-bottom: 12px;
     }
 
@@ -617,8 +602,8 @@
     }
 
     .team-bio {
-      font-family: 'Be Vietnam Pro', sans-serif;
-      font-size: 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
       color: var(--gray-text);
       line-height: 1.7;
     }
@@ -660,20 +645,20 @@
     
     .footer-left .logo-wordmark .line-1,
     .footer-left .logo-wordmark .line-2 {
-      color: var(--navy);
+      color: var(--black);
     }
 
     .footer-center {
-      font-family: 'Be Vietnam Pro', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 14px;
-      color: var(--near-black);
+      color: var(--black);
       text-align: center;
     }
 
     .footer-right {
-      font-family: 'Be Vietnam Pro', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 14px;
-      color: var(--near-black);
+      color: var(--black);
       text-align: right;
       display: flex;
       flex-direction: column;
@@ -710,32 +695,27 @@
         border: none;
         cursor: pointer;
         z-index: 1001;
-        display: flex;
+        display: flex !important;
         flex-direction: column;
         justify-content: space-between;
-        width: 28px;
-        height: 18px;
+        width: 24px;
+        height: 16px;
         padding: 0;
       }
       .hamburger .line {
-        display: block;
-        width: 100%;
+        display: block !important;
+        width: 24px;
         height: 2px;
-        background-color: var(--navy);
-        transition: background-color 0.2s;
+        background-color: var(--black);
       }
       .hamburger:hover .line { background-color: var(--gold); }
-      .hamburger .menu-text { display: none !important; }
-      /* On dark hero: lines should be white */
-      .hero-sec .hamburger .line,
-      .main-header.on-hero .hamburger .line { background-color: white; }
     }
-    
-      /* Arrow only on active nav link */
-      .sidenav-link .arrow { display: none !important; }
-      .sidenav-link.active .arrow { display: inline; }
-      .sidenav-link.active { color: var(--gold); }
-    </style>
+    @media (min-width: 769px) {
+      .hamburger {
+        display: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -925,9 +905,9 @@
       <!-- Left -->
       <div class="footer-left">
         <svg class="wave-svg" viewBox="0 0 50 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 18 C 10 18, 10 12, 18 12 C 26 12, 26 18, 34 18 C 42 18, 42 12, 48 12" stroke="#1a2847" stroke-width="2" stroke-linecap="round"/>
-          <path d="M2 12 C 10 12, 10 6, 18 6 C 26 6, 26 12, 34 12 C 42 12, 42 6, 48 6" stroke="#1a2847" stroke-width="2" stroke-linecap="round"/>
-          <path d="M2 6 C 10 6, 10 0, 18 0 C 26 0, 26 6, 34 6 C 42 6, 42 0, 48 0" stroke="#1a2847" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 18 C 10 18, 10 12, 18 12 C 26 12, 26 18, 34 18 C 42 18, 42 12, 48 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 12 C 10 12, 10 6, 18 6 C 26 6, 26 12, 34 12 C 42 12, 42 6, 48 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 6 C 10 6, 10 0, 18 0 C 26 0, 26 6, 34 6 C 42 6, 42 0, 48 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
         <div class="logo-wordmark">
           <span class="line-1">LEGACY</span>

@@ -6,36 +6,36 @@
   <title>Legacy Development Group - Project Detail</title>
   
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- AOS CSS -->
 
   <style>
     /* CSS VARIABLES */
     :root {
-      --black:       #000000;
-      --near-black:  #2c2c2c;
-      --navy:        #1a2847;   /* our brand navy */
-      --gold:        #c9a060;   /* our brand gold — use for hover, thin accent lines, active nav arrow */
-      --gray-text:   #848484;
-      --white:       #ffffff;
-      --off-white:   #f6f6f6;
-      --footer-bg:   #e3e3e3;
+      --gold:      #c9a060;
+      --black:     #0d0d0d;
+      --white:     #ffffff;
+      --off-white: #f6f6f6;
+      --footer-bg: #e3e3e3;
+      --gray-text: #848484;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: 'Montserrat', sans-serif;
     }
 
     body {
       background-color: var(--white);
       color: var(--black);
-      font-family: 'Be Vietnam Pro', sans-serif;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
     /* Max-width container: 1400px centered */
@@ -57,26 +57,15 @@
       .container {
         padding: 0 20px;
       }
-      .hamburger {
-        width: 24px;
-        height: 16px;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-      .hamburger .menu-text {
-        display: none;
-      }
-      .hamburger .line {
-        display: block;
-      }
     }
 
     /* GENERAL CTA LINK */
     .cta-link {
-      font-family: 'Josefin Sans', sans-serif;
-      font-style: normal;
-      font-size: 15px;
-      font-weight: 400;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
       color: var(--black);
       text-decoration: none;
       display: inline-flex;
@@ -88,119 +77,150 @@
       color: var(--gold);
     }
 
-  header.main-header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    height: 100px;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    background: var(--white);
-    border-bottom: 1px solid rgba(26, 40, 71, 0.1);
-    transition: color 0.3s ease;
-  }
-  .header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-  .logo-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    cursor: pointer;
-    color: var(--navy);
-    text-decoration: none;
-  }
-  .logo-container,
-  .logo-container:visited,
-  .logo-container:hover {
-    color: var(--navy);
-    text-decoration: none;
-  }
-  .logo-wordmark {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.1;
-  }
-  .logo-wordmark .line-1 {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--navy);
-  }
-  .logo-wordmark .line-2 {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--navy);
-  }
-  .desktop-nav {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-  }
-  .desktop-nav-link {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--navy);
-    text-decoration: none;
-    padding-bottom: 3px;
-    transition: color 0.3s ease, border-color 0.3s ease;
-  }
-  .desktop-nav-link:hover,
-  .desktop-nav-link.active {
-    color: var(--gold);
-  }
-  .wave-svg {
-    width: 50px;
-    height: 24px;
-  }
-  .wave-svg path {
-    stroke: currentColor;
-  }
-  .hamburger {
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 0;
-  }
-  .hamburger .menu-text {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--navy);
-  }
-  .hamburger .line {
-    display: none;
-    width: 24px;
-    height: 2px;
-    background-color: var(--navy);
-  }
-  @media (min-width: 769px) {
-    .hamburger { display: none !important; }
-  }
-  @media (max-width: 768px) {
-    .desktop-nav { display: none !important; }
-    .hamburger { display: flex !important; }
-    .hamburger .menu-text { display: none; }
-    .hamburger .line { display: block; }
-  }
+    header.main-header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 100px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      background: var(--white);
+      border-bottom: 1px solid rgba(13, 13, 13, 0.1);
+      transition: color 0.3s ease;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      cursor: pointer;
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    .logo-container,
+    .logo-container:visited,
+    .logo-container:hover {
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    .logo-wordmark {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .logo-wordmark .line-1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    .logo-wordmark .line-2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .desktop-nav-link {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+      padding-bottom: 3px;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .desktop-nav-link:hover,
+    .desktop-nav-link.active {
+      color: var(--gold);
+    }
+
+    .wave-svg {
+      width: 50px;
+      height: 24px;
+    }
+
+    .wave-svg path {
+      stroke: currentColor;
+    }
+
+    .hamburger {
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      padding: 0;
+      transition: color 0.3s ease;
+    }
+
+    .hamburger .menu-text {
+      display: none !important;
+    }
+
+    .hamburger .line {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--black);
+      transition: color 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 16px;
+        z-index: 1001;
+      }
+      .hamburger .line {
+        display: block !important;
+        width: 24px;
+        height: 2px;
+        background-color: var(--black);
+      }
+      .hamburger:hover .line {
+        background-color: var(--gold);
+      }
+      .desktop-nav {
+        display: none !important;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .hamburger {
+        display: none !important;
+      }
+    }
 
     /* SIDENAV */
     .sidenav {
@@ -217,7 +237,7 @@
       flex-direction: column;
       justify-content: space-between;
       transform: translateX(100%);
-      transition: color 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
     .sidenav.open {
@@ -228,9 +248,9 @@
       position: absolute;
       top: 30px;
       right: 40px;
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 50px;
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1;
       cursor: pointer;
       user-select: none;
@@ -243,12 +263,12 @@
     }
 
     .sidenav-label {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
       font-weight: 600;
-      letter-spacing: 2.3px;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      color: #2c2c2c;
+      color: var(--gray-text);
       margin-bottom: 40px;
     }
 
@@ -259,10 +279,10 @@
     }
 
     .sidenav-link {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 20px;
-      font-weight: 400;
-      letter-spacing: 1.3px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--black);
       text-decoration: none;
@@ -272,18 +292,11 @@
     }
 
     .sidenav-link .arrow {
-      color: var(--gold);
-      margin-right: 8px;
-      opacity: 0;
-      width: 0;
-      transition: color 0.3s ease;
-      display: inline-block;
-      overflow: hidden;
+      display: none !important;
     }
 
-    .sidenav-link.active .arrow {
-      opacity: 1;
-      width: 20px;
+    .sidenav-link.active {
+      color: var(--gold);
     }
 
     .sidenav-link:hover {
@@ -297,15 +310,15 @@
     }
 
     .sidenav-phone {
-      font-family: 'Be Vietnam Pro', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 22px;
-      font-weight: 500;
+      font-weight: 700;
       color: var(--black);
       text-decoration: none;
     }
 
     .sidenav-email {
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 20px;
       color: var(--black);
       text-decoration: none;
@@ -315,7 +328,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 13px;
       text-transform: uppercase;
       color: var(--gray-text);
@@ -341,11 +354,11 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(26, 40, 71, 0.2);
+      background: rgba(13, 13, 13, 0.2);
       z-index: 998;
       opacity: 0;
       pointer-events: none;
-      transition: color 0.3s ease;
+      transition: opacity 0.3s ease;
     }
 
     .backdrop.active {
@@ -368,7 +381,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 100%);
+      background: linear-gradient(to top, rgba(13,13,13,0.6) 0%, rgba(13,13,13,0.1) 100%);
       z-index: 1;
     }
 
@@ -380,29 +393,30 @@
     }
 
     .hero-detail-content .breadcrumb {
-      font-family: 'Be Vietnam Pro', sans-serif;
-      font-size: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
       color: var(--white);
       opacity: 0.5;
       margin-bottom: 12px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 3px;
     }
 
     .hero-detail-content h1 {
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 64px;
-      font-weight: 400;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
       color: var(--white);
       line-height: 1.1;
       margin-bottom: 8px;
     }
 
     .hero-detail-content .location {
-      font-family: 'Be Vietnam Pro', sans-serif;
-      font-size: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
       color: var(--white);
       opacity: 0.7;
     }
@@ -431,11 +445,12 @@
       align-items: center;
       justify-content: center;
       color: var(--white);
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 22px;
-      letter-spacing: 2px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      transition: color 0.3s ease;
+      transition: opacity 0.3s ease;
     }
 
     .gallery-left .tall-img:hover {
@@ -457,12 +472,13 @@
       align-items: center;
       justify-content: center;
       color: var(--white);
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 16px;
+      font-weight: 400;
       letter-spacing: 1px;
       text-transform: uppercase;
       min-height: 290px;
-      transition: color 0.3s ease;
+      transition: opacity 0.3s ease;
     }
 
     .grid-img:hover {
@@ -476,13 +492,13 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(26, 40, 71, 0.95);
+      background-color: rgba(13, 13, 13, 0.95);
       z-index: 1000;
       display: none;
       align-items: center;
       justify-content: center;
       opacity: 0;
-      transition: color 0.3s ease;
+      transition: opacity 0.3s ease;
     }
 
     .lightbox.active {
@@ -495,7 +511,7 @@
       top: 40px;
       right: 40px;
       color: var(--white);
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 60px;
       cursor: pointer;
       user-select: none;
@@ -509,9 +525,10 @@
       align-items: center;
       justify-content: center;
       color: var(--white);
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 32px;
-      letter-spacing: 3px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: 1px;
       text-transform: uppercase;
     }
 
@@ -533,20 +550,20 @@
     }
 
     .info-left h6 {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: #2c2c2c;
+      color: var(--gray-text);
       margin-bottom: 24px;
     }
 
     .info-left p {
-      font-family: 'Be Vietnam Pro', sans-serif;
-      font-size: 15px;
-      line-height: 1.8;
-      color: #2c2c2c;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--black);
       margin-bottom: 20px;
     }
 
@@ -558,9 +575,9 @@
     }
 
     .highlight-item {
-      font-family: 'Be Vietnam Pro', sans-serif;
-      font-size: 15px;
-      color: var(--near-black);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      color: var(--black);
       display: flex;
       align-items: center;
       gap: 8px;
@@ -578,12 +595,12 @@
     }
 
     .specs-block h6 {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 12px;
-      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: #2c2c2c;
+      color: var(--gray-text);
       margin-bottom: 24px;
     }
 
@@ -592,30 +609,39 @@
       justify-content: space-between;
       padding: 12px 0;
       border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-      font-size: 14px;
+      font-size: 13px;
+      color: var(--gray-text);
     }
 
     .spec-label {
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       text-transform: uppercase;
       font-weight: 600;
-      letter-spacing: 1px;
+      letter-spacing: 3px;
+      font-size: 11px;
       color: var(--gray-text);
     }
 
     .spec-value {
-      font-family: 'Be Vietnam Pro', sans-serif;
-      color: var(--near-black);
+      font-family: 'Montserrat', sans-serif;
+      color: var(--black);
     }
 
     .specs-block a {
-      font-family: 'Josefin Sans', sans-serif;
-      font-style: normal;
-      font-size: 15px;
-      color: var(--gold);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--black);
       text-decoration: none;
       display: inline-flex;
       margin-top: 30px;
+      transition: color 0.3s ease;
+    }
+
+    .specs-block a:hover {
+      color: var(--gold);
     }
 
     /* LOCATION */
@@ -625,12 +651,12 @@
     }
 
     .location-sec h6 {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: #2c2c2c;
+      color: var(--gray-text);
       margin-bottom: 24px;
     }
 
@@ -643,7 +669,7 @@
       align-items: center;
       justify-content: center;
       color: rgba(255,255,255,0.4);
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 18px;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -667,10 +693,10 @@
     }
 
     .location-point {
-      font-family: 'Be Vietnam Pro', sans-serif;
-      font-size: 15px;
-      color: var(--near-black);
-      line-height: 1.6;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      color: var(--black);
+      line-height: 1.7;
     }
 
     /* CONTACT FORM */
@@ -680,9 +706,11 @@
     }
 
     .contact-sec h2 {
-      font-family: 'Josefin Sans', sans-serif;
-      font-style: normal;
+      font-family: 'Montserrat', sans-serif;
       font-size: 36px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
       text-align: center;
       color: var(--black);
       margin-bottom: 80px;
@@ -700,10 +728,10 @@
       flex-direction: column;
       justify-content: center;
       gap: 20px;
-      font-family: 'Be Vietnam Pro', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 16px;
-      color: var(--near-black);
-      line-height: 1.8;
+      color: var(--black);
+      line-height: 1.7;
     }
 
     .contact-form {
@@ -720,12 +748,12 @@
     }
 
     .form-group label {
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
+      font-weight: 600;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      color: #2c2c2c;
+      color: var(--gray-text);
     }
 
     .form-group input,
@@ -735,14 +763,10 @@
       border: none;
       border-bottom: 1px solid rgba(0, 0, 0, 0.15);
       padding: 15px 35px;
-      font-family: 'Be Vietnam Pro', sans-serif;
-      font-size: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
       color: var(--black);
       outline: none;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
     }
 
     .form-group textarea {
@@ -751,10 +775,12 @@
     }
 
     .submit-btn {
-      font-family: 'Josefin Sans', sans-serif;
-      font-style: normal;
-      font-size: 18px;
-      color: #222;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--black);
       background: transparent;
       border: none;
       cursor: pointer;
@@ -775,12 +801,12 @@
     }
 
     .related-sec h4 {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 12px;
-      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: #2c2c2c;
+      color: var(--gray-text);
       margin-bottom: 40px;
       text-align: center;
     }
@@ -811,33 +837,32 @@
     }
 
     .project-row-left .number {
-      font-family: 'Josefin Sans', sans-serif;
-      font-style: normal;
-      font-size: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
       color: var(--gray-text);
       width: 30px;
     }
 
     .project-row-left .name {
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 28px;
-      font-weight: 400;
+      font-weight: 500;
       text-transform: uppercase;
-      color: var(--navy);
+      color: var(--black);
       letter-spacing: 1px;
     }
 
     .project-row-center {
-      font-family: 'Be Vietnam Pro', sans-serif;
-      font-size: 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
       color: var(--gray-text);
       width: 40%;
       text-align: center;
     }
 
     .project-row-center span.bold {
-      color: var(--near-black);
-      font-weight: 500;
+      color: var(--black);
+      font-weight: 600;
     }
 
     .project-row-right {
@@ -846,9 +871,11 @@
     }
 
     .project-row-right a {
-      font-family: 'Josefin Sans', sans-serif;
-      font-style: normal;
-      font-size: 15px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
       color: var(--black);
       text-decoration: none;
       transition: color 0.3s ease;
@@ -880,20 +907,20 @@
     
     .footer-left .logo-wordmark .line-1,
     .footer-left .logo-wordmark .line-2 {
-      color: var(--navy);
+      color: var(--black);
     }
 
     .footer-center {
-      font-family: 'Be Vietnam Pro', sans-serif;
-      font-size: 14px;
-      color: var(--near-black);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      color: var(--black);
       text-align: center;
     }
 
     .footer-right {
-      font-family: 'Be Vietnam Pro', sans-serif;
-      font-size: 14px;
-      color: var(--near-black);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      color: var(--black);
       text-align: right;
       display: flex;
       flex-direction: column;
@@ -901,7 +928,7 @@
     }
     
     .footer-right .copyright-row {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--gray-text);
       display: flex;
       justify-content: flex-end;
@@ -1016,37 +1043,7 @@
         padding: 100px 0;
       }
     }
-  
-      .hamburger {
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 1001;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 28px;
-        height: 18px;
-        padding: 0;
-      }
-      .hamburger .line {
-        display: block;
-        width: 100%;
-        height: 2px;
-        background-color: var(--navy);
-        transition: background-color 0.2s;
-      }
-      .hamburger:hover .line { background-color: var(--gold); }
-      .hamburger .menu-text { display: none !important; }
-      /* On dark hero: lines should be white */
-      .hero-sec .hamburger .line,
-      .main-header.on-hero .hamburger .line { background-color: white; }
-    
-      /* Arrow only on active nav link */
-      .sidenav-link .arrow { display: none !important; }
-      .sidenav-link.active .arrow { display: inline; }
-      .sidenav-link.active { color: var(--gold); }
-    </style>
+  </style>
 </head>
 <body>
 
