@@ -6,311 +6,29 @@
   <title>Who We Are | Legacy Development Group</title>
   
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   
   <style>
-    /* CSS VARIABLES */
-    :root {
-      --gold:      #c9a060;
-      --black:     #0d0d0d;
-      --white:     #ffffff;
-      --off-white: #f6f6f6;
-      --footer-bg: #e3e3e3;
-      --gray-text: #848484;
+    /* Company intro section */
+    .company-intro { padding: 100px 0; background-color: var(--white); }
+    .intro-content { max-width: 720px; }
+    .intro-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--gray-text);
+      display: block; margin-bottom: 20px;
     }
+    .intro-title {
+      font-size: 40px; font-weight: 400;
+      color: var(--gold); line-height: 1.3; margin-bottom: 24px;
+    }
+    .intro-p { font-size: 15px; font-weight: 300; line-height: 1.8; color: var(--black); }
 
-    /* Reset & Base Styles */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: var(--white);
-      color: var(--black);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    /* Max-Width Container: 1400px Centered */
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 80px;
-      position: relative;
-    }
-
-    @media (max-width: 1024px) {
-      .container {
-        padding: 0 40px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        padding: 0 20px;
-      }
-    }
-
-    /* SECTION 1: STICKY NAVBAR */
-    header.main-header {
-      position: sticky;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100px;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      background: var(--white);
-      border-bottom: 1px solid rgba(13, 13, 13, 0.1);
-      transition: color 0.3s ease;
-    }
-
-    .header-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-    }
-
-    /* Logo Wave Icon (SVG) */
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      cursor: pointer;
-      color: var(--black);
-    }
-    
-    .wave-svg {
-      width: 50px;
-      height: 24px;
-    }
-
-    .wave-svg path {
-      stroke: currentColor;
-    }
-    
-    .logo-wordmark {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-    
-    .logo-wordmark .line-1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--black);
-    }
-    
-    .logo-wordmark .line-2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--black);
-    }
-
-    /* Desktop Navigation Links */
-    .desktop-nav {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-    }
-
-    .desktop-nav-link {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--black);
-      text-decoration: none;
-      padding-bottom: 3px;
-      transition: color 0.3s ease, border-color 0.3s ease;
-    }
-
-    .desktop-nav-link:hover,
-    .desktop-nav-link.active {
-      color: var(--gold);
-    }
-
-    /* Hamburger Menu Button */
-    .hamburger {
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 1000;
-      display: none;
-      align-items: center;
-      gap: 8px;
-      padding: 0;
-      transition: color 0.3s ease;
-    }
-    
-    .hamburger .menu-text {
-      display: none !important;
-    }
-
-    .hamburger .line {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background-color: var(--black);
-      transition: color 0.3s ease;
-    }
-
-    /* Media query for hiding/showing desktop links and hamburger */
-    @media (max-width: 768px) {
-      .desktop-nav {
-        display: none;
-      }
-      .hamburger {
-        display: flex;
-      }
-    }
-
-    /* SIDENAV PANEL */
-    .sidenav {
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100%;
-      width: 420px;
-      background-color: var(--white);
-      box-shadow: -10px 0 30px rgba(0,0,0,0.05);
-      z-index: 999;
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-      padding: 100px 50px 50px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    
-    .sidenav.open {
-      transform: translateX(0);
-    }
-
-    .sidenav-close {
-      position: absolute;
-      top: 40px;
-      right: 40px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 50px;
-      font-weight: 400;
-      cursor: pointer;
-      line-height: 1;
-      transition: color 0.3s ease;
-    }
-    
-    .sidenav-close:hover {
-      color: var(--gold);
-    }
-
-    .sidenav-label {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gray-text);
-      margin-bottom: 40px;
-    }
-
-    .sidenav-links {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-
-    .sidenav-link {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--black);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    
-    .sidenav-link .arrow {
-      display: none !important;
-    }
-
-    .sidenav-link.active {
-      color: var(--gold);
-    }
-
-    .sidenav-link:hover {
-      color: var(--gold);
-    }
-
-    .sidenav-footer {
-      border-top: 1px solid rgba(0,0,0,0.1);
-      padding-top: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .sidenav-phone {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--black);
-    }
-
-    .sidenav-email {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 20px;
-      color: var(--black);
-    }
-
-    @media (max-width: 768px) {
-      .sidenav {
-        width: 100%;
-      }
-    }
-
-    /* BACKDROP OVERLAY */
-    .backdrop {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(13, 13, 13, 0.4);
-      z-index: 998;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    
-    .backdrop.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    /* SECTION 2: PAGE HERO (two-column split) */
+/* SECTION 2: PAGE HERO (two-column split) */
     .split-hero {
+      padding: 0;
       display: flex;
       min-height: 520px;
       width: 100%;
@@ -369,115 +87,60 @@
     .hero-paragraph {
       font-family: 'Montserrat', sans-serif;
       font-size: 16px;
-      color: rgba(255, 255, 255, 0.75);
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.7);
       line-height: 1.7;
-      margin-top: 24px;
-      max-width: 380px;
+      margin-top: 30px;
     }
 
     @media (max-width: 991px) {
       .split-hero {
         flex-direction: column;
       }
-      .hero-left {
+      .hero-left, .hero-right {
         width: 100%;
-        padding: 80px 40px;
+      }
+      .hero-left {
+        padding: 60px 40px;
       }
       .hero-right {
-        width: 100%;
         min-height: 350px;
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 576px) {
       .hero-left {
-        padding: 80px 20px;
+        padding: 40px 20px;
       }
-      .hero-title-line1,
-      .hero-title-line2 {
-        font-size: 40px;
+      .hero-title-line1, .hero-title-line2 {
+        font-size: 38px;
       }
     }
 
-    /* SECTION 3: COMPANY INTRO */
-    .company-intro {
-      padding: 80px 0;
-      background-color: var(--white);
-    }
-
-    .intro-content {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .intro-label {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: var(--gray-text);
-      margin-bottom: 20px;
-      display: block;
-    }
-
-    .intro-title {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 36px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--black);
-      margin-bottom: 30px;
-    }
-
-    .intro-p {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 16px;
-      color: var(--black);
-      line-height: 1.7;
-    }
-
-    .intro-p + .intro-p {
-      margin-top: 20px;
-    }
-
-    /* SECTION 4: FOUR PILLARS */
+    /* SECTION 3: THREE PILLARS */
     .pillars-section {
-      background-color: var(--off-white);
-      padding: 80px 0;
-    }
-
-    .section-label {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: var(--gray-text);
-      margin-bottom: 60px;
-      display: inline-block;
+      padding: 120px 0;
+      background-color: var(--white);
     }
 
     .pillars-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 60px;
     }
 
     .pillar-card {
-      background-color: var(--white);
-      padding: 50px 40px;
+      display: flex;
+      flex-direction: column;
     }
 
     .pillar-number {
       font-family: 'Montserrat', sans-serif;
-      font-size: 48px;
-      font-weight: 400;
+      font-size: 14px;
+      font-weight: 700;
       color: var(--gold);
-      margin-bottom: 16px;
-      line-height: 1;
+      margin-bottom: 24px;
+      display: block;
     }
 
     .pillar-title {
@@ -487,63 +150,66 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       color: var(--black);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .pillar-divider {
-      width: 50px;
-      height: 2px;
-      background-color: var(--gold);
-      margin-bottom: 20px;
+      width: 40px;
+      height: 1px;
+      background-color: rgba(0,0,0,0.15);
+      margin-bottom: 16px;
     }
 
     .pillar-text {
       font-family: 'Montserrat', sans-serif;
-      font-size: 16px;
-      color: var(--black);
+      font-size: 14px;
+      color: var(--gray-text);
       line-height: 1.7;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
       .pillars-grid {
         grid-template-columns: 1fr;
         gap: 40px;
       }
-      .pillar-card {
-        padding: 40px 30px;
-      }
     }
 
-    /* SECTION 5: TEAM */
+    /* SECTION 4: DECORATIVE BANNER */
+    .about-banner {
+      width: 100%;
+      height: 480px;
+      background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6d349a58?w=900&q=80&fit=crop');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* SECTION 5: LEADERSHIP TEAM */
     .team-section {
-      background-color: var(--white);
-      padding: 80px 0;
+      padding: 120px 0 150px;
+      background-color: var(--off-white);
     }
 
     .team-title {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 36px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--black);
+      font-size: 40px;
+      font-weight: 400;
+      color: var(--gold);
       text-align: center;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
     .team-subtext {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 13px;
+      font-size: 15px;
+      font-weight: 300;
       color: var(--gray-text);
-      max-width: 600px;
-      margin: 0 auto 80px;
       text-align: center;
-      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto 60px;
+      line-height: 1.8;
     }
 
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 60px;
     }
 
@@ -553,16 +219,16 @@
       align-items: flex-start;
     }
 
-    .team-photo {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
+    .team-img {
+      width: 200px;
+      height: 240px;
       background-size: cover;
       background-position: center;
       flex-shrink: 0;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     }
 
-    .team-card-body {
+    .team-info {
       display: flex;
       flex-direction: column;
     }
@@ -622,99 +288,6 @@
         margin: 0 auto 12px;
       }
     }
-
-    /* SECTION 6: FOOTER */
-    footer.main-footer {
-      background-color: var(--footer-bg);
-      padding: 51px 0;
-      border-top: 1px solid rgba(0,0,0,0.05);
-    }
-
-    .footer-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      align-items: center;
-      gap: 40px;
-    }
-
-    .footer-left {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-    
-    .footer-left .logo-wordmark .line-1,
-    .footer-left .logo-wordmark .line-2 {
-      color: var(--black);
-    }
-
-    .footer-center {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 14px;
-      color: var(--black);
-      text-align: center;
-    }
-
-    .footer-right {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 14px;
-      color: var(--black);
-      text-align: right;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-    
-    .footer-right .copyright {
-      font-size: 12px;
-      color: var(--gray-text);
-      margin-top: 8px;
-    }
-
-    .footer-right a:hover {
-      color: var(--gold);
-    }
-
-    @media (max-width: 768px) {
-      .footer-inner {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 20px;
-      }
-      .footer-left {
-        justify-content: center;
-      }
-      .footer-center, .footer-right {
-        text-align: center;
-      }
-    }
-  
-    @media (max-width: 768px) {
-      .hamburger {
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 1001;
-        display: flex !important;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 24px;
-        height: 16px;
-        padding: 0;
-      }
-      .hamburger .line {
-        display: block !important;
-        width: 24px;
-        height: 2px;
-        background-color: var(--black);
-      }
-      .hamburger:hover .line { background-color: var(--gold); }
-    }
-    @media (min-width: 769px) {
-      .hamburger {
-        display: none !important;
-      }
-    }
   </style>
 </head>
 <body>
@@ -759,15 +332,19 @@
       <div class="sidenav-label">NAVIGATE</div>
       <div class="sidenav-links">
         <a href="index.html" class="sidenav-link">
+          <span class="arrow">&rarr;</span>
           <span>Home</span>
         </a>
         <a href="about.html" class="sidenav-link active">
+          <span class="arrow">&rarr;</span>
           <span>Who We Are</span>
         </a>
         <a href="projects.html" class="sidenav-link">
+          <span class="arrow">&rarr;</span>
           <span>Portfolio</span>
         </a>
         <a href="contact.html" class="sidenav-link">
+          <span class="arrow">&rarr;</span>
           <span>Contact</span>
         </a>
       </div>
@@ -854,8 +431,8 @@
       <div class="team-grid">
         <!-- Member 1 -->
         <div class="team-card">
-          <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80&fit=crop');"></div>
-          <div class="team-card-body">
+          <div class="team-img" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80&fit=crop');"></div>
+          <div class="team-info">
             <h3 class="team-name"><span class="bold">DAVID</span> <span class="thin">NGUYEN</span></h3>
             <span class="team-title-label">Founder & CEO</span>
             <div class="team-divider"></div>
@@ -865,8 +442,8 @@
 
         <!-- Member 2 -->
         <div class="team-card">
-          <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80&fit=crop');"></div>
-          <div class="team-card-body">
+          <div class="team-img" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80&fit=crop');"></div>
+          <div class="team-info">
             <h3 class="team-name"><span class="bold">SARAH</span> <span class="thin">CHEN</span></h3>
             <span class="team-title-label">Managing Director</span>
             <div class="team-divider"></div>
@@ -876,8 +453,8 @@
 
         <!-- Member 3 -->
         <div class="team-card">
-          <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80&fit=crop');"></div>
-          <div class="team-card-body">
+          <div class="team-img" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80&fit=crop');"></div>
+          <div class="team-info">
             <h3 class="team-name"><span class="bold">MICHAEL</span> <span class="thin">TRAN</span></h3>
             <span class="team-title-label">Director of Development</span>
             <div class="team-divider"></div>
@@ -887,8 +464,8 @@
 
         <!-- Member 4 -->
         <div class="team-card">
-          <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80&fit=crop');"></div>
-          <div class="team-card-body">
+          <div class="team-img" style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80&fit=crop');"></div>
+          <div class="team-info">
             <h3 class="team-name"><span class="bold">LISA</span> <span class="thin">PARK</span></h3>
             <span class="team-title-label">Director of Sales</span>
             <div class="team-divider"></div>
@@ -930,30 +507,6 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    // Sidenav triggers
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const sidenav = document.getElementById('sidenav');
-    const sidenavClose = document.getElementById('sidenavClose');
-    const backdrop = document.getElementById('backdrop');
-
-    function openSidenav() {
-      sidenav.classList.add('open');
-      backdrop.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeSidenav() {
-      sidenav.classList.remove('open');
-      backdrop.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    if (hamburgerBtn) hamburgerBtn.addEventListener('click', openSidenav);
-    if (sidenavClose) sidenavClose.addEventListener('click', closeSidenav);
-    if (backdrop) backdrop.addEventListener('click', closeSidenav);
-  </script>
+  <script src="scripts.js"></script>
 </body>
 </html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            

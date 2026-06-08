@@ -6,352 +6,19 @@
   <title>Legacy Development Group - Contact Us</title>
   
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>emailjs.init('cFCpU6CiCv-0ufI__');</script>
 
   <style>
-    /* CSS VARIABLES */
-    :root {
-      --gold:      #c9a060;
-      --black:     #0d0d0d;
-      --white:     #ffffff;
-      --off-white: #f6f6f6;
-      --footer-bg: #e3e3e3;
-      --gray-text: #848484;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    body {
-      background-color: var(--white);
-      color: var(--black);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* Max-width container: 1400px centered */
-    .container {
-      width: 100%;
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 80px;
-      position: relative;
-    }
-
-    @media (max-width: 1024px) {
-      .container {
-        padding: 0 40px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        padding: 0 20px;
-      }
-    }
-
-    header.main-header {
-      position: sticky;
-      top: 0;
-      width: 100%;
-      height: 100px;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      background: var(--white);
-      border-bottom: 1px solid rgba(13, 13, 13, 0.1);
-      transition: color 0.3s ease;
-    }
-
-    .header-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-    }
-
-    .desktop-nav {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-    }
-
-    .desktop-nav-link {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--black);
-      text-decoration: none;
-      padding-bottom: 3px;
-      transition: color 0.3s ease, border-color 0.3s ease;
-    }
-
-    .desktop-nav-link:hover,
-    .desktop-nav-link.active {
-      color: var(--gold);
-    }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      cursor: pointer;
-      color: var(--black);
-      text-decoration: none;
-    }
-
-    .logo-container,
-    .logo-container:visited,
-    .logo-container:hover {
-      color: var(--black);
-      text-decoration: none;
-    }
-
-    .wave-svg {
-      width: 50px;
-      height: 24px;
-    }
-
-    .wave-svg path {
-      stroke: currentColor;
-    }
-
-    .logo-wordmark {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-
-    .logo-wordmark .line-1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--black);
-    }
-
-    .logo-wordmark .line-2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--black);
-    }
-
-    .hamburger {
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 1000;
-      display: none;
-      align-items: center;
-      gap: 8px;
-      padding: 0;
-      transition: color 0.3s ease;
-    }
-
-    .hamburger .menu-text {
-      display: none !important;
-    }
-
-    .hamburger .line {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background-color: var(--black);
-      transition: color 0.3s ease;
-    }
-
-    @media (max-width: 768px) {
-      .hamburger {
-        display: flex !important;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 24px;
-        height: 16px;
-        z-index: 1001;
-      }
-      .hamburger .line {
-        display: block !important;
-        width: 24px;
-        height: 2px;
-        background-color: var(--black);
-      }
-      .hamburger:hover .line {
-        background-color: var(--gold);
-      }
-      .desktop-nav {
-        display: none !important;
-      }
-    }
-
-    @media (min-width: 769px) {
-      .hamburger {
-        display: none !important;
-      }
-    }
-
-    /* SIDENAV */
-    .sidenav {
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100%;
-      width: 420px;
-      background-color: var(--white);
-      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
-      z-index: 999;
-      padding: 100px 50px 50px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-    }
-
-    .sidenav.open {
-      transform: translateX(0);
-    }
-
-    .sidenav-close {
-      position: absolute;
-      top: 30px;
-      right: 40px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 50px;
-      font-weight: 400;
-      line-height: 1;
-      cursor: pointer;
-      user-select: none;
-      transition: color 0.3s ease;
-      color: var(--black);
-    }
-
-    .sidenav-close:hover {
-      color: var(--gold);
-    }
-
-    .sidenav-label {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gray-text);
-      margin-bottom: 40px;
-    }
-
-    .sidenav-links {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-
-    .sidenav-link {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--black);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      transition: color 0.3s ease;
-    }
-
-    .sidenav-link .arrow {
-      display: none !important;
-    }
-
-    .sidenav-link.active {
-      color: var(--gold);
-    }
-
-    .sidenav-link:hover {
-      color: var(--gold);
-    }
-
-    .sidenav-bottom {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .sidenav-phone {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--black);
-      text-decoration: none;
-    }
-
-    .sidenav-email {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 20px;
-      color: var(--black);
-      text-decoration: none;
-    }
-
-    .lang-switcher {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 13px;
-      text-transform: uppercase;
-      color: var(--gray-text);
-      user-select: none;
-    }
-
-    .lang-btn {
-      color: var(--gray-text);
-      text-decoration: none;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-
-    .lang-btn.active {
-      color: var(--gold);
-      font-weight: 600;
-    }
-
-    /* BACKDROP */
-    .backdrop {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(13, 13, 13, 0.2);
-      z-index: 998;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-
-    .backdrop.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    /* SECTION 1 — contact banner */
+/* SECTION 1 — contact banner */
     .sec-contact-banner {
+      padding: 0;
       display: flex;
       align-items: stretch;
       min-height: 540px;
@@ -511,67 +178,6 @@
       color: var(--gold);
     }
 
-    /* FOOTER */
-    footer.main-footer {
-      background-color: var(--footer-bg);
-      padding: 51px 0;
-      border-top: 1px solid rgba(0,0,0,0.05);
-    }
-
-    .footer-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      align-items: center;
-      gap: 40px;
-    }
-
-    .footer-left {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-    
-    .footer-left .logo-wordmark .line-1,
-    .footer-left .logo-wordmark .line-2 {
-      color: var(--black);
-    }
-
-    .footer-center {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 16px;
-      color: var(--black);
-      text-align: center;
-    }
-
-    .footer-right {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 16px;
-      color: var(--black);
-      text-align: right;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-    
-    .footer-right .copyright-row {
-      font-size: 13px;
-      color: var(--gray-text);
-      display: flex;
-      justify-content: flex-end;
-      gap: 12px;
-      margin-top: 4px;
-    }
-
-    .footer-right .copyright-row a {
-      text-decoration: none;
-      color: var(--gray-text);
-      transition: color 0.3s ease;
-    }
-
-    .footer-right .copyright-row a:hover {
-      color: var(--gold);
-    }
-
     /* RESPONSIVE LAYOUTS */
     @media (max-width: 1024px) {
       .banner-left {
@@ -606,24 +212,6 @@
       .circular-img {
         width: 250px;
         height: 250px;
-      }
-      .footer-inner {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-      }
-      .footer-center {
-        text-align: center;
-      }
-      .footer-right {
-        text-align: center;
-        align-items: center;
-      }
-      .footer-right .copyright-row {
-        justify-content: center;
-      }
-      .sidenav {
-        width: 100%;
       }
     }
 
@@ -716,6 +304,36 @@
   </header>
 
   <!-- SECTION 1 — contact banner -->
+  <!-- SIDENAV -->
+  <nav class="sidenav" id="sidenav">
+    <div class="sidenav-close" id="sidenavClose">&times;</div>
+    <div>
+      <div class="sidenav-label">NAVIGATE</div>
+      <div class="sidenav-links">
+        <a href="index.html" class="sidenav-link">
+          <span class="arrow">&rarr;</span>
+          <span>Home</span>
+        </a>
+        <a href="about.html" class="sidenav-link">
+          <span class="arrow">&rarr;</span>
+          <span>Who We Are</span>
+        </a>
+        <a href="projects.html" class="sidenav-link">
+          <span class="arrow">&rarr;</span>
+          <span>Portfolio</span>
+        </a>
+        <a href="contact.html" class="sidenav-link active">
+          <span class="arrow">&rarr;</span>
+          <span>Contact</span>
+        </a>
+      </div>
+    </div>
+    <div class="sidenav-footer">
+      <div class="sidenav-phone">+1 (714) 555-0192</div>
+      <div class="sidenav-email">hello@legacydevelopmentgroup.com</div>
+    </div>
+  </nav>
+
   <section class="sec-contact-banner">
     <div class="banner-left">
       <div>
@@ -782,32 +400,6 @@
     </div>
   </section>
 
-  <!-- SIDENAV -->
-  <nav class="sidenav" id="sidenav">
-    <div class="sidenav-close" id="sidenavClose">&times;</div>
-    <div>
-      <div class="sidenav-label">NAVIGATE</div>
-      <div class="sidenav-links">
-        <a href="index.html" class="sidenav-link">
-          <span>Home</span>
-        </a>
-        <a href="about.html" class="sidenav-link">
-          <span>Who We Are</span>
-        </a>
-        <a href="projects.html" class="sidenav-link">
-          <span>Portfolio</span>
-        </a>
-        <a href="contact.html" class="sidenav-link active">
-          <span>Contact</span>
-        </a>
-      </div>
-    </div>
-    <div class="sidenav-footer">
-      <div class="sidenav-phone">+1 (714) 555-0192</div>
-      <div class="sidenav-email">hello@legacydevelopmentgroup.com</div>
-    </div>
-  </nav>
-
   <!-- FOOTER -->
   <footer class="main-footer">
     <div class="container footer-inner">
@@ -836,25 +428,6 @@
   </footer>
 
   <script>
-    // ── Sidenav ──
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const sidenav = document.getElementById('sidenav');
-    const sidenavClose = document.getElementById('sidenavClose');
-    const backdrop = document.getElementById('backdrop');
-
-    function openSidenav() {
-      sidenav.classList.add('open');
-      backdrop.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeSidenav() {
-      sidenav.classList.remove('open');
-      backdrop.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-    if (hamburgerBtn) hamburgerBtn.addEventListener('click', openSidenav);
-    if (sidenavClose) sidenavClose.addEventListener('click', closeSidenav);
-    if (backdrop) backdrop.addEventListener('click', closeSidenav);
 
     // ── Contact Form — Formspree AJAX ──
     const form = document.getElementById('contactForm');
@@ -913,5 +486,6 @@
       });
     }
   </script>
+  <script src="scripts.js"></script>
 </body>
 </html>
