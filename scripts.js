@@ -1,3 +1,15 @@
+// Shrink header on scroll (Aron-style)
+const mainHeader = document.querySelector('header.main-header');
+if (mainHeader) {
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 50) {
+      mainHeader.classList.add('scrolled');
+    } else {
+      mainHeader.classList.remove('scrolled');
+    }
+  }, { passive: true });
+}
+
 // Sidenav controls
 const hamburgerBtn = document.getElementById('hamburgerBtn');
 const sidenav = document.getElementById('sidenav');

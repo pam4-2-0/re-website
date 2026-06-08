@@ -119,19 +119,18 @@
       margin-top: 40px;
     }
 
+    /* --- Aron-inspired card: image top + dark overlay footer --- */
     .project-card {
-      background-color: var(--white);
-      border: 1px solid rgba(0,0,0,0.06);
+      background: transparent;
+      border: none;
       cursor: pointer;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.02);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
     .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+      transform: translateY(-6px);
     }
 
     .card-image {
@@ -139,12 +138,21 @@
       height: 260px;
       background-size: cover;
       background-position: center;
+      border-radius: 12px 12px 0 0;
     }
 
     .card-body {
-      padding: 30px;
+      background: #2a2a2a;
+      /* min-height đảm bảo tất cả card-body đồng đều dù text xuống dòng */
+      min-height: 110px;
+      padding: 20px 24px 24px;
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      border-radius: 0 0 12px 12px;
+      margin-top: -16px;
+      position: relative;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.18);
     }
 
     .status-badge {
@@ -154,7 +162,7 @@
       letter-spacing: 2px;
       color: var(--gold);
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     .project-name {
@@ -163,55 +171,24 @@
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: var(--black);
+      color: rgba(255,255,255,1);
       margin-bottom: 6px;
+      /* Giới hạn 1 dòng — tên project dài không đẩy card cao hơn */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .project-location {
       font-family: 'Montserrat', sans-serif;
       font-size: 13px;
-      color: var(--gray-text);
-      margin-bottom: 4px;
-    }
-
-    .project-type {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 13px;
-      color: var(--gray-text);
-      margin-bottom: 16px;
-    }
-
-    .card-divider {
-      border: none;
-      border-bottom: 1px solid rgba(0,0,0,0.1);
-      margin-bottom: 16px;
-    }
-
-    .card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .card-meta-info {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--gray-text);
-    }
-
-    .card-cta {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--black);
-      transition: color 0.3s ease;
-    }
-
-    .project-card:hover .card-cta {
-      color: var(--gold);
+      color: rgba(255,255,255,0.60);
+      /* Giới hạn 2 dòng — nếu text dài hơn sẽ bị cắt thay vì đẩy cao card */
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin: 0;
     }
 
     @media (max-width: 991px) {
@@ -323,12 +300,6 @@
             <span class="status-badge">FOR SALE</span>
             <h3 class="project-name">RIVERSIDE HEIGHTS</h3>
             <p class="project-location">Orange County, California</p>
-            <p class="project-type">Land lots & Townhomes</p>
-            <hr class="card-divider">
-            <div class="card-footer">
-              <span class="card-meta-info">320 Units</span>
-              <span class="card-cta">View details &rarr;</span>
-            </div>
           </div>
         </div>
 
@@ -339,12 +310,6 @@
             <span class="status-badge">UNDER CONSTRUCTION</span>
             <h3 class="project-name">OAK VALLEY ESTATES</h3>
             <p class="project-location">San Diego County, California</p>
-            <p class="project-type">Premium Land Lots</p>
-            <hr class="card-divider">
-            <div class="card-footer">
-              <span class="card-meta-info">Est. ROI 18%</span>
-              <span class="card-cta">View details &rarr;</span>
-            </div>
           </div>
         </div>
 
@@ -355,12 +320,6 @@
             <span class="status-badge">COMPLETED</span>
             <h3 class="project-name">MAPLE RIDGE</h3>
             <p class="project-location">Los Angeles County, California</p>
-            <p class="project-type">Townhouse Community</p>
-            <hr class="card-divider">
-            <div class="card-footer">
-              <span class="card-meta-info">85 Units</span>
-              <span class="card-cta">View details &rarr;</span>
-            </div>
           </div>
         </div>
 
@@ -371,12 +330,6 @@
             <span class="status-badge">FOR SALE</span>
             <h3 class="project-name">CEDAR GROVE</h3>
             <p class="project-location">Riverside County, California</p>
-            <p class="project-type">Villa & Estate Lots</p>
-            <hr class="card-divider">
-            <div class="card-footer">
-              <span class="card-meta-info">Est. ROI 22%</span>
-              <span class="card-cta">View details &rarr;</span>
-            </div>
           </div>
         </div>
 
@@ -387,12 +340,6 @@
             <span class="status-badge">UNDER CONSTRUCTION</span>
             <h3 class="project-name">PINE CREST VILLAS</h3>
             <p class="project-location">Santa Barbara County, California</p>
-            <p class="project-type">Luxury Villas</p>
-            <hr class="card-divider">
-            <div class="card-footer">
-              <span class="card-meta-info">Est. ROI 24%</span>
-              <span class="card-cta">View details &rarr;</span>
-            </div>
           </div>
         </div>
 
@@ -403,12 +350,6 @@
             <span class="status-badge">FOR SALE</span>
             <h3 class="project-name">HARBOR VIEW RESIDENCES</h3>
             <p class="project-location">Ventura County, California</p>
-            <p class="project-type">Waterfront Apartments</p>
-            <hr class="card-divider">
-            <div class="card-footer">
-              <span class="card-meta-info">142 Units</span>
-              <span class="card-cta">View details &rarr;</span>
-            </div>
           </div>
         </div>
       </div>
