@@ -64,7 +64,6 @@ section {
 }
 
 .section-label {
-  font-family: 'Montserrat', sans-serif;
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
@@ -75,7 +74,6 @@ section {
 }
 
 .heading-large-serif {
-  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-size: 40px;
   font-weight: 400;
@@ -84,7 +82,6 @@ section {
 }
 
 .heading-medium-garamond {
-  font-family: 'Montserrat', sans-serif;
   font-size: 28px;
   font-weight: 500;
   color: var(--black);
@@ -168,7 +165,6 @@ header.main-header.scrolled {
 }
 
 .logo-wordmark .line-1 {
-  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 4px;
@@ -178,7 +174,6 @@ header.main-header.scrolled {
 }
 
 .logo-wordmark .line-2 {
-  font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   font-weight: 400;
   letter-spacing: 4px;
@@ -217,7 +212,6 @@ header.main-header.scrolled {
 }
 
 .desktop-nav-link {
-  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0;
@@ -278,7 +272,6 @@ header.main-header.scrolled {
   position: absolute;
   top: 40px;
   right: 40px;
-  font-family: 'Montserrat', sans-serif;
   font-size: 50px;
   font-weight: 400;
   cursor: pointer;
@@ -290,7 +283,6 @@ header.main-header.scrolled {
 }
 
 .sidenav-label {
-  font-family: 'Montserrat', sans-serif;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -306,7 +298,6 @@ header.main-header.scrolled {
 }
 
 .sidenav-link {
-  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   font-weight: 400;
   letter-spacing: 1px;
@@ -338,14 +329,12 @@ header.main-header.scrolled {
 }
 
 .sidenav-phone {
-  font-family: 'Montserrat', sans-serif;
   font-size: 22px;
   font-weight: 700;
   color: var(--black);
 }
 
 .sidenav-email {
-  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   color: var(--near-black);
 }
@@ -399,14 +388,12 @@ footer.main-footer {
 }
 
 .footer-center {
-  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   color: rgba(255,255,255,0.65);
   text-align: center;
 }
 
 .footer-right {
-  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   color: rgba(255,255,255,0.85);
   text-align: right;
