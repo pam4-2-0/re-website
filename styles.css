@@ -110,7 +110,7 @@ section {
   color: var(--gold);
 }
 
-header.main-header {
+header.l-header {
   position: fixed;
   top: 0;
   left: 0;
@@ -124,7 +124,7 @@ header.main-header {
   transition: height 0.3s ease;
 }
 
-header.main-header.scrolled {
+header.l-header.scrolled {
   height: 110px;
 }
 
@@ -362,7 +362,7 @@ header.main-header.scrolled {
   pointer-events: auto;
 }
 
-footer.main-footer {
+footer.l-footer {
   background-color: var(--footer-bg);
   padding: 51px 0;
   border-top: 1px solid rgba(255,255,255,0.08);

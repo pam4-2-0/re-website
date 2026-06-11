@@ -1,5 +1,5 @@
 // Shrink header on scroll (Aron-style)
-const mainHeader = document.querySelector('header.main-header');
+const mainHeader = document.querySelector('header.l-header');
 if (mainHeader) {
   window.addEventListener('scroll', function () {
     if (window.scrollY > 50) {

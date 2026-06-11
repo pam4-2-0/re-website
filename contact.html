@@ -1,14 +1,16 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Legacy Development Group - Contact Us</title>
-  
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="components.css">
 
@@ -16,18 +18,22 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>emailjs.init('cFCpU6CiCv-0ufI__');</script>
 </head>
+
 <body>
 
   <!-- Backdrop -->
   <div class="backdrop" id="backdrop"></div>
 
-  <header class="main-header">
+  <header class="l-header">
     <div class="container header-inner">
       <a href="index.html" class="logo-container">
         <svg class="wave-svg" viewBox="0 0 50 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 18 C 10 18, 10 12, 18 12 C 26 12, 26 18, 34 18 C 42 18, 42 12, 48 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M2 12 C 10 12, 10 6, 18 6 C 26 6, 26 12, 34 12 C 42 12, 42 6, 48 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M2 6 C 10 6, 10 0, 18 0 C 26 0, 26 6, 34 6 C 42 6, 42 0, 48 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 18 C 10 18, 10 12, 18 12 C 26 12, 26 18, 34 18 C 42 18, 42 12, 48 12" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" />
+          <path d="M2 12 C 10 12, 10 6, 18 6 C 26 6, 26 12, 34 12 C 42 12, 42 6, 48 6" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" />
+          <path d="M2 6 C 10 6, 10 0, 18 0 C 26 0, 26 6, 34 6 C 42 6, 42 0, 48 0" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" />
         </svg>
         <div class="logo-wordmark">
           <span class="line-1">LEGACY</span>
@@ -79,84 +85,89 @@
     </div>
   </nav>
 
-  <main>
+  <main class="l-main">
 
-  <section class="sec-contact-banner">
-    <div class="banner-left">
-      <div>
-        <h1>CONTACT</h1>
-        <p class="intro-text">Contact us to discuss design-driven real estate developments that deliver long-term value to people, partners, and communities.</p>
-      </div>
+    <section class="s-contact-hero">
+      <div class="banner-left">
+        <div>
+          <h1>CONTACT</h1>
+          <p class="intro-text">Contact us to discuss design-driven real estate developments that deliver long-term
+            value to people, partners, and communities.</p>
+        </div>
 
-      <div class="company-meta">
-        <p class="company-name">Legacy Development Group Group</p>
-        <p class="contact-detail">Phone: +1 (714) 555-0192</p>
-        <p class="contact-detail">Email: hello@legacydevelopmentgroup.com</p>
-      </div>
-    </div>
-    
-    <div class="banner-right"></div>
-  </section>
-
-  <!-- SECTION 2 — form -->
-  <section class="sec-contact-form">
-    <div class="container form-layout">
-      <!-- Left circular details -->
-      <div class="form-left">
-        <div class="circular-img"></div>
-        <address>
-          <strong>Legacy Development Group Headquarters</strong><br>
-          100 Spectrum Center Drive, Suite 900,<br>
-          Irvine, CA 92618
-        </address>
-      </div>
-
-      <!-- Right Form fields -->
-      <div class="form-right">
-        <form class="contact-form" id="contactForm">
-          <!-- Formspree spam honeypot -->
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-
-          <div class="form-group">
-            <label for="name">Name*</label>
-            <input type="text" id="name" name="name" required placeholder="Your full name">
-          </div>
-          <div class="form-group">
-            <label for="email">Email*</label>
-            <input type="email" id="email" name="email" required placeholder="Your email address">
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="How can our consulting team assist you?"></textarea>
-          </div>
-
-          <button type="submit" class="submit-btn" id="submitBtn">
-            <span class="btn-text">Submit &rarr;</span>
-            <span class="btn-sending" style="display:none">Sending&hellip;</span>
-          </button>
-        </form>
-
-        <!-- Thank You State -->
-        <div class="form-thankyou" id="formThankyou" style="display:none">
-          <div class="thankyou-line"></div>
-          <p class="thankyou-label">INQUIRY RECEIVED</p>
-          <h3 class="thankyou-heading">Thank You</h3>
-          <p class="thankyou-body">A member of our team will be in touch within 24 hours.<br>We look forward to speaking with you.</p>
+        <div class="company-meta">
+          <p class="company-name">Legacy Development Group</p>
+          <p class="contact-detail">Phone: +1 (714) 555-0192</p>
+          <p class="contact-detail">Email: hello@legacydevelopmentgroup.com</p>
         </div>
       </div>
-    </div>
-  </section>
+
+      <div class="banner-right"></div>
+    </section>
+
+    <!-- SECTION 2 — form -->
+    <section class="s-contact-form">
+      <div class="container form-layout">
+        <!-- Left circular details -->
+        <div class="form-left">
+          <div class="circular-img"></div>
+          <address>
+            <strong>Legacy Development Group Headquarters</strong><br>
+            100 Spectrum Center Drive, Suite 900,<br>
+            Irvine, CA 92618
+          </address>
+        </div>
+
+        <!-- Right Form fields -->
+        <div class="form-right">
+          <form class="contact-form" id="contactForm">
+            <!-- Formspree spam honeypot -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+            <div class="form-group">
+              <label for="name">Name*</label>
+              <input type="text" id="name" name="name" required placeholder="Your full name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email*</label>
+              <input type="email" id="email" name="email" required placeholder="Your email address">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="How can our consulting team assist you?"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+              <span class="btn-text">Submit &rarr;</span>
+              <span class="btn-sending" style="display:none">Sending&hellip;</span>
+            </button>
+          </form>
+
+          <!-- Thank You State -->
+          <div class="form-thankyou" id="formThankyou" style="display:none">
+            <div class="thankyou-line"></div>
+            <p class="thankyou-label">INQUIRY RECEIVED</p>
+            <h3 class="thankyou-heading">Thank You</h3>
+            <p class="thankyou-body">A member of our team will be in touch within 24 hours.<br>We look forward to
+              speaking with you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </main>
 
   <!-- FOOTER -->
-  <footer class="main-footer">
+  <footer class="l-footer">
     <div class="container footer-inner">
       <div class="footer-left">
         <svg class="wave-svg" viewBox="0 0 50 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 18 C 10 18, 10 12, 18 12 C 26 12, 26 18, 34 18 C 42 18, 42 12, 48 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M2 12 C 10 12, 10 6, 18 6 C 26 6, 26 12, 34 12 C 42 12, 42 6, 48 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M2 6 C 10 6, 10 0, 18 0 C 26 0, 26 6, 34 6 C 42 6, 42 0, 48 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 18 C 10 18, 10 12, 18 12 C 26 12, 26 18, 34 18 C 42 18, 42 12, 48 12" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" />
+          <path d="M2 12 C 10 12, 10 6, 18 6 C 26 6, 26 12, 34 12 C 42 12, 42 6, 48 6" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" />
+          <path d="M2 6 C 10 6, 10 0, 18 0 C 26 0, 26 6, 34 6 C 42 6, 42 0, 48 0" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" />
         </svg>
         <div class="logo-wordmark">
           <span class="line-1">LEGACY</span>
@@ -186,7 +197,7 @@
     const thankyou = document.getElementById('formThankyou');
 
     if (form) {
-      form.addEventListener('submit', async function(e) {
+      form.addEventListener('submit', async function (e) {
         e.preventDefault();
 
         // Show "Sending..." state
@@ -237,4 +248,5 @@
   </script>
   <script src="scripts.js"></script>
 </body>
+
 </html>

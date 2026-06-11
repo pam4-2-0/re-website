@@ -21,7 +21,7 @@
    ============================================================ */
 
 /* Hero Banner */
-.hero-sec {
+.s-hero {
   height: calc(100vh - 150px);
   min-height: 680px;
   max-height: 900px;
@@ -85,7 +85,7 @@
 }
 
 /* Section 2: Intro Sec */
-.intro-sec {
+.s-brand-intro {
   padding: 120px 0 150px;
 }
 
@@ -120,12 +120,12 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* Component-scoped typography — .intro-sec */
-.intro-sec .center-col {
+/* Component-scoped typography — .s-brand-intro */
+.s-brand-intro .center-col {
   padding: 0 30px;
 }
 
-.intro-sec .center-col h3 {
+.s-brand-intro .center-col h3 {
   font-size: 28px;
   font-weight: 500;
   color: var(--black);
@@ -133,16 +133,16 @@
   margin-top: 0;
 }
 
-.intro-sec .center-col p {
+.s-brand-intro .center-col p {
   margin-bottom: 25px;
   color: var(--black);
 }
 
-.intro-sec .right-col {
+.s-brand-intro .right-col {
   /* block layout — spacing via .cta-link margin-top: 20px in styles.css */
 }
 
-.intro-sec .right-col h4 {
+.s-brand-intro .right-col h4 {
   font-size: 40px;
   font-weight: 400;
   color: var(--black);
@@ -151,14 +151,14 @@
 }
 
 /* Section 3: Centered Pullquote */
-.create-place-sec {
+.s-mission {
   padding: 150px 0 60px;
   text-align: center;
   position: relative;
   background: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80&fit=crop') center center / cover no-repeat;
 }
 
-.create-place-sec::before {
+.s-mission::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -178,7 +178,7 @@
 }
 
 /* Section 4: Home About Sec */
-.home-about-sec {
+.s-values {
   padding: 100px 0 120px;
 }
 
@@ -1203,8 +1203,8 @@
   }
 }
 
-.hero-sec .hamburger .line,
-.main-header.on-hero .hamburger .line {
+.s-hero .hamburger .line,
+.l-header.on-hero .hamburger .line {
   display: block;
   width: 24px;
   height: 2px;
@@ -1215,7 +1215,7 @@
    PROJECTS.HTML
    ============================================================ */
 
-.page-hero {
+.s-page-hero {
   background-color: var(--black);
   padding: 60px 0 50px;
 }
@@ -1264,7 +1264,7 @@
   }
 }
 
-.invest-highlight-bar {
+.s-invest-cta {
   background-color: var(--gold);
   padding: 30px 0;
 }
@@ -1305,7 +1305,7 @@
   }
 }
 
-.project-grid-section {
+.s-all-properties {
   padding: 120px 0;
   background-color: var(--white);
 }
@@ -1398,7 +1398,7 @@
    ABOUT.HTML
    ============================================================ */
 
-.company-intro {
+.s-about {
   padding: 100px 0;
   background-color: var(--white);
 }
@@ -1433,7 +1433,7 @@
   color: var(--black);
 }
 
-.split-hero {
+.s-about-hero {
   padding: 0;
   display: flex;
   min-height: 520px;
@@ -1485,7 +1485,7 @@
 }
 
 @media (max-width: 991px) {
-  .split-hero {
+  .s-about-hero {
     flex-direction: column;
   }
 
@@ -1514,7 +1514,7 @@
   }
 }
 
-.pillars-section {
+.s-how-we-work {
   padding: 120px 0;
   background-color: var(--white);
 }
@@ -1577,7 +1577,7 @@
   background-position: center;
 }
 
-.team-section {
+.s-team {
   padding: 120px 0 150px;
   background-color: var(--off-white);
 }
@@ -1688,7 +1688,7 @@
    CONTACT.HTML
    ============================================================ */
 
-.sec-contact-banner {
+.s-contact-hero {
   padding: 0;
   display: flex;
   align-items: stretch;
@@ -1751,7 +1751,7 @@
   background: url('https://images.unsplash.com/photo-1600607687939-ce8a6d349a58?w=900&q=80&fit=crop') center center / cover no-repeat;
 }
 
-.sec-contact-form {
+.s-contact-form {
   padding: 80px 0;
   background-color: var(--white);
 }
@@ -1853,7 +1853,7 @@
 }
 
 @media (max-width: 991px) {
-  .sec-contact-banner {
+  .s-contact-hero {
     flex-direction: column;
   }
 
@@ -1887,7 +1887,7 @@
     padding: 40px 20px;
   }
 
-  .sec-contact-form {
+  .s-contact-form {
     padding: 100px 20px 80px;
   }
 
@@ -1948,7 +1948,7 @@
    PROJECT-DETAIL.HTML
    ============================================================ */
 
-.hero-detail {
+.s-detail-hero {
   height: 70vh;
   min-height: 480px;
   position: relative;
@@ -2002,7 +2002,7 @@
   opacity: 0.7;
 }
 
-.gallery-sec {
+.s-gallery {
   padding: 60px 0 80px;
   background-color: var(--white);
 }
@@ -2108,7 +2108,7 @@
   text-transform: uppercase;
 }
 
-.info-sec {
+.s-project-info {
   padding: 80px 0;
   background-color: var(--white);
 }
@@ -2219,12 +2219,12 @@
   color: var(--gold);
 }
 
-.location-sec {
+.s-location {
   padding: 80px 0;
   background-color: var(--off-white);
 }
 
-.location-sec h6 {
+.s-location h6 {
   font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   font-weight: 600;
@@ -2272,12 +2272,12 @@
   line-height: 1.7;
 }
 
-.contact-sec {
+.s-contact-inline {
   padding: 150px 0;
   background-color: var(--white);
 }
 
-.contact-sec h2 {
+.s-contact-inline h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 36px;
   font-weight: 600;
@@ -2306,13 +2306,13 @@
   line-height: 1.7;
 }
 
-.related-sec {
+.s-related {
   padding: 100px 0;
   background-color: var(--white);
   border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.related-sec h4 {
+.s-related h4 {
   font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   font-weight: 600;
@@ -2476,7 +2476,7 @@
     padding-left: 20px;
   }
 
-  .contact-sec {
+  .s-contact-inline {
     padding: 100px 0;
   }
 }
