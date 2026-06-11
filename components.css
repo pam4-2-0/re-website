@@ -1407,17 +1407,6 @@
   max-width: 720px;
 }
 
-.intro-label {
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: #8c765c;
-  margin-bottom: 12px;
-  display: block;
-  line-height: 1.2;
-}
-
 .intro-title {
   font-size: 40px;
   font-weight: 400;
@@ -1532,7 +1521,7 @@
 
 .pillar-number {
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--gold);
   margin-bottom: 24px;
