@@ -35,9 +35,9 @@
 .slider_cont {
   position: absolute;
   bottom: 30px;
-  left: max(80px, calc((100vw - 1400px) / 2 + 80px));
+  left: 0;
   width: 35%;
-  padding: 20px 80px;
+  padding: 20px 80px 20px max(80px, calc((100vw - 1400px) / 2 + 80px));
   z-index: 2;
   background-color: rgba(13, 13, 13, 0.70);
   border-radius: 0 24px 24px 0;
@@ -1185,6 +1185,12 @@
 
   .gallery-left-tall {
     height: 350px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .slider_cont {
+    padding: 20px 40px;
   }
 }
 
