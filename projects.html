@@ -1,17 +1,20 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio | Legacy Development Group</title>
-  
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="components.css">
 </head>
+
 <body>
 
   <!-- Backdrop -->
@@ -22,9 +25,12 @@
     <div class="container header-inner">
       <a href="index.html" class="logo-container">
         <svg class="wave-svg" viewBox="0 0 50 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 18 C 10 18, 10 12, 18 12 C 26 12, 26 18, 34 18 C 42 18, 42 12, 48 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M2 12 C 10 12, 10 6, 18 6 C 26 6, 26 12, 34 12 C 42 12, 42 6, 48 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M2 6 C 10 6, 10 0, 18 0 C 26 0, 26 6, 34 6 C 42 6, 42 0, 48 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 18 C 10 18, 10 12, 18 12 C 26 12, 26 18, 34 18 C 42 18, 42 12, 48 12" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" />
+          <path d="M2 12 C 10 12, 10 6, 18 6 C 26 6, 26 12, 34 12 C 42 12, 42 6, 48 6" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" />
+          <path d="M2 6 C 10 6, 10 0, 18 0 C 26 0, 26 6, 34 6 C 42 6, 42 0, 48 0" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" />
         </svg>
         <div class="logo-wordmark">
           <span class="line-1">LEGACY</span>
@@ -38,7 +44,7 @@
         <a href="projects.html" class="desktop-nav-link active">Portfolio</a>
         <a href="contact.html" class="desktop-nav-link">Contact</a>
       </nav>
-      
+
       <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
         <span class="line"></span>
         <span class="line"></span>
@@ -80,91 +86,122 @@
 
   <main class="l-main">
 
-  <!-- SECTION 2: PAGE HERO -->
-  <section class="s-page-hero">
-    <div class="container hero-content">
-      <span class="hero-label">PORTFOLIO</span>
-      <h1 class="hero-title">OUR PROJECTS</h1>
-      <p class="hero-subtext">Explore our portfolio of landmark developments across California.</p>
-    </div>
-  </section>
+    <!-- SECTION 2: PAGE HERO -->
+    <section class="s-page-hero">
+      <div class="container hero-content">
+        <span class="hero-label">PORTFOLIO</span>
+        <h1 class="hero-title">OUR PROJECTS</h1>
+        <p class="hero-subtext">Explore our portfolio of landmark developments across California.</p>
+      </div>
+    </section>
 
-  <!-- SECTION 3: INVEST HIGHLIGHT BAR -->
-  <section class="s-invest-cta">
-    <div class="container invest-inner">
-      <span class="invest-text">INTERESTED IN INVESTING WITH US?</span>
-      <a href="contact.html" class="invest-btn">LEARN MORE &rarr;</a>
-    </div>
-  </section>
+    <!-- SECTION 3: INVEST HIGHLIGHT BAR -->
+    <section class="s-invest-cta">
+      <div class="container invest-inner">
+        <span class="invest-text">INTERESTED IN INVESTING WITH US?</span>
+        <a href="contact.html" class="invest-btn">LEARN MORE &rarr;</a>
+      </div>
+    </section>
 
-  <!-- SECTION 4: PROJECT GRID -->
-  <section class="s-all-properties">
-    <div class="container">
-      <span class="section-label">ALL PROPERTIES</span>
-      
-      <div class="project-grid">
-        <!-- Card 1 -->
-        <div class="project-card" onclick="window.location.href='project-detail.html'">
-          <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80&fit=crop');"></div>
-          <div class="card-body">
-            <span class="status-badge">FOR SALE</span>
-            <h3 class="project-name">RIVERSIDE HEIGHTS</h3>
-            <p class="project-location">Orange County, California</p>
+    <!-- SECTION 3.5: INVEST FEATURE -->
+    <section class="s-invest-feature">
+      <div class="container">
+        <div class="invest-row">
+          <div class="invest-content">
+            <span class="section-label">INVEST</span>
+            <p>For private equity groups and private lenders. Why you should invest. Legacy Development Group works with
+              different forms of capital — crowdfunding for individual investors, and partnerships with larger
+              institutional funds and lenders.</p>
+            <a href="contact.html" class="cta-link">Contact Us &rarr;</a>
           </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="project-card" onclick="window.location.href='project-detail.html'">
-          <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80&fit=crop');"></div>
-          <div class="card-body">
-            <span class="status-badge">UNDER CONSTRUCTION</span>
-            <h3 class="project-name">OAK VALLEY ESTATES</h3>
-            <p class="project-location">San Diego County, California</p>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="project-card" onclick="window.location.href='project-detail.html'">
-          <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80&fit=crop');"></div>
-          <div class="card-body">
-            <span class="status-badge">COMPLETED</span>
-            <h3 class="project-name">MAPLE RIDGE</h3>
-            <p class="project-location">Los Angeles County, California</p>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="project-card" onclick="window.location.href='project-detail.html'">
-          <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=800&q=80&fit=crop');"></div>
-          <div class="card-body">
-            <span class="status-badge">FOR SALE</span>
-            <h3 class="project-name">CEDAR GROVE</h3>
-            <p class="project-location">Riverside County, California</p>
-          </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="project-card" onclick="window.location.href='project-detail.html'">
-          <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80&fit=crop');"></div>
-          <div class="card-body">
-            <span class="status-badge">UNDER CONSTRUCTION</span>
-            <h3 class="project-name">PINE CREST VILLAS</h3>
-            <p class="project-location">Santa Barbara County, California</p>
-          </div>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="project-card" onclick="window.location.href='project-detail.html'">
-          <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1598228723793-52759bba239c?w=800&q=80&fit=crop');"></div>
-          <div class="card-body">
-            <span class="status-badge">FOR SALE</span>
-            <h3 class="project-name">HARBOR VIEW RESIDENCES</h3>
-            <p class="project-location">Ventura County, California</p>
+          <div class="invest-img rounded">
+            <img class="rounded" src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=800&q=80&fit=crop"
+              alt="invest" style="width:100%; height:100%; object-fit:cover;">
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- SECTION 4: PROJECT GRID -->
+    <section class="s-all-properties">
+      <div class="container">
+        <span class="section-label">ALL PROPERTIES</span>
+
+        <div class="project-grid">
+          <!-- Card 1 -->
+          <div class="project-card rounded" onclick="window.location.href='project-detail.html'">
+            <div class="card-image rounded"
+              style="background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80&fit=crop');">
+            </div>
+            <div class="card-body">
+              <span class="status-badge">FOR SALE</span>
+              <h3 class="project-name">RIVERSIDE HEIGHTS</h3>
+              <p class="project-location">Orange County, California</p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="project-card rounded" onclick="window.location.href='project-detail.html'">
+            <div class="card-image rounded"
+              style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80&fit=crop');">
+            </div>
+            <div class="card-body">
+              <span class="status-badge">UNDER CONSTRUCTION</span>
+              <h3 class="project-name">OAK VALLEY ESTATES</h3>
+              <p class="project-location">San Diego County, California</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="project-card rounded" onclick="window.location.href='project-detail.html'">
+            <div class="card-image rounded"
+              style="background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80&fit=crop');">
+            </div>
+            <div class="card-body">
+              <span class="status-badge">COMPLETED</span>
+              <h3 class="project-name">MAPLE RIDGE</h3>
+              <p class="project-location">Los Angeles County, California</p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="project-card rounded" onclick="window.location.href='project-detail.html'">
+            <div class="card-image rounded"
+              style="background-image: url('https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=800&q=80&fit=crop');">
+            </div>
+            <div class="card-body">
+              <span class="status-badge">FOR SALE</span>
+              <h3 class="project-name">CEDAR GROVE</h3>
+              <p class="project-location">Riverside County, California</p>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="project-card rounded" onclick="window.location.href='project-detail.html'">
+            <div class="card-image rounded"
+              style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80&fit=crop');">
+            </div>
+            <div class="card-body">
+              <span class="status-badge">UNDER CONSTRUCTION</span>
+              <h3 class="project-name">PINE CREST VILLAS</h3>
+              <p class="project-location">Santa Barbara County, California</p>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="project-card rounded" onclick="window.location.href='project-detail.html'">
+            <div class="card-image rounded"
+              style="background-image: url('https://images.unsplash.com/photo-1598228723793-52759bba239c?w=800&q=80&fit=crop');">
+            </div>
+            <div class="card-body">
+              <span class="status-badge">FOR SALE</span>
+              <h3 class="project-name">HARBOR VIEW RESIDENCES</h3>
+              <p class="project-location">Ventura County, California</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </main>
 
@@ -174,9 +211,12 @@
       <!-- Left -->
       <div class="footer-left">
         <svg class="wave-svg" viewBox="0 0 50 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 18 C 10 18, 10 12, 18 12 C 26 12, 26 18, 34 18 C 42 18, 42 12, 48 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M2 12 C 10 12, 10 6, 18 6 C 26 6, 26 12, 34 12 C 42 12, 42 6, 48 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M2 6 C 10 6, 10 0, 18 0 C 26 0, 26 6, 34 6 C 42 6, 42 0, 48 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 18 C 10 18, 10 12, 18 12 C 26 12, 26 18, 34 18 C 42 18, 42 12, 48 12" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" />
+          <path d="M2 12 C 10 12, 10 6, 18 6 C 26 6, 26 12, 34 12 C 42 12, 42 6, 48 6" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" />
+          <path d="M2 6 C 10 6, 10 0, 18 0 C 26 0, 26 6, 34 6 C 42 6, 42 0, 48 0" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" />
         </svg>
         <div class="logo-wordmark">
           <span class="line-1">LEGACY</span>
@@ -201,4 +241,5 @@
   </footer>
   <script src="scripts.js"></script>
 </body>
+
 </html>
