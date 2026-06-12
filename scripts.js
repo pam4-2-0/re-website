@@ -31,3 +31,8 @@ function closeSidenav() {
 if (hamburgerBtn) hamburgerBtn.addEventListener('click', openSidenav);
 if (sidenavClose) sidenavClose.addEventListener('click', closeSidenav);
 if (backdrop) backdrop.addEventListener('click', closeSidenav);
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && sidenav && sidenav.classList.contains('open')) {
+    closeSidenav();
+  }
+});

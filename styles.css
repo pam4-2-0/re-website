@@ -84,6 +84,26 @@ section {
   line-height: 1.3;
 }
 
+.pullquote-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.sub-block-b-text .heading-medium-garamond {
+  font-size: 25px;
+}
+
+.breadcrumb-link {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.breadcrumb-link:hover {
+  color: var(--gold);
+}
+
 .heading-medium-garamond {
   font-size: 28px;
   font-weight: 500;
