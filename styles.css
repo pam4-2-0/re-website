@@ -1,10 +1,15 @@
 :root {
-  --gold: #c9a060;
-  --black: #0d0d0d;
+  --gold: #C7A158;
+  --black: #102537;
   --white: #ffffff;
-  --off-white: #f6f6f6;
-  --footer-bg: #393939;
-  --gray-text: #848484;
+  --off-white: #F2F0E8;
+  --ivory: #F2F0E8;
+  --footer-bg: #102537;
+  --gray-text: #8C8B8F;
+  --sage: #6B8D6F;
+  --stone: #8C8B8F;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans:  'Montserrat', sans-serif;
 }
 
 *,
@@ -18,13 +23,25 @@
 body {
   background-color: var(--white);
   color: var(--black);
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-sans);
   font-size: 15px;
   font-weight: 400;
   line-height: 1.8;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   padding-top: 150px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+}
+
+h5,
+h6 {
+  font-family: var(--font-sans);
 }
 
 p {
@@ -66,6 +83,7 @@ section {
 }
 
 .section-label {
+  font-family: var(--font-sans);
   font-size: 20px;
   font-weight: 600;
   text-transform: uppercase;
@@ -77,6 +95,7 @@ section {
 }
 
 .heading-large-serif {
+  font-family: var(--font-serif);
   font-style: normal;
   font-size: 40px;
   font-weight: 400;
@@ -105,6 +124,7 @@ section {
 }
 
 .heading-medium-garamond {
+  font-family: var(--font-serif);
   font-size: 28px;
   font-weight: 500;
   color: var(--black);

@@ -1271,7 +1271,8 @@
 }
 
 .s-invest-cta {
-  background-color: var(--gold);
+  background-color: var(--sage);
+  color: var(--white);
   padding: 30px 0;
 }
 
@@ -1364,6 +1365,11 @@
   color: var(--gold);
   text-transform: uppercase;
   margin-bottom: 8px;
+}
+
+.status-badge.completed {
+  background: transparent;
+  color: var(--sage);
 }
 
 .project-name {
@@ -1546,7 +1552,7 @@
 .pillar-divider {
   width: 40px;
   height: 1px;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: var(--sage);
   margin-bottom: 16px;
 }
 
