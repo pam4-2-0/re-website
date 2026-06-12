@@ -1246,11 +1246,11 @@
 }
 
 .hero-title {
-  font-size: 56px;
+  font-size: 46px;
   font-weight: 700;
   color: var(--white);
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   margin: 0;
   line-height: 1.2;
 }

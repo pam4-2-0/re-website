@@ -424,9 +424,17 @@ footer.l-footer {
 
 .footer-left {
   display: flex;
-  align-items: center;
-  gap: 15px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
   color: #ffffff;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .footer-left .logo-wordmark .line-1,
@@ -487,3 +495,11 @@ footer.l-footer {
 }
 
 .content-divider {}
+
+.footer-tagline {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 8px;
+}
