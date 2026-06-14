@@ -39,6 +39,26 @@
 - If verification is needed, user will request it explicitly
 - When requested: use file:// protocol — open `file:///D:/Vibe Coding/10_Projects/RE-Website/[filename].html` directly, do NOT spin up localhost
 
+## Code Comment Rules
+When writing CSS or JS, add a short comment ONLY when the WHY is non-obvious. Format:
+- CSS: `/* [mô tả ngắn mục đích — không mô tả cái gì, mô tả tại sao] */`
+- JS: `// [mô tả ngắn mục đích]`
+
+Mandatory comment cases (áp dụng toàn dự án):
+- Decorative pattern `::before` — ghi: `/* Decorative pattern — ẩn trên mobile, không ảnh hưởng layout */`
+- Mobile hide `@media` cho decorative element — ghi: `/* Decorative patterns — ẩn trên mobile: không cần thiết cho UX, tiết kiệm render */`
+- Scroll reveal CSS class — ghi: `/* Scroll reveal — class .visible được thêm bởi IntersectionObserver trong scripts.js */`
+- Scroll reveal JS — ghi: `// Scroll reveal — observe .reveal elements, thêm class .visible khi vào viewport`
+- opacity thấp trên pattern — ghi: `/* opacity 0.05–0.12: barely visible — luxury = subtle */`
+
+Never comment: obvious CSS properties, standard resets, color values already in design system.
+
+## Workflow Principle
+Với mọi task có nhiều bước (research, planning, mapping, analysis):
+- AI thực hiện đầy đủ TRƯỚC — không hỏi giữa chừng, không tạm dừng chờ approval
+- User review output hoàn chỉnh → chốt quyết định
+- Chỉ hỏi khi bị block bởi thông tin không thể tự quyết định
+
 ## Token Efficiency
 - Skip project discovery — structure is above
 - Skip file exploration — I will specify which file
