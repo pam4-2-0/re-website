@@ -199,7 +199,7 @@
   padding: 150px 0 60px;
   text-align: center;
   position: relative;
-  background: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80&fit=crop') center center / cover no-repeat;
+  background: url('img/mission-bg.jpg') center center / cover no-repeat;
 }
 
 .s-mission::before {
@@ -248,7 +248,7 @@
   width: 100%;
   height: 500px;
   background-color: #c8b89a;
-  background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=900&q=80&fit=crop');
+  background-image: url('img/block-a.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -296,7 +296,7 @@
 .sub-block-c-img {
   width: 100%;
   height: 550px;
-  background: url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=900&q=80&fit=crop') center center / cover no-repeat;
+  background: url('img/block-c.jpg') center center / cover no-repeat;
 }
 
 /* ============================================================
