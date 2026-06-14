@@ -36,3 +36,14 @@ document.addEventListener('keydown', function (e) {
     closeSidenav();
   }
 });
+
+// Scroll reveal — observe .reveal elements, thêm class .visible khi vào viewport
+const revealObserver = new IntersectionObserver(
+  entries => entries.forEach(e => {
+    e.isIntersecting
+      ? e.target.classList.add('visible')
+      : e.target.classList.remove('visible');
+  }),
+  { threshold: 0.15 }
+);
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));

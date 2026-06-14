@@ -29,19 +29,21 @@
   overflow: hidden;
   background:
     radial-gradient(ellipse at 0% 100%, rgba(13, 13, 13, 0.92) 0%, rgba(13, 13, 13, 0.60) 42%, transparent 68%),
-    url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1600&q=80&fit=crop') center center / cover no-repeat;
+    url('img/hero-index.png') center center / cover no-repeat;
 }
 
 .slider_cont {
   position: absolute;
-  bottom: 30px;
+  bottom: 150px;
   left: 0;
-  width: 35%;
+  width: 50%;
   padding: 20px 80px 20px max(80px, calc((100vw - 1400px) / 2 + 80px));
   z-index: 2;
-  background-color: rgba(13, 13, 13, 0.70);
-  border-radius: 0 24px 24px 0;
-  display: block;
+  --background-color: rgba(13, 13, 13, 0.70);
+  --border-radius: 0 24px 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
 }
 
 .slider_cont h1 {
@@ -64,7 +66,7 @@
 }
 
 .slider_cont .hero-subline {
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.88);
   line-height: 1.6;
@@ -76,24 +78,66 @@
 }
 
 .slider_cont .cta-link {
-  color: var(--white);
-  text-align: left;
+  display: inline-block;
+  width: 60%;
+  background-color: var(--gold);
+  color: var(--white) !important;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .slider_cont .cta-link:hover {
-  color: var(--gold);
+  background-color: #b5904f;
+  /* Đổi sang màu vàng sậm hơn một chút */
+  color: var(--white);
+  transform: translateY(-2px);
 }
 
 /* Section 2: Intro Sec */
 .s-brand-intro {
-  padding: 120px 0 150px;
+  padding: 120px 0;
+  background-color: var(--ivory);
 }
 
-.three-col-layout {
+.four-col-layout {
   display: grid;
-  grid-template-columns: 3.5fr 4.5fr 4fr;
-  gap: 60px;
-  align-items: flex-start;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.prop-col .heading-medium-garamond {
+  text-align: center;
+  font-size: 20px;
+}
+
+.prop-col:not(:last-child) {
+  border-right: 1px solid rgba(16, 37, 55, 0.12);
+}
+
+.prop-img {
+  width: 60%;
+  aspect-ratio: 4 / 3;
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+  /* căn giữa block element */
+  margin-bottom: 50px;
+  mix-blend-mode: multiply;
+}
+
+@media (max-width: 768px) {
+  .four-col-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .prop-col:not(:last-child) {
+    border-right: none;
+  }
 }
 
 .image-overlap-wrapper {
@@ -180,6 +224,7 @@
 /* Section 4: Home About Sec */
 .s-values {
   padding: 100px 0 120px;
+  background-color: var(--ivory);
 }
 
 .sub-block-a {
@@ -2543,4 +2588,112 @@
     min-height: 300px;
     height: 300px;
   }
+}
+
+/* ─── Brand Statement Section ──────────────────────────── */
+.s-brand-statement {
+  position: relative;
+  background-color: var(--black);
+  overflow: hidden;
+  padding: 140px 0;
+  text-align: center;
+  --margin-bottom: 60px;
+}
+
+/* Decorative pattern — ẩn trên mobile, không ảnh hưởng layout */
+.s-brand-statement::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('img/engraved-landscape-overlaid-pattern.png');
+  background-size: 400px auto;
+  background-repeat: repeat;
+  background-position: center;
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.s-brand-statement>* {
+  position: relative;
+  z-index: 1;
+}
+
+.brand-statement-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.brand-eyebrow {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.brand-tagline {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 4vw, 48px);
+  font-weight: 300;
+  color: var(--off-white);
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+/* ─── About Nature Section (topographic) ───────────────── */
+.s-about-nature {
+  position: relative;
+}
+
+/* Decorative pattern — ẩn trên mobile, không ảnh hưởng layout */
+.s-about-nature::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('img/patterns/topographic.svg');
+  background-size: 600px 450px;
+  background-repeat: repeat;
+  background-position: center;
+  /* opacity 0.05–0.12: barely visible — luxury = subtle */
+  opacity: 0.08;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.s-about-nature>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Scroll Reveal ─────────────────────────────────────── */
+/* Scroll reveal — class .visible được thêm bởi IntersectionObserver trong scripts.js */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Decorative patterns — ẩn trên mobile: không cần thiết cho UX, tiết kiệm render */
+@media (max-width: 768px) {
+  .s-brand-statement::before {
+    display: none;
+  }
+
+  .s-about-nature::before {
+    display: none;
+  }
+}
+
+.l-footer .footer-brand img {
+  filter: brightness(0) invert(1);
 }
