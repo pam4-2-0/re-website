@@ -1,22 +1,30 @@
 # Project Rules
 
 ## Files
-- HTML: index.html, about.html, projects.html, project-detail.html, contact.html (1000-2000 lines each)
-- components.css: layout/components (~1500 lines)
-- styles.css: typography/colors (~500 lines)
-- scripts.js: interactions
+
+**HTML Site (static — html-site/):**
+- HTML: html-site/index.html, html-site/about.html, html-site/projects.html, html-site/project-detail.html, html-site/contact.html (1000-2000 lines each)
+- CSS: html-site/styles.css, html-site/components.css
+- JS: html-site/scripts.js
+- Images: html-site/img/
+
+**React App (claude.ai/design — react-app/):**
+- Components: react-app/src/components/ (Header, Footer, Sidenav, BrandStatement, RouterProvider)
+- Pages: react-app/src/pages/ (Home, About, Projects, ProjectDetail, Contact, NotFound)
+- Design system bundle: react-app/ds-bundle/ (uploaded to claude.ai/design)
 
 ## Prompt Format
-- `=fix [file] [selector] => [action]` — edit immediately, no explanation
+- `=fix [file] [selector] => [action]` — edit immediately, no explanation. Default target: **html-site/** unless user specifies react-app/
 - `=ask [scope] [question]` — explain only, no edits
 - `/fix_bug` — use surgical edit skill
 - Batch: `=fix [file]: 1. ... 2. ... 3. ...`
 - `=commit_log` — run `git diff HEAD`, read changed files, output 1 suggested commit message (Conventional Commits format). Do NOT commit. User commits manually.
-- `=prompt_anti [mô tả việc cần làm]` — TRƯỚC KHI generate: đọc `styles.css` để verify utility classes và naming patterns hiện có. Không tự đặt tên HTML element hay CSS class mới khi chưa check. Sau đó generate 1 Antigravity prompt in English (scoped to RE-Website context: files, naming convention, CSS vars). Output prompt block + breakdown giải thích từng yếu tố bằng tiếng Việt. NEVER include browser verification, screenshot requests, or phrases like "Return your findings", "verify in browser", "take a screenshot" — omit entirely unless user explicitly requests. When prompt involves color/CSS: auto-include Color Contrast Constraints block (see ## Color Contrast Rules below).
+- `=prompt_anti [mô tả việc cần làm]` — TRƯỚC KHI generate: đọc `html-site/styles.css` hoặc `react-app/src/styles.css` (tùy target) để verify utility classes và naming patterns hiện có. Không tự đặt tên HTML element hay CSS class mới khi chưa check. Sau đó generate 1 Antigravity prompt in English (scoped to RE-Website context: files, naming convention, CSS vars). Output prompt block + breakdown giải thích từng yếu tố bằng tiếng Việt. NEVER include browser verification, screenshot requests, or phrases like "Return your findings", "verify in browser", "take a screenshot" — omit entirely unless user explicitly requests. When prompt involves color/CSS: auto-include Color Contrast Constraints block (see ## Color Contrast Rules below).
 - `=audit` — run B2 automated checks (grep patterns from AUDIT.md §5) against current codebase. Output: 3-column table: Item | Status | File:line. Then update §3 snapshot in AUDIT.md with current date. Flag what needs browser (cannot automate). Do NOT explain methodology — just results.
 
 ## Edit Rules
-- CSS lookup order: component.css FIRST, style.css SECOND
+- **HTML Site**: CSS lookup order: `html-site/components.css` FIRST, `html-site/styles.css` SECOND
+- **React App**: CSS files: `react-app/src/components.css`, `react-app/src/styles.css`
 - Do NOT read HTML unless prompt specifies or DOM check needed
 - Use str_replace ONLY — never rewrite full file
 - No explanation unless =ask
@@ -37,7 +45,8 @@
 ## Browser Verification Rule
 - Do NOT include browser verification steps in any generated prompt by default
 - If verification is needed, user will request it explicitly
-- When requested: use file:// protocol — open `file:///D:/Vibe Coding/10_Projects/RE-Website/[filename].html` directly, do NOT spin up localhost
+- When requested: use file:// protocol — open `file:///D:/Vibe Coding/10_Projects/RE-Website/html-site/[filename].html` directly, do NOT spin up localhost
+- For React app: `cd react-app && npm run dev` → http://localhost:5173
 
 ## Code Comment Rules
 When writing CSS or JS, add a short comment ONLY when the WHY is non-obvious. Format:

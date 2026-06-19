@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+  <!-- Layer 1 — distant hills, faintest -->
+  <path d="M0 75 C120 38,240 55,380 40 C520 25,640 52,780 36 C920 20,1060 48,1200 34 C1320 22,1390 40,1440 36 L1440 120 L0 120Z" fill="#173248"/>
+  <!-- Layer 2 — mid hills -->
+  <path d="M0 85 C160 58,320 70,480 60 C640 50,800 68,960 58 C1100 49,1260 64,1380 56 C1416 52,1432 58,1440 56 L1440 120 L0 120Z" fill="#1b3a52"/>
+  <!-- Layer 3 — near foreground hills -->
+  <path d="M0 100 C200 80,400 90,620 84 C840 78,1020 94,1220 86 C1360 80,1408 88,1440 86 L1440 120 L0 120Z" fill="#1f4060"/>
+</svg>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Silver Creek Valley Estates</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="components.css">
+</head>
+
+<body>
+
+  <!-- Backdrop -->
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- STICKY NAVBAR -->
+  <header class="l-header" id="mainHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-container">
+        <img src="img/logo-horizontal.png" alt="Silver Creek Valley Estates" style="height:60px; width:auto;">
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html" class="desktop-nav-link">Home</a>
+        <a href="about.html" class="desktop-nav-link active">About</a>
+        <a href="projects.html" class="desktop-nav-link">Portfolio</a>
+        <a href="contact.html" class="desktop-nav-link">Contact</a>
+      </nav>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- SIDENAV MENU (Slides in from right) -->
+  <nav class="sidenav" id="sidenav">
+    <div class="sidenav-close" id="sidenavClose">&times;</div>
+    <div>
+      <div class="sidenav-label">NAVIGATE</div>
+      <div class="sidenav-links">
+        <a href="index.html" class="sidenav-link">
+          <span class="arrow">&rarr;</span>
+          <span>Home</span>
+        </a>
+        <a href="about.html" class="sidenav-link active">
+          <span class="arrow">&rarr;</span>
+          <span>About</span>
+        </a>
+        <a href="projects.html" class="sidenav-link">
+          <span class="arrow">&rarr;</span>
+          <span>Portfolio</span>
+        </a>
+        <a href="contact.html" class="sidenav-link">
+          <span class="arrow">&rarr;</span>
+          <span>Contact</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="sidenav-footer">
+      <div class="sidenav-phone">+1 (714) 555-0192</div>
+      <div class="sidenav-email">hello@silvercreekvalleyestates.com</div>
+    </div>
+  </nav>
+
+  <main class="l-main">
+
+    <!-- SECTION 2: PAGE HERO (split) -->
+    <section class="s-about-hero">
+      <div class="hero-left">
+        <span class="hero-label">WHO WE ARE ——</span>
+        <h1 class="hero-title">
+          <span class="hero-title-line">THE POWER OF<br>GREAT DESIGN</span>
+        </h1>
+        <p class="hero-paragraph">Premium homesites in a legacy community surrounded by nature. Where nature, privacy,
+          and timeless living come together.</p>
+      </div>
+      <div class="hero-right"></div>
+    </section>
+
+    <!-- SECTION 3: COMPANY INTRO -->
+    <section class="s-about reveal">
+      <div class="container">
+        <div class="intro-content">
+          <span class="section-label">ABOUT THE COMPANY</span>
+          <h2 class="intro-title">WHO WE ARE</h2>
+          <p class="intro-p">Silver Creek Valley Estates is a technology-driven real estate development company founded
+            with the mission to redefine how landmark properties are built, sold, and sustained. We started with premium
+            residential developments and have since expanded to high-density mixed-use projects across California's most
+            dynamic urban markets.</p>
+          <p class="intro-p">We manage the entire lifecycle of every project — from site acquisition and entitlements
+            through construction, branding, and asset stabilization — ensuring best-in-class outcomes for investors,
+            partners, and communities.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: FOUR PILLARS -->
+    <section class="s-how-we-work s-about-nature">
+      <div class="container">
+        <span class="section-label">HOW WE WORK</span>
+
+        <div class="pillars-grid">
+          <!-- Pillar 1 -->
+          <div class="pillar-card rounded reveal">
+            <div class="pillar-number">01</div>
+            <h3 class="pillar-title">ACQUISITION & DILIGENCE</h3>
+            <div class="pillar-divider"></div>
+            <p class="pillar-text">We identify high-value infill opportunities through a network of brokers and
+              proprietary outreach tools. Every site undergoes rigorous feasibility analysis to assess entitlement risk,
+              market positioning, and long-term return potential.</p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="pillar-card rounded reveal">
+            <div class="pillar-number">02</div>
+            <h3 class="pillar-title">CAPITAL FORMATION</h3>
+            <div class="pillar-divider"></div>
+            <p class="pillar-text">We leverage a growing network of accredited investors to structure the capital stack
+              for each project. Our transparent investor portal provides real-time updates on project milestones,
+              financials, and distributions.</p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="pillar-card rounded reveal">
+            <div class="pillar-number">03</div>
+            <h3 class="pillar-title">OPERATIONS</h3>
+            <div class="pillar-divider"></div>
+            <p class="pillar-text">Our operations team manages cost and timeline with precision — selecting top-tier
+              contractors, negotiating tight contracts, and deploying digital tools that streamline vendor payments
+              while protecting investor capital.</p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="pillar-card rounded reveal">
+            <div class="pillar-number">04</div>
+            <h3 class="pillar-title">SALES & LEASING</h3>
+            <div class="pillar-divider"></div>
+            <p class="pillar-text">We pre-sell and pre-lease units before construction completes. High-quality 3D
+              renderings, virtual tours, and targeted marketing campaigns minimize market exposure risk and accelerate
+              returns for our investors.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: TEAM -->
+    <section class="s-team">
+      <div class="container">
+        <h2 class="team-title">LEADERSHIP</h2>
+        <p class="team-subtext">Our management team brings decades of institutional real estate development, investment,
+          and design experience across major markets.</p>
+
+        <div class="team-grid">
+          <!-- Member 1 -->
+          <div class="team-card rounded reveal">
+            <div class="team-img rounded"
+              style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80&fit=crop');">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name"><span class="bold">DAVID</span> <span class="thin">NGUYEN</span></h3>
+              <span class="team-title-label">Founder & CEO</span>
+              <div class="team-divider"></div>
+              <p class="team-bio">28 years in real estate development across Southeast Asia and the US West Coast. David
+                leads the firm's vision, strategy, and investor relations.</p>
+            </div>
+          </div>
+
+          <!-- Member 2 -->
+          <div class="team-card rounded reveal">
+            <div class="team-img rounded"
+              style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80&fit=crop');">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name"><span class="bold">SARAH</span> <span class="thin">CHEN</span></h3>
+              <span class="team-title-label">Managing Director</span>
+              <div class="team-divider"></div>
+              <p class="team-bio">Oversees acquisition, underwriting, and equity placement. Sarah brings 15 years of
+                institutional investment experience from top-tier firms.</p>
+            </div>
+          </div>
+
+          <!-- Member 3 -->
+          <div class="team-card rounded reveal">
+            <div class="team-img rounded"
+              style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80&fit=crop');">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name"><span class="bold">MICHAEL</span> <span class="thin">TRAN</span></h3>
+              <span class="team-title-label">Director of Development</span>
+              <div class="team-divider"></div>
+              <p class="team-bio">Leads masterplan approvals, infrastructure delivery, and contractor coordination
+                across all active projects.</p>
+            </div>
+          </div>
+
+          <!-- Member 4 -->
+          <div class="team-card rounded reveal">
+            <div class="team-img rounded"
+              style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80&fit=crop');">
+            </div>
+            <div class="team-info">
+              <h3 class="team-name"><span class="bold">LISA</span> <span class="thin">PARK</span></h3>
+              <span class="team-title-label">Director of Sales</span>
+              <div class="team-divider"></div>
+              <p class="team-bio">Manages sales strategy, agent partnerships, and buyer relations. Lisa has closed over
+                $400M in residential transactions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <section class="s-brand-statement">
+    <div class="brand-statement-inner reveal">
+      <span class="brand-eyebrow">Silver Creek Valley Estates</span>
+      <h2 class="brand-tagline">LEGACY IN NATURE · HOME IN HARMONY</h2>
+    </div>
+  </section>
+
+
+
+  <!-- SECTION 6: FOOTER -->
+  <footer class="l-footer">
+    <div class="container footer-inner">
+      <!-- Left -->
+      <div class="footer-left">
+        <div class="footer-brand">
+          <img src="img/logo-primary.png" alt="Silver Creek Valley Estates" style="height:80px; width:auto;">
+          <p class="footer-tagline">Legacy in Nature<br>Home in Harmony</p>
+        </div>
+      </div>
+
+      <!-- Center -->
+      <div class="footer-center">
+        <span>100 Spectrum Center Drive, Suite 900, Irvine, CA 92618</span>
+      </div>
+
+      <!-- Right -->
+      <div class="footer-right">
+        <span>+1 (714) 555-0192 | hello@silvercreekvalleyestates.com</span>
+        <div class="copyright">
+          <span>Copyright &copy; 2026 | </span>
+          <a href="contact.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="scripts.js" defer></script>
+</body>
+
+</html>

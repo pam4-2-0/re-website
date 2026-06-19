@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440">
+  <!-- All strokes/fills in gold #C7A158 on transparent background -->
+
+  <!-- Ornamental border frame -->
+  <rect x="10" y="10" width="580" height="420" fill="none" stroke="#C7A158" stroke-width="0.8" opacity="0.35"/>
+  <!-- Corner brackets -->
+  <path d="M10 35 L10 10 L35 10" fill="none" stroke="#C7A158" stroke-width="1.1" opacity="0.65"/>
+  <path d="M565 10 L590 10 L590 35" fill="none" stroke="#C7A158" stroke-width="1.1" opacity="0.65"/>
+  <path d="M10 405 L10 430 L35 430" fill="none" stroke="#C7A158" stroke-width="1.1" opacity="0.65"/>
+  <path d="M565 430 L590 430 L590 405" fill="none" stroke="#C7A158" stroke-width="1.1" opacity="0.65"/>
+
+  <!-- Sky hatching — horizontal parallel lines -->
+  <g stroke="#C7A158" stroke-width="0.45" opacity="0.13">
+    <line x1="16" y1="28" x2="584" y2="28"/>
+    <line x1="16" y1="38" x2="584" y2="38"/>
+    <line x1="16" y1="48" x2="584" y2="48"/>
+    <line x1="16" y1="58" x2="584" y2="58"/>
+    <line x1="16" y1="68" x2="584" y2="68"/>
+    <line x1="16" y1="78" x2="584" y2="78"/>
+    <line x1="16" y1="88" x2="584" y2="88"/>
+    <line x1="16" y1="98" x2="584" y2="98"/>
+    <line x1="16" y1="108" x2="584" y2="108"/>
+    <line x1="16" y1="118" x2="584" y2="118"/>
+  </g>
+
+  <!-- Sun / Moon -->
+  <circle cx="448" cy="72" r="30" fill="none" stroke="#C7A158" stroke-width="1.2" opacity="0.5"/>
+  <circle cx="448" cy="72" r="20" fill="none" stroke="#C7A158" stroke-width="0.6" opacity="0.3"/>
+  <!-- Sun rays -->
+  <g stroke="#C7A158" stroke-width="0.6" opacity="0.25" stroke-linecap="round">
+    <line x1="448" y1="34" x2="448" y2="26"/>
+    <line x1="473" y1="47" x2="479" y2="41"/>
+    <line x1="484" y1="72" x2="492" y2="72"/>
+    <line x1="473" y1="97" x2="479" y2="103"/>
+    <line x1="448" y1="108" x2="448" y2="116"/>
+    <line x1="423" y1="97" x2="417" y2="103"/>
+    <line x1="412" y1="72" x2="404" y2="72"/>
+    <line x1="423" y1="47" x2="417" y2="41"/>
+  </g>
+
+  <!-- Far hills — outline + fill (slightly darker transparent for depth) -->
+  <path d="M16 240 Q80 168 145 192 Q200 155 258 182 Q315 148 375 174 Q432 146 490 170 Q536 150 584 168 L584 430 L16 430Z" fill="none" stroke="#C7A158" stroke-width="1.0" opacity="0.45"/>
+
+  <!-- Far hills diagonal hatching -->
+  <g stroke="#C7A158" stroke-width="0.45" opacity="0.18" stroke-linecap="round">
+    <line x1="22" y1="268" x2="38" y2="246"/>
+    <line x1="44" y1="260" x2="60" y2="238"/>
+    <line x1="66" y1="250" x2="82" y2="228"/>
+    <line x1="88" y1="240" x2="104" y2="218"/>
+    <line x1="112" y1="238" x2="128" y2="216"/>
+    <line x1="140" y1="250" x2="156" y2="228"/>
+    <line x1="168" y1="245" x2="184" y2="223"/>
+    <line x1="196" y1="240" x2="212" y2="218"/>
+    <line x1="224" y1="238" x2="240" y2="216"/>
+    <line x1="256" y1="244" x2="272" y2="222"/>
+    <line x1="288" y1="248" x2="304" y2="226"/>
+    <line x1="320" y1="244" x2="336" y2="222"/>
+    <line x1="352" y1="240" x2="368" y2="218"/>
+    <line x1="384" y1="244" x2="400" y2="222"/>
+    <line x1="416" y1="246" x2="432" y2="224"/>
+    <line x1="448" y1="244" x2="464" y2="222"/>
+    <line x1="480" y1="246" x2="496" y2="224"/>
+    <line x1="512" y1="244" x2="528" y2="222"/>
+    <line x1="544" y1="246" x2="560" y2="224"/>
+    <line x1="566" y1="248" x2="582" y2="226"/>
+  </g>
+  <!-- Far hills cross-hatch -->
+  <g stroke="#C7A158" stroke-width="0.3" opacity="0.1" stroke-linecap="round">
+    <line x1="38" y1="246" x2="22" y2="228"/>
+    <line x1="60" y1="238" x2="44" y2="220"/>
+    <line x1="82" y1="228" x2="66" y2="210"/>
+    <line x1="104" y1="222" x2="88" y2="204"/>
+    <line x1="128" y1="218" x2="112" y2="200"/>
+    <line x1="156" y1="228" x2="140" y2="210"/>
+    <line x1="184" y1="225" x2="168" y2="207"/>
+    <line x1="212" y1="220" x2="196" y2="202"/>
+  </g>
+
+  <!-- Mid foreground hills -->
+  <path d="M16 285 Q70 248 124 265 Q178 235 234 258 Q290 230 348 254 Q406 228 462 252 Q510 232 556 250 Q575 240 584 248 L584 430 L16 430Z" fill="none" stroke="#C7A158" stroke-width="0.9" opacity="0.5"/>
+  <!-- Mid hills hatching -->
+  <g stroke="#C7A158" stroke-width="0.4" opacity="0.2" stroke-linecap="round">
+    <line x1="22" y1="305" x2="36" y2="288"/>
+    <line x1="50" y1="298" x2="64" y2="281"/>
+    <line x1="80" y1="292" x2="94" y2="275"/>
+    <line x1="115" y1="298" x2="129" y2="281"/>
+    <line x1="148" y1="292" x2="162" y2="275"/>
+    <line x1="182" y1="290" x2="196" y2="273"/>
+    <line x1="218" y1="292" x2="232" y2="275"/>
+    <line x1="258" y1="290" x2="272" y2="273"/>
+    <line x1="300" y1="290" x2="314" y2="273"/>
+    <line x1="342" y1="290" x2="356" y2="273"/>
+    <line x1="384" y1="290" x2="398" y2="273"/>
+    <line x1="426" y1="290" x2="440" y2="273"/>
+    <line x1="466" y1="290" x2="480" y2="273"/>
+    <line x1="504" y1="288" x2="518" y2="271"/>
+    <line x1="542" y1="290" x2="556" y2="273"/>
+    <line x1="570" y1="286" x2="582" y2="270"/>
+  </g>
+
+  <!-- Near ground -->
+  <path d="M16 320 Q100 302 180 310 Q270 296 360 308 Q450 294 540 306 Q568 298 584 306 L584 430 L16 430Z" fill="none" stroke="#C7A158" stroke-width="0.7" opacity="0.4"/>
+
+  <!-- Pine Tree 1 (left group) -->
+  <g transform="translate(75,210)" opacity="0.92">
+    <polygon points="0,-58 -18,0 18,0" fill="none" stroke="#C7A158" stroke-width="1.0" stroke-linejoin="round"/>
+    <polygon points="0,-42 -23,13 23,13" fill="none" stroke="#C7A158" stroke-width="1.0" stroke-linejoin="round"/>
+    <polygon points="0,-24 -28,28 28,28" fill="none" stroke="#C7A158" stroke-width="1.0" stroke-linejoin="round"/>
+    <rect x="-4" y="28" width="8" height="16" fill="none" stroke="#C7A158" stroke-width="0.85"/>
+  </g>
+
+  <!-- Pine Tree 2 (tallest, left) -->
+  <g transform="translate(128,196)" opacity="0.95">
+    <polygon points="0,-72 -21,0 21,0" fill="none" stroke="#C7A158" stroke-width="1.1" stroke-linejoin="round"/>
+    <polygon points="0,-53 -27,15 27,15" fill="none" stroke="#C7A158" stroke-width="1.1" stroke-linejoin="round"/>
+    <polygon points="0,-32 -33,32 33,32" fill="none" stroke="#C7A158" stroke-width="1.1" stroke-linejoin="round"/>
+    <rect x="-4.5" y="32" width="9" height="18" fill="none" stroke="#C7A158" stroke-width="0.9"/>
+  </g>
+
+  <!-- Pine Tree 3 (small, between) -->
+  <g transform="translate(100,228)" opacity="0.72">
+    <polygon points="0,-42 -13,0 13,0" fill="none" stroke="#C7A158" stroke-width="0.85" stroke-linejoin="round"/>
+    <polygon points="0,-30 -17,10 17,10" fill="none" stroke="#C7A158" stroke-width="0.85" stroke-linejoin="round"/>
+    <polygon points="0,-16 -21,18 21,18" fill="none" stroke="#C7A158" stroke-width="0.85" stroke-linejoin="round"/>
+    <rect x="-3" y="18" width="6" height="12" fill="none" stroke="#C7A158" stroke-width="0.7"/>
+  </g>
+
+  <!-- Pine Tree 4 (right group, tall) -->
+  <g transform="translate(462,200)" opacity="0.88">
+    <polygon points="0,-65 -20,0 20,0" fill="none" stroke="#C7A158" stroke-width="1.0" stroke-linejoin="round"/>
+    <polygon points="0,-47 -25,14 25,14" fill="none" stroke="#C7A158" stroke-width="1.0" stroke-linejoin="round"/>
+    <polygon points="0,-27 -30,30 30,30" fill="none" stroke="#C7A158" stroke-width="1.0" stroke-linejoin="round"/>
+    <rect x="-4" y="30" width="8" height="17" fill="none" stroke="#C7A158" stroke-width="0.85"/>
+  </g>
+
+  <!-- Pine Tree 5 (right) -->
+  <g transform="translate(508,218)" opacity="0.78">
+    <polygon points="0,-50 -16,0 16,0" fill="none" stroke="#C7A158" stroke-width="0.9" stroke-linejoin="round"/>
+    <polygon points="0,-36 -20,12 20,12" fill="none" stroke="#C7A158" stroke-width="0.9" stroke-linejoin="round"/>
+    <polygon points="0,-20 -24,22 24,22" fill="none" stroke="#C7A158" stroke-width="0.9" stroke-linejoin="round"/>
+    <rect x="-3.5" y="22" width="7" height="14" fill="none" stroke="#C7A158" stroke-width="0.75"/>
+  </g>
+
+  <!-- Pine Tree 6 (right, small) -->
+  <g transform="translate(540,232)" opacity="0.65">
+    <polygon points="0,-38 -12,0 12,0" fill="none" stroke="#C7A158" stroke-width="0.8" stroke-linejoin="round"/>
+    <polygon points="0,-27 -16,10 16,10" fill="none" stroke="#C7A158" stroke-width="0.8" stroke-linejoin="round"/>
+    <polygon points="0,-14 -19,17 19,17" fill="none" stroke="#C7A158" stroke-width="0.8" stroke-linejoin="round"/>
+    <rect x="-3" y="17" width="6" height="11" fill="none" stroke="#C7A158" stroke-width="0.65"/>
+  </g>
+
+  <!-- Creek / water flowing lines -->
+  <path d="M16 400 Q100 392 185 396 Q275 388 365 394 Q455 386 545 392 Q568 388 584 392" fill="none" stroke="#C7A158" stroke-width="0.9" opacity="0.38"/>
+  <path d="M16 408 Q110 400 200 405 Q295 397 385 402 Q470 394 558 400 Q574 396 584 400" fill="none" stroke="#C7A158" stroke-width="0.65" opacity="0.22"/>
+  <path d="M16 416 Q120 408 215 413 Q315 406 408 411 Q488 404 565 410 Q578 406 584 410" fill="none" stroke="#C7A158" stroke-width="0.5" opacity="0.15"/>
+
+  <!-- Ground texture dots -->
+  <g fill="#C7A158" opacity="0.18">
+    <circle cx="40" cy="424" r="1.2"/>
+    <circle cx="80" cy="422" r="1.0"/>
+    <circle cx="130" cy="423" r="1.2"/>
+    <circle cx="180" cy="421" r="0.9"/>
+    <circle cx="240" cy="423" r="1.1"/>
+    <circle cx="300" cy="421" r="0.9"/>
+    <circle cx="360" cy="422" r="1.2"/>
+    <circle cx="420" cy="420" r="1.0"/>
+    <circle cx="480" cy="422" r="1.1"/>
+    <circle cx="540" cy="421" r="0.9"/>
+    <circle cx="575" cy="423" r="1.0"/>
+  </g>
+
+  <!-- Brand wordmark at base (subtle) -->
+  <text x="300" y="385" text-anchor="middle" font-family="Georgia, serif" font-size="8" letter-spacing="4" fill="#C7A158" opacity="0.3">SILVER CREEK VALLEY ESTATES</text>
+
+</svg>
