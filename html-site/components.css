@@ -1364,7 +1364,8 @@
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* Desktop: auto-fit minmax(300px, 1fr) = ~3-4 columns depending on space */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: clamp(16px, 4vw, 32px);
   margin-top: 40px;
 }
@@ -1439,13 +1440,15 @@
   margin: 0;
 }
 
-@media (max-width: 768px) {
+/* Tablet: explicit 2 columns */
+@media (max-width: 1024px) {
   .project-grid {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: clamp(12px, 3vw, 24px);
   }
 }
 
+/* Mobile: single column */
 @media (max-width: 480px) {
   .project-grid {
     grid-template-columns: 1fr;
