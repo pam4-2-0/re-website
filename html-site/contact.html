@@ -9,15 +9,17 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="_ds_bundle.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="components.css">
 
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-          integrity="sha384-SALc35EccAf6RzGw4iNsyj7kTPr33K7RoGzYu+7heZhT8s0GZouafRiCg1qy44AS"
-          crossorigin="anonymous"></script>
+    integrity="sha384-SALc35EccAf6RzGw4iNsyj7kTPr33K7RoGzYu+7heZhT8s0GZouafRiCg1qy44AS"
+    crossorigin="anonymous"></script>
   <script>emailjs.init('cFCpU6CiCv-0ufI__');</script>
 </head>
 
@@ -27,7 +29,8 @@
   <div class="backdrop" id="backdrop"></div>
 
   <!-- FLOATING NAVBAR -->
-  <header class="l-header" id="mainHeader" style="background-color: #F2EDE3; box-shadow: none; transition: box-shadow 0.3s ease;">
+  <header class="l-header" id="mainHeader"
+    style="background-color: #F2EDE3; box-shadow: none; transition: box-shadow 0.3s ease;">
     <div class="container header-inner">
       <a href="index.html" class="logo-container">
         <img src="img/logo-horizontal.png" alt="Silver Creek Valley Estates" style="height:60px; width:auto;">
@@ -82,39 +85,31 @@
   <main class="l-main">
 
     <section class="s-contact-hero">
-      <div class="banner-left">
-        <div>
-          <h1>CONTACT</h1>
-          <p class="intro-text">Premium homesites in a legacy community surrounded by nature. Where nature, privacy, and timeless living come together.</p>
-        </div>
-
-        <div class="company-meta">
-          <p class="company-name">Silver Creek Valley Estates</p>
-          <p class="contact-detail">Phone: +1 (714) 555-0192</p>
-          <p class="contact-detail">Email: hello@silvercreekvalleyestates.com</p>
+      <div class="container">
+        <div class="contact-hero-info">
+          <div class="contact-hero-col">
+            <span class="contact-hero-label">Address</span>
+            <p class="contact-hero-value">100 Spectrum Center Drive,<br>Suite 900, Irvine, CA 92618</p>
+          </div>
+          <div class="contact-hero-col">
+            <span class="contact-hero-label">Contact — Silver Creek Valley Estates</span>
+            <p class="contact-hero-value">+1 (714) 555-0192</p>
+            <a href="mailto:hello@silvercreekvalleyestates.com" class="contact-hero-email">hello@silvercreekvalleyestates.com</a>
+          </div>
         </div>
       </div>
-
-      <div class="banner-right"></div>
     </section>
 
     <!-- CONTACT FORM SECTION -->
-    <section class="s-contact-form">
-      <div class="container form-layout">
-        <div class="form-left">
-          <div class="circular-img"></div>
-          <address>
-            <strong>Silver Creek Valley Estates Headquarters</strong><br>
-            100 Spectrum Center Drive, Suite 900,<br>
-            Irvine, CA 92618
-          </address>
+    <section class="s-contact-form s-contact-inline">
+      <div class="container">
+        <div class="contact-inline-header">
+          <h2 class="heading-large-serif">Get in Touch</h2>
+          <p class="contact-inline-sub">Leave your request and we'll contact you in the next 24 hours.</p>
         </div>
-
-        <div class="form-right">
-          <form class="contact-form" id="contactForm">
-            <!-- Formspree spam honeypot -->
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-
+        <form class="contact-form-inline" id="contactForm">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <div class="contact-row-split">
             <div class="form-group">
               <label for="name">Name*</label>
               <input type="text" id="name" name="name" required placeholder="Your full name">
@@ -123,24 +118,24 @@
               <label for="email">Email*</label>
               <input type="email" id="email" name="email" required placeholder="Your email address">
             </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="How can our consulting team assist you?"></textarea>
-            </div>
-
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="How can our consulting team assist you?"></textarea>
+          </div>
+          <div class="contact-submit-row">
             <button type="submit" class="submit-btn" id="submitBtn">
-              <span class="btn-text">Submit &rarr;</span>
+              <span class="btn-text">Submit</span>
               <span class="btn-sending" style="display:none">Sending&hellip;</span>
             </button>
-          </form>
-
-          <!-- Thank You State -->
-          <div class="form-thankyou" id="formThankyou" style="display:none">
-            <div class="thankyou-line"></div>
-            <p class="thankyou-label">INQUIRY RECEIVED</p>
-            <h3 class="thankyou-heading">Thank You</h3>
-            <p class="thankyou-body">A member of our team will be in touch within 24 hours.<br>We look forward to speaking with you.</p>
           </div>
+        </form>
+        <div class="form-thankyou" id="formThankyou" style="display:none">
+          <div class="thankyou-line"></div>
+          <p class="thankyou-label">INQUIRY RECEIVED</p>
+          <h3 class="thankyou-heading">Thank You</h3>
+          <p class="thankyou-body">A member of our team will be in touch within 24 hours.<br>We look forward to speaking
+            with you.</p>
         </div>
       </div>
     </section>

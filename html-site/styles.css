@@ -1,18 +1,18 @@
 @import "./fonts/fonts.css";
 
 :root {
-  --gold:      #C7A15B;
-  --black:     #1D3557;
-  --navy:      #1D3557;
-  --white:     #ffffff;
+  --gold: #C7A15B;
+  --black: #1D3557;
+  --navy: #1D3557;
+  --white: #ffffff;
   --off-white: #F2EDE3;
-  --ivory:     #F2EDE3;
+  --ivory: #F2EDE3;
   --footer-bg: #1D3557;
   --gray-text: #8E918D;
-  --sage:      #6E826F;
-  --stone:     #8E918D;
+  --sage: #6E826F;
+  --stone: #8E918D;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans:  'Montserrat', sans-serif;
+  --font-sans: 'Montserrat', sans-serif;
 }
 
 *,
@@ -80,7 +80,7 @@ a {
 }
 
 section {
-  padding: 120px 0;
+  padding: 80px 0;
   position: relative;
   background-color: var(--ivory);
 }
@@ -102,7 +102,7 @@ section {
   font-style: normal;
   font-size: 40px;
   font-weight: 400;
-  color: var(--gold);
+  color: var(--navy);
   line-height: 1.3;
 }
 
@@ -122,6 +122,7 @@ section {
   text-decoration: none;
   transition: color 0.2s;
 }
+
 .breadcrumb-link:hover {
   color: var(--gold);
 }

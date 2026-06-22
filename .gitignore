@@ -4,3 +4,9 @@ node_modules/
 .DS_Store
 *.log
 _server.py
+export/
+.git-old/
+AUDIT.md
+AUDIT-METHODOLOGY.md
+CLAUDE.md
+react-app/
