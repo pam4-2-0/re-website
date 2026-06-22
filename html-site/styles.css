@@ -1,13 +1,16 @@
+@import "./fonts/fonts.css";
+
 :root {
-  --gold: #C7A158;
-  --black: #102537;
-  --white: #ffffff;
+  --gold:      #C7A15B;
+  --black:     #1D3557;
+  --navy:      #1D3557;
+  --white:     #ffffff;
   --off-white: #F2EDE3;
   --ivory:     #F2EDE3;
-  --footer-bg: #102537;
-  --gray-text: #8C8B8F;
-  --sage: #6B8D6F;
-  --stone: #8C8B8F;
+  --footer-bg: #1D3557;
+  --gray-text: #8E918D;
+  --sage:      #6E826F;
+  --stone:     #8E918D;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans:  'Montserrat', sans-serif;
 }
@@ -162,8 +165,8 @@ header.l-header {
   z-index: 100;
   display: flex;
   align-items: center;
-  background: var(--white);
-  box-shadow: rgba(211, 211, 211, 0.5) 0px 0px 16px 0px;
+  background: var(--black);
+  box-shadow: none;
   transition: height 0.3s ease;
 }
 
@@ -214,7 +217,7 @@ header.l-header.scrolled {
   font-weight: 600;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: var(--black);
+  color: #000000;
   transition: color 0.3s ease;
 }
 
@@ -223,7 +226,7 @@ header.l-header.scrolled {
   font-weight: 400;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: var(--black);
+  color: #000000;
   transition: color 0.3s ease;
 }
 
@@ -243,7 +246,7 @@ header.l-header.scrolled {
   display: block;
   width: 24px;
   height: 2px;
-  background-color: var(--black);
+  background-color: var(--ivory);
 }
 
 .hamburger:hover .line {
@@ -261,14 +264,14 @@ header.l-header.scrolled {
   font-weight: 400;
   letter-spacing: 0;
   text-transform: uppercase;
-  color: var(--black);
+  color: #000000;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .desktop-nav-link:hover,
 .desktop-nav-link.active {
-  color: var(--gold);
+  color: var(--navy);
 }
 
 @media (max-width: 768px) {

@@ -9,8 +9,8 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="_ds_bundle.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="components.css">
 </head>
@@ -20,8 +20,8 @@
   <!-- Backdrop -->
   <div class="backdrop" id="backdrop"></div>
 
-  <!-- STICKY NAVBAR -->
-  <header class="l-header" id="mainHeader">
+  <!-- FLOATING NAVBAR -->
+  <header class="l-header" id="mainHeader" style="background-color: #F2EDE3; box-shadow: none; transition: box-shadow 0.3s ease;">
     <div class="container header-inner">
       <a href="index.html" class="logo-container">
         <img src="img/logo-horizontal.png" alt="Silver Creek Valley Estates" style="height:60px; width:auto;">
@@ -42,7 +42,7 @@
     </div>
   </header>
 
-  <!-- SIDENAV MENU (Slides in from right) -->
+  <!-- SIDENAV MENU -->
   <nav class="sidenav" id="sidenav">
     <div class="sidenav-close" id="sidenavClose">&times;</div>
     <div>
@@ -75,7 +75,7 @@
 
   <main class="l-main">
 
-    <!-- SECTION 2: PAGE HERO -->
+    <!-- PAGE HERO -->
     <section class="s-page-hero">
       <div class="container hero-content">
         <span class="hero-label">PORTFOLIO</span>
@@ -84,7 +84,7 @@
       </div>
     </section>
 
-    <!-- SECTION 3: INVEST HIGHLIGHT BAR -->
+    <!-- INVEST HIGHLIGHT BAR -->
     <section class="s-invest-cta">
       <div class="container invest-inner">
         <span class="invest-text">INTERESTED IN INVESTING WITH US?</span>
@@ -92,7 +92,7 @@
       </div>
     </section>
 
-    <!-- SECTION 3.5: INVEST FEATURE -->
+    <!-- INVEST FEATURE -->
     <section class="s-invest-feature">
       <div class="container">
         <div class="invest-row">
@@ -113,17 +113,15 @@
       </div>
     </section>
 
-    <!-- SECTION 4: PROJECT GRID -->
+    <!-- PROJECT GRID -->
     <section class="s-all-properties">
       <div class="container">
         <span class="section-label">ALL PROPERTIES</span>
 
         <div class="project-grid">
-          <!-- Card 1 -->
           <div class="project-card rounded" onclick="window.location.href='project-detail.html'">
             <div class="card-image rounded"
-              style="background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80&fit=crop');">
-            </div>
+              style="background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80&fit=crop');"></div>
             <div class="card-body">
               <span class="status-badge">FOR SALE</span>
               <h3 class="project-name">RIVERSIDE HEIGHTS</h3>
@@ -131,11 +129,9 @@
             </div>
           </div>
 
-          <!-- Card 2 -->
           <div class="project-card rounded" onclick="window.location.href='project-detail.html'">
             <div class="card-image rounded"
-              style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80&fit=crop');">
-            </div>
+              style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80&fit=crop');"></div>
             <div class="card-body">
               <span class="status-badge">UNDER CONSTRUCTION</span>
               <h3 class="project-name">OAK VALLEY ESTATES</h3>
@@ -143,11 +139,9 @@
             </div>
           </div>
 
-          <!-- Card 3 -->
           <div class="project-card rounded" onclick="window.location.href='project-detail.html'">
             <div class="card-image rounded"
-              style="background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80&fit=crop');">
-            </div>
+              style="background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80&fit=crop');"></div>
             <div class="card-body">
               <span class="status-badge completed">COMPLETED</span>
               <h3 class="project-name">MAPLE RIDGE</h3>
@@ -155,11 +149,9 @@
             </div>
           </div>
 
-          <!-- Card 4 -->
           <div class="project-card rounded" onclick="window.location.href='project-detail.html'">
             <div class="card-image rounded"
-              style="background-image: url('https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=800&q=80&fit=crop');">
-            </div>
+              style="background-image: url('https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=800&q=80&fit=crop');"></div>
             <div class="card-body">
               <span class="status-badge">FOR SALE</span>
               <h3 class="project-name">CEDAR GROVE</h3>
@@ -167,11 +159,9 @@
             </div>
           </div>
 
-          <!-- Card 5 -->
           <div class="project-card rounded" onclick="window.location.href='project-detail.html'">
             <div class="card-image rounded"
-              style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80&fit=crop');">
-            </div>
+              style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80&fit=crop');"></div>
             <div class="card-body">
               <span class="status-badge">UNDER CONSTRUCTION</span>
               <h3 class="project-name">PINE CREST VILLAS</h3>
@@ -179,11 +169,9 @@
             </div>
           </div>
 
-          <!-- Card 6 -->
           <div class="project-card rounded" onclick="window.location.href='project-detail.html'">
             <div class="card-image rounded"
-              style="background-image: url('https://images.unsplash.com/photo-1598228723793-52759bba239c?w=800&q=80&fit=crop');">
-            </div>
+              style="background-image: url('https://images.unsplash.com/photo-1598228723793-52759bba239c?w=800&q=80&fit=crop');"></div>
             <div class="card-body">
               <span class="status-badge">FOR SALE</span>
               <h3 class="project-name">HARBOR VIEW RESIDENCES</h3>
@@ -196,25 +184,18 @@
 
   </main>
 
-
-
-  <!-- SECTION 5: FOOTER -->
+  <!-- FOOTER -->
   <footer class="l-footer">
     <div class="container footer-inner">
-      <!-- Left -->
       <div class="footer-left">
         <div class="footer-brand">
           <img src="img/logo-primary.png" alt="Silver Creek Valley Estates" style="height:80px; width:auto;">
           <p class="footer-tagline">Legacy in Nature<br>Home in Harmony</p>
         </div>
       </div>
-
-      <!-- Center -->
       <div class="footer-center">
         <span>100 Spectrum Center Drive, Suite 900, Irvine, CA 92618</span>
       </div>
-
-      <!-- Right -->
       <div class="footer-right">
         <span>+1 (714) 555-0192 | hello@silvercreekvalleyestates.com</span>
         <div class="copyright">
@@ -224,6 +205,17 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) {
+        header.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+      } else {
+        header.style.boxShadow = 'none';
+      }
+    });
+  </script>
   <script src="scripts.js" defer></script>
 </body>
 

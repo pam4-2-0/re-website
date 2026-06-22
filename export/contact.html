@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Silver Creek Valley Estates</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="_ds_bundle.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="components.css">
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+          integrity="sha384-SALc35EccAf6RzGw4iNsyj7kTPr33K7RoGzYu+7heZhT8s0GZouafRiCg1qy44AS"
+          crossorigin="anonymous"></script>
+  <script>emailjs.init('cFCpU6CiCv-0ufI__');</script>
+</head>
+
+<body>
+
+  <!-- Backdrop -->
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- FLOATING NAVBAR -->
+  <header class="l-header" id="mainHeader" style="background-color: #F2EDE3; box-shadow: none; transition: box-shadow 0.3s ease;">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-container">
+        <img src="img/logo-horizontal.png" alt="Silver Creek Valley Estates" style="height:60px; width:auto;">
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html" class="desktop-nav-link">Home</a>
+        <a href="about.html" class="desktop-nav-link">About</a>
+        <a href="projects.html" class="desktop-nav-link">Portfolio</a>
+        <a href="contact.html" class="desktop-nav-link active">Contact</a>
+      </nav>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- SIDENAV MENU -->
+  <nav class="sidenav" id="sidenav">
+    <div class="sidenav-close" id="sidenavClose">&times;</div>
+    <div>
+      <div class="sidenav-label">NAVIGATE</div>
+      <div class="sidenav-links">
+        <a href="index.html" class="sidenav-link">
+          <span class="arrow">&rarr;</span>
+          <span>Home</span>
+        </a>
+        <a href="about.html" class="sidenav-link">
+          <span class="arrow">&rarr;</span>
+          <span>About</span>
+        </a>
+        <a href="projects.html" class="sidenav-link">
+          <span class="arrow">&rarr;</span>
+          <span>Portfolio</span>
+        </a>
+        <a href="contact.html" class="sidenav-link active">
+          <span class="arrow">&rarr;</span>
+          <span>Contact</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="sidenav-footer">
+      <div class="sidenav-phone">+1 (714) 555-0192</div>
+      <div class="sidenav-email">hello@silvercreekvalleyestates.com</div>
+    </div>
+  </nav>
+
+  <main class="l-main">
+
+    <section class="s-contact-hero">
+      <div class="banner-left">
+        <div>
+          <h1>CONTACT</h1>
+          <p class="intro-text">Premium homesites in a legacy community surrounded by nature. Where nature, privacy, and timeless living come together.</p>
+        </div>
+
+        <div class="company-meta">
+          <p class="company-name">Silver Creek Valley Estates</p>
+          <p class="contact-detail">Phone: +1 (714) 555-0192</p>
+          <p class="contact-detail">Email: hello@silvercreekvalleyestates.com</p>
+        </div>
+      </div>
+
+      <div class="banner-right"></div>
+    </section>
+
+    <!-- CONTACT FORM SECTION -->
+    <section class="s-contact-form">
+      <div class="container form-layout">
+        <div class="form-left">
+          <div class="circular-img"></div>
+          <address>
+            <strong>Silver Creek Valley Estates Headquarters</strong><br>
+            100 Spectrum Center Drive, Suite 900,<br>
+            Irvine, CA 92618
+          </address>
+        </div>
+
+        <div class="form-right">
+          <form class="contact-form" id="contactForm">
+            <!-- Formspree spam honeypot -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+            <div class="form-group">
+              <label for="name">Name*</label>
+              <input type="text" id="name" name="name" required placeholder="Your full name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email*</label>
+              <input type="email" id="email" name="email" required placeholder="Your email address">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="How can our consulting team assist you?"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+              <span class="btn-text">Submit &rarr;</span>
+              <span class="btn-sending" style="display:none">Sending&hellip;</span>
+            </button>
+          </form>
+
+          <!-- Thank You State -->
+          <div class="form-thankyou" id="formThankyou" style="display:none">
+            <div class="thankyou-line"></div>
+            <p class="thankyou-label">INQUIRY RECEIVED</p>
+            <h3 class="thankyou-heading">Thank You</h3>
+            <p class="thankyou-body">A member of our team will be in touch within 24 hours.<br>We look forward to speaking with you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="l-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="footer-brand">
+          <img src="img/logo-primary.png" alt="Silver Creek Valley Estates" style="height:80px; width:auto;">
+          <p class="footer-tagline">Legacy in Nature<br>Home in Harmony</p>
+        </div>
+      </div>
+      <div class="footer-center">
+        <span>100 Spectrum Center Drive, Suite 900, Irvine, CA 92618</span>
+      </div>
+      <div class="footer-right">
+        <span>+1 (714) 555-0192 | hello@silvercreekvalleyestates.com</span>
+        <div class="copyright">
+          <span>Copyright &copy; 2026 | </span>
+          <a href="contact.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) {
+        header.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+      } else {
+        header.style.boxShadow = 'none';
+      }
+    });
+
+    // Contact Form — Formspree AJAX
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = submitBtn ? submitBtn.querySelector('.btn-text') : null;
+    const btnSending = submitBtn ? submitBtn.querySelector('.btn-sending') : null;
+    const thankyou = document.getElementById('formThankyou');
+
+    if (form) {
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        if (btnText) btnText.style.display = 'none';
+        if (btnSending) btnSending.style.display = 'inline';
+        if (submitBtn) submitBtn.disabled = true;
+
+        const data = new FormData(form);
+
+        try {
+          const res = await fetch('https://formspree.io/f/maqzqpjw', {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (res.ok) {
+            try {
+              await emailjs.send('service_irum7qe', 'template_xa2vyxn', {
+                name: data.get('name'),
+                email: data.get('email'),
+                message: data.get('message')
+              });
+            } catch (emailErr) {
+              console.warn('EmailJS auto-reply failed:', emailErr);
+            }
+            form.style.display = 'none';
+            if (thankyou) thankyou.style.display = 'block';
+          } else {
+            if (btnText) btnText.style.display = 'inline';
+            if (btnSending) btnSending.style.display = 'none';
+            if (submitBtn) submitBtn.disabled = false;
+            alert('Something went wrong. Please try again or email us directly.');
+          }
+        } catch (err) {
+          if (btnText) btnText.style.display = 'inline';
+          if (btnSending) btnSending.style.display = 'none';
+          if (submitBtn) submitBtn.disabled = false;
+          alert('Network error. Please try again.');
+        }
+      });
+    }
+  </script>
+  <script src="scripts.js" defer></script>
+</body>
+
+</html>

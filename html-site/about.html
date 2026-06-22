@@ -12,6 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="_ds_bundle.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="components.css">
 </head>
@@ -22,7 +23,7 @@
   <div class="backdrop" id="backdrop"></div>
 
   <!-- STICKY NAVBAR -->
-  <header class="l-header" id="mainHeader">
+  <header class="l-header" id="mainHeader" style="background-color: #F2EDE3; box-shadow: none; transition: box-shadow 0.3s ease;">
     <div class="container header-inner">
       <a href="index.html" class="logo-container">
         <img src="img/logo-horizontal.png" alt="Silver Creek Valley Estates" style="height:60px; width:auto;">
@@ -76,17 +77,13 @@
 
   <main class="l-main">
 
-    <!-- SECTION 2: PAGE HERO (split) -->
+    <!-- PAGE HERO -->
     <section class="s-about-hero">
-      <div class="hero-left">
-        <span class="hero-label">WHO WE ARE ——</span>
-        <h1 class="hero-title">
-          <span class="hero-title-line">THE POWER OF<br>GREAT DESIGN</span>
-        </h1>
-        <p class="hero-paragraph">Premium homesites in a legacy community surrounded by nature. Where nature, privacy,
-          and timeless living come together.</p>
+      <div class="about-hero-overlay">
+        <h1 class="about-hero-title">THE POWER OF<br>GREAT DESIGN</h1>
+        <p class="about-hero-desc">Premium homesites in a legacy community surrounded by nature. Where nature, privacy, and timeless living come together.</p>
+        <a href="#about" class="cta-link">Learn More →</a>
       </div>
-      <div class="hero-right"></div>
     </section>
 
     <!-- SECTION 3: COMPANY INTRO -->
@@ -115,8 +112,8 @@
           <!-- Pillar 1 -->
           <div class="pillar-card rounded reveal">
             <div class="pillar-number">01</div>
-            <h3 class="pillar-title">ACQUISITION & DILIGENCE</h3>
             <div class="pillar-divider"></div>
+            <h3 class="pillar-title">ACQUISITION & DILIGENCE</h3>
             <p class="pillar-text">We identify high-value infill opportunities through a network of brokers and
               proprietary outreach tools. Every site undergoes rigorous feasibility analysis to assess entitlement risk,
               market positioning, and long-term return potential.</p>
@@ -125,8 +122,8 @@
           <!-- Pillar 2 -->
           <div class="pillar-card rounded reveal">
             <div class="pillar-number">02</div>
-            <h3 class="pillar-title">CAPITAL FORMATION</h3>
             <div class="pillar-divider"></div>
+            <h3 class="pillar-title">CAPITAL FORMATION</h3>
             <p class="pillar-text">We leverage a growing network of accredited investors to structure the capital stack
               for each project. Our transparent investor portal provides real-time updates on project milestones,
               financials, and distributions.</p>
@@ -135,8 +132,8 @@
           <!-- Pillar 3 -->
           <div class="pillar-card rounded reveal">
             <div class="pillar-number">03</div>
-            <h3 class="pillar-title">OPERATIONS</h3>
             <div class="pillar-divider"></div>
+            <h3 class="pillar-title">OPERATIONS</h3>
             <p class="pillar-text">Our operations team manages cost and timeline with precision — selecting top-tier
               contractors, negotiating tight contracts, and deploying digital tools that streamline vendor payments
               while protecting investor capital.</p>
@@ -145,8 +142,8 @@
           <!-- Pillar 4 -->
           <div class="pillar-card rounded reveal">
             <div class="pillar-number">04</div>
-            <h3 class="pillar-title">SALES & LEASING</h3>
             <div class="pillar-divider"></div>
+            <h3 class="pillar-title">SALES & LEASING</h3>
             <p class="pillar-text">We pre-sell and pre-lease units before construction completes. High-quality 3D
               renderings, virtual tours, and targeted marketing campaigns minimize market exposure risk and accelerate
               returns for our investors.</p>
@@ -231,8 +228,6 @@
     </div>
   </section>
 
-
-
   <!-- SECTION 6: FOOTER -->
   <footer class="l-footer">
     <div class="container footer-inner">
@@ -259,6 +254,17 @@
       </div>
     </div>
   </footer>
+  <script>
+    // Add shadow to header on scroll
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) {
+        header.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+      } else {
+        header.style.boxShadow = 'none';
+      }
+    });
+  </script>
   <script src="scripts.js" defer></script>
 </body>
 
