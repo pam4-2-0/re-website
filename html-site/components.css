@@ -67,7 +67,7 @@
 
 .slider_cont .hero-subline {
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.88);
   line-height: 1.6;
   margin: 0 0 0.5rem;
@@ -1489,7 +1489,7 @@
 
 .intro-p {
   font-size: 15px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.8;
   color: var(--black);
 }
@@ -1509,7 +1509,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(29,53,87,0.55) 0%, rgba(29,53,87,0.15) 100%);
+  background: linear-gradient(to right, rgba(29, 53, 87, 0.55) 0%, rgba(29, 53, 87, 0.15) 100%);
   pointer-events: none;
 }
 
@@ -1586,7 +1586,7 @@
   font-family: var(--font-body);
   font-size: 15px;
   font-weight: 300;
-  color: rgba(242,237,227,0.82);
+  color: rgba(242, 237, 227, 0.82);
   line-height: 1.7;
   margin: 16px 0 28px 0;
 }
@@ -1615,7 +1615,7 @@
   justify-content: center;
   width: 36px;
   height: 36px;
-  border: 1px solid rgba(255,255,255,0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   font-size: 20px;
   line-height: 1;
@@ -1641,7 +1641,7 @@
 .hero-paragraph {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--stone);
   line-height: 1.7;
   margin-top: 30px;
@@ -1703,7 +1703,7 @@
 }
 
 .pillar-title {
-  font-size: 13px !important;
+  font-size: 14px !important;
   font-weight: 600 !important;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -1713,17 +1713,10 @@
   min-height: 40px;
 }
 
-.pillar-divider {
-  width: 40px;
-  height: 2px;
-  background-color: var(--sage);
-  margin-bottom: 12px;
-}
-
 .pillar-text {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
-  color: var(--gray-text);
+  color: var(--black);
   line-height: 1.7;
 }
 
@@ -1757,8 +1750,8 @@
 
 .team-subtext {
   font-size: 15px;
-  font-weight: 300;
-  color: var(--gray-text);
+  font-weight: 400;
+  color: var(--black);
   text-align: center;
   max-width: 600px;
   margin: 0 auto 60px;
@@ -1814,21 +1807,14 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: var(--gray-text);
-  margin-bottom: 12px;
-}
-
-.team-divider {
-  width: 40px;
-  height: 1px;
-  background-color: rgba(0, 0, 0, 0.15);
+  color: var(--gold);
   margin-bottom: 12px;
 }
 
 .team-bio {
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;
-  color: var(--gray-text);
+  color: var(--black);
   line-height: 1.7;
 }
 
@@ -1854,56 +1840,60 @@
    ============================================================ */
 
 .s-contact-hero {
-  padding: 80px 0;
+  padding: 56px 0 40px;
   background-color: var(--ivory);
+  text-align: center;
 }
 
-.contact-hero-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+.contact-hero-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
-.contact-hero-label {
+.contact-hero-title {
   font-family: var(--font-sans);
-  font-size: 10px;
+  font-size: 22px;
   font-weight: 600;
-  letter-spacing: 3px;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--gray-text);
-  display: block;
-  margin-bottom: 20px;
-}
-
-.contact-hero-value {
-  font-family: var(--font-serif);
-  font-size: 40px;
-  font-weight: 400;
   color: var(--black);
-  line-height: 1.25;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
-.contact-hero-email {
+.contact-hero-company {
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: 500;
   color: var(--black);
-  text-decoration: none;
-  transition: color 0.2s;
+  margin-bottom: 0;
 }
 
-.contact-hero-email:hover {
-  color: var(--gold);
+.contact-hero-meta {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gray-text);
+  margin-bottom: 0;
 }
 
 .s-contact-form {
-  padding: 80px 0;
+  padding: 40px 0 80px;
   background-color: var(--ivory);
 }
 
 /* Center submit button on contact page — project-detail stays right-aligned */
 .s-contact-form .contact-submit-row {
   justify-content: center;
+}
+
+/* Box-style inputs for contact page */
+.s-contact-form .form-group input,
+.s-contact-form .form-group textarea {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 14px 16px;
+  background: var(--white);
 }
 
 .form-group {
@@ -1950,17 +1940,13 @@
 }
 
 @media (max-width: 768px) {
-  .contact-hero-info {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  .contact-hero-value {
-    font-size: 28px;
+  .contact-hero-meta {
+    font-size: 13px;
   }
 }
 
 @media (max-width: 576px) {
+
   .form-group input,
   .form-group textarea {
     font-size: 16px;
@@ -2384,6 +2370,11 @@
   margin-bottom: 0;
 }
 
+.contact-form-inline > .form-group,
+.contact-form-inline > .contact-row-split {
+  padding-top: 0;
+}
+
 .s-contact-inline .form-group label {
   font-size: 10px;
   font-weight: 600;
@@ -2398,9 +2389,10 @@
   background: transparent;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-  padding: 12px 0;
+  padding: 14px 0;
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 400;
   color: var(--black);
   outline: none;
   transition: border-color 0.3s ease;
@@ -2635,9 +2627,9 @@
 }
 
 .invest-content p {
-  font-size: 15px;
-  font-weight: 300;
-  line-height: 1.8;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
   color: var(--black);
   margin-bottom: 0;
 }
@@ -2786,6 +2778,7 @@
 .l-footer .footer-brand img {
   filter: brightness(0) invert(1);
 }
+
 /* ============================================================
    ABOUT — STATS BAR
    ============================================================ */
@@ -2827,12 +2820,12 @@
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(242,237,227,0.6);
+  color: rgba(242, 237, 227, 0.6);
 }
 
 .stat-divider {
   width: 1px;
-  background: rgba(242,237,227,0.15);
+  background: rgba(242, 237, 227, 0.15);
   align-self: stretch;
   margin: 24px 0;
 }
